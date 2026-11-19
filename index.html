@@ -1026,7 +1026,7 @@ html body #app #info.identity-panel .identity-meta a{color:#fffaf7!important;fon
     <button id="riskMapRead" class="risk-map-read" type="button" disabled>Leggi l’episodio <span aria-hidden="true">↗</span></button>
   </div>
 </section>
-<div class="library-backdrop hidden" id="libraryBackdrop" aria-hidden="true"></div><section class="library-drawer hidden" id="libraryDrawer" role="dialog" aria-label="Biblioteca di COME LUPI" aria-modal="true"><div class="library-main-head"><div><span class="eyebrow">COME LUPI / RISORSE</span><h2>Biblioteca</h2><p>Materiali gratuiti e indicazioni per andare oltre la lettura. Seleziona una risorsa: il lettore scende qui sotto.</p></div><button type="button" id="libraryClose" class="library-close" aria-label="Chiudi biblioteca">✕ <span>Chiudi</span></button></div><div class="library-resource-list" id="libraryResources"></div><div class="library-reader hidden" id="libraryReader"><div class="library-reader-toolbar"><strong id="librarySelectedTitle">Documento</strong><div class="library-reader-controls"><button type="button" id="libGuideToTop" title="Torna all’inizio della guida" aria-label="Torna all’inizio della guida" hidden>↑ Inizio</button><button type="button" id="libZoomOut" aria-label="Riduci testo">−</button><span id="libraryZoomLabel">100%</span><button type="button" id="libZoomIn" aria-label="Ingrandisci testo">＋</button><button type="button" id="libZoomReset" title="Ripristina zoom">↺</button><button type="button" id="libraryReaderClose" aria-label="Chiudi lettore">✕</button></div></div><div id="libraryViewport" class="library-viewport"><article id="libraryText" class="library-text"></article><div id="libraryExternal" class="library-external hidden"></div></div><p id="libraryLicense" class="library-license"></p></div><div class="library-footer"><span>Le guide originali sono disponibili offline. I siti esterni richiedono connessione.</span><button type="button" class="btn small" id="libraryReturn">← Torna all’app</button></div></section><nav aria-label="Sezioni dell'app" class="tabs" role="tablist"><button aria-selected="true" data-tab="info" role="tab" title="Informazioni sull'app" aria-label="Informazioni sull'app"><span class="navico info-nav-icon" aria-hidden="true">i</span><span>Info</span></button><button aria-selected="false" data-tab="reader" role="tab"><span class="navico">▤</span><span>Libro</span></button><button aria-selected="false" data-tab="signals" role="tab"><span class="navico">☑</span><span>Questionari</span></button><button aria-selected="false" data-tab="help" role="tab"><span class="navico">ⓘ</span><span>Aiuto</span></button><button aria-selected="false" data-tab="legal" role="tab"><span class="navico">♢</span><span>Tutela</span></button><button aria-selected="false" data-tab="gloss" role="tab"><span class="navico">☷</span><span>Glossario</span></button></nav><main>
+<div class="library-backdrop hidden" id="libraryBackdrop" aria-hidden="true"></div><section class="library-drawer hidden" id="libraryDrawer" role="dialog" aria-label="Biblioteca di COME LUPI" aria-modal="true"><div class="library-main-head"><div><span class="eyebrow">COME LUPI / RISORSE</span><h2>Biblioteca</h2><p>Materiali gratuiti e indicazioni per andare oltre la lettura. Seleziona una risorsa: il lettore scende qui sotto.</p></div><button type="button" id="libraryClose" class="library-close" aria-label="Chiudi biblioteca">✕ <span>Chiudi</span></button></div><div class="cl-legal-library-strip"><button id="clLegalNotesOpen" type="button" class="library-resource cl-legal-resource" aria-haspopup="dialog" aria-controls="clLegalOverlay"><span class="lib-badge">INFORMAZIONI E DIRITTI</span><strong>Note legali sull'App COME LUPI</strong><small>Privacy, condizioni d’uso, hosting e contatti del progetto</small></button></div><div class="library-resource-list" id="libraryResources"></div><div class="library-reader hidden" id="libraryReader"><div class="library-reader-toolbar"><strong id="librarySelectedTitle">Documento</strong><div class="library-reader-controls"><button type="button" id="libGuideToTop" title="Torna all’inizio della guida" aria-label="Torna all’inizio della guida" hidden>↑ Inizio</button><button type="button" id="libZoomOut" aria-label="Riduci testo">−</button><span id="libraryZoomLabel">100%</span><button type="button" id="libZoomIn" aria-label="Ingrandisci testo">＋</button><button type="button" id="libZoomReset" title="Ripristina zoom">↺</button><button type="button" id="libraryReaderClose" aria-label="Chiudi lettore">✕</button></div></div><div id="libraryViewport" class="library-viewport"><article id="libraryText" class="library-text"></article><div id="libraryExternal" class="library-external hidden"></div></div><p id="libraryLicense" class="library-license"></p></div><div class="library-footer"><span>Le guide originali sono disponibili offline. I siti esterni richiedono connessione.</span><div class="cl-library-footer-actions"><button type="button" class="btn small cl-clear-data-button" id="clClearDataOpen" aria-haspopup="dialog" aria-controls="clClearOverlay">Cancella dati di navigazione</button><button type="button" class="btn small" id="libraryReturn">← Torna all’app</button></div></div></section><nav aria-label="Sezioni dell'app" class="tabs" role="tablist"><button aria-selected="true" data-tab="info" role="tab" title="Informazioni sull'app" aria-label="Informazioni sull'app"><span class="navico info-nav-icon" aria-hidden="true">i</span><span>Info</span></button><button aria-selected="false" data-tab="reader" role="tab"><span class="navico">▤</span><span>Libro</span></button><button aria-selected="false" data-tab="signals" role="tab"><span class="navico">☑</span><span>Questionari</span></button><button aria-selected="false" data-tab="help" role="tab"><span class="navico">ⓘ</span><span>Aiuto</span></button><button aria-selected="false" data-tab="legal" role="tab"><span class="navico">♢</span><span>Tutela</span></button><button aria-selected="false" data-tab="gloss" role="tab"><span class="navico">☷</span><span>Glossario</span></button></nav><main>
 
 <section class="panel active identity-panel" id="info" aria-label="Informazioni sul progetto COME LUPI">
   <div class="identity-scene">
@@ -4471,6 +4471,7 @@ function eraseAppData(){
  try{for(let i=sessionStorage.length-1;i>=0;i--){const k=sessionStorage.key(i);if(k && (/^comelupi(?:_|$)/i.test(k)||/^come_lupi_/i.test(k)))sessionStorage.removeItem(k)}}catch(e){}
  return keys.length;
 }
+window.ComeLupiClearStoredData=eraseAppData;
 const erase=$('archiveErase');
 if(erase){erase.dataset.lucianoPatched='1';erase.onclick=()=>{
  if(!confirm('Eliminare note, segnalibri, punto di lettura, questionari e bozze salvati nell’app su questo browser? Eventuali file già esportati e la cronologia del browser NON saranno cancellati.'))return;
@@ -9553,4 +9554,216 @@ html body #app #info.identity-panel .identity-welcome-copy>h1 em{display:inline!
 #app #legal .legal-topic-text .tutela-fonti{padding:12px}
 }
 </style>
+
+<style id="come-lupi-legal-library-20261119">
+/* Isolated library controls and red text-only dialogs. */
+#app .cl-legal-library-strip {padding:12px 16px 3px;box-sizing:border-box}
+#app .cl-legal-library-strip .cl-legal-resource {display:flex;flex-direction:column;align-items:flex-start;min-height:78px;width:100%;gap:5px;padding:12px 17px;border:2px dashed #ffe0ca!important;border-radius:14px;background:linear-gradient(110deg,#590a1d,#812038 65%,#570b1b)!important;color:#fff9f3!important;box-shadow:inset 0 0 0 1px rgba(255,244,231,.1),0 5px 16px rgba(52,5,17,.22)!important;text-align:left;cursor:pointer}
+#app .cl-legal-library-strip .cl-legal-resource:before {display:none!important}
+#app .cl-legal-library-strip .cl-legal-resource .lib-badge {color:#ffe4d4!important;font:700 10px/1.2 system-ui,sans-serif;letter-spacing:.09em}
+#app .cl-legal-library-strip .cl-legal-resource strong {color:#fff9f5!important;font:700 clamp(16px,2vw,20px)/1.25 Georgia,serif}
+#app .cl-legal-library-strip .cl-legal-resource small {color:#fbe3df!important;font:12px/1.4 system-ui,sans-serif}
+#app .cl-legal-library-strip .cl-legal-resource:hover {background:linear-gradient(110deg,#741125,#992b41 65%,#691028)!important}
+#app .cl-legal-resource:focus-visible,#app #clClearDataOpen:focus-visible {outline:3px solid #ffdfaf!important;outline-offset:3px!important}
+#app .cl-library-footer-actions {display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap}
+#app .library-footer .cl-library-footer-actions>.btn {width:auto!important;min-width:unset!important;margin:0!important;min-height:42px!important;white-space:normal!important;line-height:1.2!important}
+#app #clClearDataOpen {background:rgba(255,246,239,.12)!important;color:#fff5f0!important;border:1px solid #f5bbb7!important;box-shadow:none!important}
+#app #clClearDataOpen:hover {background:rgba(255,246,239,.22)!important}
+@media(max-width:650px) {
+ #app .cl-legal-library-strip {padding:9px 11px 2px}
+ #app .library-footer {flex-wrap:wrap!important;gap:6px!important}
+ #app .library-footer>span {flex:1 1 100%;font-size:10px!important}
+ #app .cl-library-footer-actions {width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:7px}
+ #app .library-footer .cl-library-footer-actions>.btn {width:100%!important;min-width:0!important;min-height:40px!important;padding:8px 7px!important;font-size:11px!important}
+}
+.cl-overlay[hidden] {display:none!important}
+.cl-overlay {position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:max(12px,env(safe-area-inset-top,0px)) max(9px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(9px,env(safe-area-inset-left,0px));background:rgba(19,1,7,.82);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);overscroll-behavior:contain;box-sizing:border-box}
+.cl-modal-shell {box-sizing:border-box;position:relative;isolation:isolate;display:flex;flex-direction:column;overflow:hidden;width:min(850px,100%);max-height:100%;height:min(92dvh,870px);border:1px solid rgba(255,222,207,.48);border-radius:22px;background:radial-gradient(ellipse at 90% 9%,rgba(235,130,122,.23),transparent 37%),radial-gradient(ellipse at 3% 78%,rgba(132,24,54,.64),transparent 42%),linear-gradient(140deg,#3c0713 0%,#751426 48%,#4d0819 100%);box-shadow:0 26px 75px rgba(6,1,5,.67),inset 0 1px rgba(255,245,238,.14);color:#fff6f0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.cl-modal-shell::before {content:"";position:absolute;inset:-35px -60px auto auto;width:260px;height:260px;pointer-events:none;opacity:.2;background:radial-gradient(ellipse at 25% 35%,#ffc6b8 0 8%,transparent 9%),radial-gradient(ellipse at 55% 55%,#ffc6b8 0 9%,transparent 10%),radial-gradient(ellipse at 35% 75%,#ffc6b8 0 7%,transparent 8%);transform:rotate(-18deg);z-index:-1}
+.cl-modal-head {flex:none;position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:18px clamp(16px,3.3vw,30px) 14px;border-bottom:1px solid rgba(255,229,213,.27);background:linear-gradient(110deg,rgba(55,4,16,.94),rgba(104,13,34,.94));box-shadow:0 4px 18px rgba(18,0,8,.16)}
+.cl-modal-head h2 {font:600 clamp(21px,4.7vw,32px)/1.15 Georgia,serif;color:#fff7f0;margin:5px 0 3px;letter-spacing:.005em;overflow-wrap:anywhere}
+.cl-modal-kicker {color:#ffdcd0;font:750 clamp(9px,1.9vw,11px)/1.35 system-ui,sans-serif;letter-spacing:.14em;margin:0}
+.cl-modal-subtitle {color:#f3dad5;font:12px/1.4 system-ui,sans-serif;margin:5px 0 0}
+.cl-modal-x {display:grid;place-items:center;flex:0 0 41px;width:41px;height:41px;line-height:1;padding:0;background:rgba(255,248,238,.12);border:1px solid rgba(255,231,220,.55);border-radius:11px;color:#fff8ed;font:30px/1 system-ui,sans-serif;cursor:pointer}
+.cl-modal-x:focus-visible,.cl-modal-shell button:focus-visible,.cl-modal-shell a:focus-visible{outline:3px solid #ffe2a8;outline-offset:2px}
+.cl-modal-scroll {flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;-webkit-overflow-scrolling:touch;scrollbar-width:thin;box-sizing:border-box;padding:12px clamp(17px,4vw,36px) 21px;overflow-wrap:anywhere}
+.cl-legal-section {padding:17px 0 15px;border-bottom:1px solid rgba(255,222,213,.22)}
+.cl-legal-section h3 {font:600 clamp(18px,3.5vw,23px)/1.26 Georgia,serif;color:#fff5e8;margin:0 0 11px}
+.cl-legal-section p,.cl-legal-section li,.cl-confirm-body p {font:400 clamp(13.5px,2.7vw,15px)/1.58 system-ui,-apple-system,'Segoe UI',sans-serif;color:#fff2ec;margin:0 0 12px}
+.cl-legal-section strong,.cl-confirm-body strong {color:#fff9d8;font-weight:700}
+.cl-legal-section a {color:#fff4c7;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.cl-legal-section ul {padding-left:23px;margin:8px 0 13px}
+.cl-legal-section li {margin:4px 0}
+.cl-legal-section code {font:600 .94em ui-monospace,monospace;color:#fff3d1}
+.cl-legal-updated {padding:10px 0;font:12px/1.5 system-ui,sans-serif;color:#fff2e8}
+.cl-legal-bottom {padding:10px 0 7px;display:flex;justify-content:flex-end}
+.cl-legal-bottom button,.cl-confirm-actions button {color:#5b1020;background:#fff4ea;border:1px solid #ffdbcb;border-radius:11px;min-height:42px;padding:10px 17px;font:700 13px/1.25 system-ui,sans-serif;cursor:pointer}
+.cl-confirm-shell {max-width:580px;height:auto;max-height:93dvh}
+.cl-confirm-body {padding-top:21px}
+.cl-confirm-actions {display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end;margin-top:19px}
+#clClearConfirm {color:#fff6ee;background:linear-gradient(120deg,#a93046,#791426);border-color:#ffb0a9}
+.cl-clear-feedback {padding:10px;border-radius:8px;background:rgba(255,255,255,.12)}
+@media(max-width:480px){.cl-overlay{padding:7px max(7px,env(safe-area-inset-right,0px)) max(7px,env(safe-area-inset-bottom,0px)) max(7px,env(safe-area-inset-left,0px))}.cl-modal-shell{height:100%;max-height:100%;border-radius:17px}.cl-confirm-shell{height:auto;max-height:100%}.cl-modal-head{padding:13px 14px 11px}.cl-modal-head h2{font-size:clamp(20px,5.5vw,25px)}.cl-modal-scroll{padding:10px 16px 20px}.cl-legal-section{padding:15px 0 12px}.cl-legal-section h3{font-size:19px}.cl-legal-section p,.cl-legal-section li,.cl-confirm-body p{font-size:14px;line-height:1.53}.cl-confirm-actions{display:grid;grid-template-columns:1fr}.cl-confirm-actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){.cl-modal-shell,.cl-modal-shell *{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<!-- COME LUPI · due nuove finestre della Biblioteca -->
+<div class="cl-overlay" id="clLegalOverlay" hidden>
+ <section class="cl-modal-shell" role="dialog" aria-modal="true" aria-labelledby="clLegalTitle" aria-describedby="clLegalSubtitle" tabindex="-1">
+  <div class="cl-modal-head"><div><p class="cl-modal-kicker">BIBLIOTECA · INFORMAZIONI SUL PROGETTO</p><h2 id="clLegalTitle">NOTE LEGALI — COME LUPI</h2><p class="cl-modal-subtitle" id="clLegalSubtitle">Privacy, utilizzo dell’app, diritti e riferimenti ufficiali</p></div><button class="cl-modal-x" id="clLegalClose" type="button" aria-label="Chiudi note legali">×</button></div>
+  <div class="cl-modal-scroll" id="clLegalScroll" tabindex="0" role="region" aria-label="Testo completo delle note legali"><section class="cl-legal-section"><h3>1. Informazioni generali sul progetto</h3>
+<p><strong>COME LUPI</strong> è un progetto editoriale e di sensibilizzazione dedicato alla conoscenza, alla prevenzione e al riconoscimento della violenza nelle relazioni affettive.</p>
+<p>L’applicazione nasce dall’omonimo libro <em>COME LUPI</em> e ne amplia la funzione attraverso la lettura integrale dell’opera, strumenti di riflessione e consapevolezza, informazioni sulle forme della violenza, indicazioni sulle tutele previste dall’ordinamento italiano e riferimenti ai servizi di assistenza.</p>
+<p>Il progetto ha finalità informative, culturali e sociali. L’accesso è gratuito e non richiede registrazione.</p>
+<p>L’applicazione non costituisce un servizio di emergenza, un servizio sanitario, un percorso psicoterapeutico o una consulenza legale individuale. Le informazioni contenute non sostituiscono l’intervento delle autorità competenti o di professionisti qualificati.</p>
+<p>In caso di pericolo immediato è possibile contattare il numero unico di emergenza <strong>112</strong>. Per informazioni e assistenza sulla violenza e sullo stalking è disponibile il numero nazionale <strong>1522</strong>, gratuito e attivo 24 ore su 24.</p>
+<p>L’applicazione è un’iniziativa editoriale autonoma e non rappresenta un servizio istituzionale della Polizia di Stato o di altre pubbliche amministrazioni, salvo eventuali specifici accordi o riconoscimenti formalizzati.</p></section>
+<section class="cl-legal-section"><h3>2. Informativa sulla riservatezza e sui dati personali</h3>
+<p>La riservatezza di chi utilizza COME LUPI costituisce un principio fondamentale del progetto. Per consultare i contenuti e utilizzare gli strumenti non occorre identificarsi né creare un account.</p>
+<p>Il codice dell’app non integra propri sistemi di registrazione, profilazione pubblicitaria o analisi delle abitudini di navigazione. Le risposte ai questionari, le riflessioni personali, le annotazioni e le bozze non vengono inviate a un archivio centrale del progetto né all’autore per essere analizzate.</p>
+<p><strong>Conservazione locale.</strong> L’app può conservare nel browser, tramite <code>localStorage</code>, annotazioni, segnalibri, posizione e preferenze di lettura, questionari e bozze, secondo le scelte di salvataggio dell’utente. Alcune informazioni rimangono soltanto nella sessione o nella memoria temporanea fino alla chiusura o al ricaricamento. I file esportati dall’utente restano dove sono stati salvati.</p>
+<p>I dati locali non sono automaticamente cifrati o protetti da chi può accedere al dispositivo. La funzione «Cancella dati di navigazione» della Biblioteca elimina i dati locali riconducibili a COME LUPI ai quali questa pagina può accedere, ma <strong>non può cancellare la cronologia del browser, i download, le copie di backup o i registri tecnici dei fornitori di servizi</strong>.</p>
+<p>La consultazione della versione online comporta comunque trattamenti tecnici dell’infrastruttura GitHub Pages, descritti nella sezione seguente. Aprire volontariamente collegamenti o documenti ospitati da terzi può comportare una connessione ai relativi siti e l’applicazione delle loro informative.</p>
+<p><strong>Importante:</strong> il mancato invio dei dati personali all’autore non significa che tali informazioni siano invisibili a chi controlli o condivida il dispositivo.</p></section>
+<section class="cl-legal-section"><h3>3. Servizio di pubblicazione GitHub Pages</h3>
+<p>La versione online di COME LUPI è destinata alla pubblicazione su <strong>GitHub Pages</strong>, servizio di hosting statico fornito da GitHub.</p>
+<p>Indirizzo indicato per il progetto: <a href="https://progettocomelupi.github.io/AppHTML/" target="_blank" rel="noopener noreferrer">progettocomelupi.github.io/AppHTML/</a>.</p>
+<p>Secondo la documentazione ufficiale di GitHub, quando viene visitato un sito GitHub Pages, l’indirizzo IP del visitatore è registrato e conservato per finalità di sicurezza, anche senza accesso a un account GitHub. GitHub può trattare inoltre informazioni tecniche e di utilizzo dei propri servizi nei termini della propria informativa.</p>
+<p>Questi trattamenti sono distinti dai questionari e dagli strumenti di consapevolezza presenti nell’app: COME LUPI non usa GitHub Pages per ricevere risposte degli utenti, testimonianze personali o archivi di situazioni descritte nell’applicazione.</p>
+<p>Per conoscere i trattamenti operati dal fornitore dell’hosting consulta le informative ufficiali della sezione conclusiva.</p></section>
+<section class="cl-legal-section"><h3>4. Cookie e sistemi di tracciamento</h3>
+<p>COME LUPI non imposta propri cookie pubblicitari, cookie di profilazione, identificatori pubblicitari o sistemi di monitoraggio delle preferenze e dei comportamenti degli utenti. Nel codice esaminato non risultano servizi di analytics integrati dall’autore.</p>
+<p>La memorizzazione locale tramite browser, utilizzata per alcune funzionalità e per i dati che l’utente sceglie di conservare, non è impiegata per profilazione o pubblicità.</p>
+<p>Il servizio GitHub e gli eventuali siti terzi aperti volontariamente seguono le rispettive politiche di riservatezza e, ove applicabile, sui cookie. Il documento «GitHub Cookies» descrive le tecnologie usate dal fornitore sui propri servizi; non implica che tutti i cookie elencati siano presenti nel sito COME LUPI.</p>
+<p>Poiché nell’app non risultano strumenti propri di tracciamento non tecnici soggetti a consenso, COME LUPI non presenta un banner per l’accettazione di cookie pubblicitari o di profilazione.</p></section>
+<section class="cl-legal-section"><h3>5. Proprietà intellettuale e condizioni di utilizzo</h3>
+<p>Il libro <em>COME LUPI</em> e l’applicazione omonima sono opere tutelate dalla normativa sul diritto d’autore.</p>
+<p><strong>Luciano Maiorano</strong>, autore del libro e responsabile del progetto, autorizza espressamente e gratuitamente le seguenti modalità di fruizione, nei limiti dei diritti di cui dispone:</p>
+<ul><li>lettura integrale del libro attraverso il sito ufficiale COME LUPI;</li><li>consultazione gratuita dei contenuti informativi e degli strumenti disponibili;</li><li>scaricamento dell’applicazione HTML completa, quando resa disponibile, per conservarla su un computer, smartphone o altro dispositivo personale;</li><li>utilizzo personale dell’applicazione scaricata, anche offline, nei limiti delle funzioni effettivamente disponibili.</li></ul>
+<p>Questa autorizzazione è concessa senza registrazione o pagamento. Non comprende automaticamente la commercializzazione, la ripubblicazione del libro o dell’app su piattaforme differenti, la distribuzione di versioni modificate, lo sfruttamento commerciale dei contenuti o altri usi non espressamente autorizzati.</p>
+<p>Per tali utilizzi occorre una distinta autorizzazione degli aventi diritto, fatti salvi gli usi consentiti dalla legge e le eventuali facoltà derivanti dalle condizioni applicabili della piattaforma GitHub.</p>
+<p>La disponibilità pubblica del codice HTML e la possibilità di scaricarlo non implicano rinuncia ai diritti d’autore. Restano salvi gli eventuali diritti di terzi su materiali legittimamente utilizzati, comprese risorse e opere esterne richiamate nella Biblioteca.</p>
+<p><strong>© Luciano Maiorano — COME LUPI. Tutti i diritti riservati, salvo le autorizzazioni d’uso espressamente indicate.</strong></p></section>
+<section class="cl-legal-section"><h3>6. Limiti delle informazioni e responsabilità nell’utilizzo</h3>
+<p>I contenuti di COME LUPI sono predisposti per favorire la consapevolezza e offrire un primo orientamento.</p>
+<p>Le informazioni sulle tutele giuridiche fanno riferimento alla normativa italiana e hanno carattere generale. La loro applicazione a situazioni concrete dipende dai fatti, dalla legislazione vigente e dalle valutazioni delle autorità competenti.</p>
+<p>I questionari svolgono una funzione di riflessione personale e non costituiscono strumenti diagnostici, perizie, valutazioni cliniche o accertamenti giudiziari. Le risposte e le restituzioni non devono essere considerate giudizi definitivi sulla personalità, sulle responsabilità di terzi o sulla qualificazione giuridica di comportamenti.</p>
+<p>Il responsabile del progetto mira a mantenere i contenuti accurati e comprensibili, ma non può garantire che ogni informazione rimanga continuamente aggiornata dopo modifiche legislative, amministrative o organizzative.</p>
+<p>L’utilizzo dell’app non garantisce da solo la prevenzione di situazioni pericolose. In presenza di minacce, violenza o pericolo è necessario rivolgersi tempestivamente ai servizi competenti.</p></section>
+<section class="cl-legal-section"><h3>7. Sicurezza personale e utilizzo riservato dell’applicazione</h3>
+<p>COME LUPI affronta argomenti che possono riguardare situazioni personali delicate.</p>
+<p>La consultazione del sito da un dispositivo condiviso o controllato può lasciare tracce nella cronologia del browser, nei download, nei collegamenti recenti e in altri registri del dispositivo. Anche i dati locali dell’app possono essere accessibili a chi dispone del dispositivo o delle relative credenziali.</p>
+<p>Chiudere l’applicazione o utilizzare il pulsante di uscita rapida non elimina necessariamente cronologia, download o dati salvati. Il pulsante «Cancella dati di navigazione» rimuove soltanto i dati locali dell’app che questa pagina può raggiungere; la cronologia e gli altri dati del browser devono essere gestiti dalle impostazioni del browser stesso.</p>
+<p>La navigazione privata può limitare alcune tracce sul dispositivo, ma non garantisce anonimato assoluto né impedisce possibili forme di controllo.</p>
+<p>Se temi che il telefono o il computer siano monitorati, valuta l’utilizzo di un dispositivo sicuro e non condiviso. La protezione personale deve avere priorità sull’uso dell’app.</p></section>
+<section class="cl-legal-section"><h3>8. Accessibilità e fruizione dei contenuti</h3>
+<p>COME LUPI è progettata con attenzione alla leggibilità, al contrasto cromatico, alla chiarezza dei comandi e alla fruizione su dispositivi di dimensioni differenti.</p>
+<p>L’obiettivo è rendere le informazioni facilmente consultabili anche da persone con esigenze diverse di lettura e interazione.</p>
+<p>Eventuali difficoltà di accesso ai contenuti o nell’utilizzo delle funzionalità possono essere segnalate ai contatti del progetto riportati in questa pagina.</p>
+<p>Non viene dichiarata alcuna certificazione formale di conformità a specifici standard di accessibilità.</p></section>
+<section class="cl-legal-section"><h3>9. Identità del responsabile del progetto e contatti</h3>
+<p>COME LUPI è un progetto editoriale collegato all’omonimo libro.</p>
+<p><strong>Autore del libro e responsabile del progetto:</strong> MAIORANO Luciano.</p>
+<p><strong>Indirizzo:</strong> Via Costa 8 – 74020 Lizzano (TA), Italia.</p>
+<p><strong>Telefono:</strong> <a href="tel:+393519118453">351 9118453</a>.</p>
+<p><strong>Contatto per comunicazioni sul progetto, sulla riservatezza e sui diritti d’autore:</strong> <a href="mailto:progettocomelupi@gmail.com">progettocomelupi@gmail.com</a>.</p>
+<p><strong>Sito indicato per il progetto:</strong> <a href="https://progettocomelupi.github.io/AppHTML/" target="_blank" rel="noopener noreferrer">https://progettocomelupi.github.io/AppHTML/</a>.</p>
+<p>Per richieste relative ai dati trattati direttamente da GitHub nell’ambito dei propri servizi, consulta anche i canali previsti nell’informativa privacy del fornitore.</p></section>
+<section class="cl-legal-section"><h3>10. Riferimenti normativi e informative ufficiali</h3>
+<p>I collegamenti seguenti aprono siti esterni e richiedono una connessione Internet.</p>
+<ul class="cl-legal-links">
+<li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Informativa generale sulla privacy di GitHub</a></li>
+<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages" target="_blank" rel="noopener noreferrer">GitHub Pages: funzionamento e trattamento dei dati di accesso</a></li>
+<li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-cookies" target="_blank" rel="noopener noreferrer">Informazioni sui cookie e sulle tecnologie utilizzate da GitHub</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2016/679/" target="_blank" rel="noopener noreferrer">Regolamento (UE) 2016/679 — GDPR</a></li>
+<li><a href="https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876" target="_blank" rel="noopener noreferrer">Garante Privacy — Linee guida sui cookie e altri strumenti di tracciamento</a></li>
+</ul>
+<p>Altri riferimenti: <strong>D.Lgs. 30 giugno 2003, n. 196</strong> e successive modificazioni, per quanto applicabile; <strong>Legge 22 aprile 1941, n. 633</strong>, in materia di diritto d’autore.</p></section>
+<p class="cl-legal-updated"><strong>Ultimo aggiornamento: <time datetime="2026-11-19">19 novembre 2026</time></strong></p>
+<div class="cl-legal-bottom"><button type="button" id="clLegalCloseBottom">Chiudi le note legali</button></div></div>
+ </section>
+</div>
+<div class="cl-overlay" id="clClearOverlay" hidden>
+ <section class="cl-modal-shell cl-confirm-shell" role="dialog" aria-modal="true" aria-labelledby="clClearTitle" aria-describedby="clClearDescription" tabindex="-1">
+  <div class="cl-modal-head"><div><p class="cl-modal-kicker">BIBLIOTECA · RISERVATEZZA</p><h2 id="clClearTitle">Cancellare i dati dell’app?</h2></div><button class="cl-modal-x" id="clClearClose" type="button" aria-label="Annulla e chiudi">×</button></div>
+  <div class="cl-modal-scroll cl-confirm-body" id="clClearScroll" tabindex="0" role="region" aria-label="Conferma cancellazione">
+   <div id="clClearDescription">
+    <p>Confermando eliminerai <strong>i dati di COME LUPI memorizzati localmente dal browser</strong> su questo dispositivo: annotazioni, segnalibri, preferenze e posizione di lettura, eventuali risposte salvate ai questionari e bozze di denuncia.</p>
+    <p><strong>Attenzione: l’operazione non si può annullare.</strong> Non cancella la cronologia di Safari o Chrome, i file già scaricati, le copie esportate, la cache generale, gli eventuali backup o i dati di accesso conservati da GitHub. Per questi elementi devi usare le impostazioni del browser o del dispositivo.</p>
+    <p>La cancellazione non garantisce che l’uso dell’app sia invisibile a chi controlla il dispositivo. Terminata l’operazione, l’app sarà ricaricata per azzerare anche i dati temporanei in memoria.</p>
+   </div>
+   <p class="cl-clear-feedback" id="clClearFeedback" role="status" aria-live="polite" hidden></p>
+   <div class="cl-confirm-actions"><button type="button" id="clClearCancel">Annulla</button><button type="button" id="clClearConfirm">Confermo: cancella i dati dell’app</button></div>
+  </div>
+ </section>
+</div>
+
+<script id="come-lupi-legal-library-handlers-20261119">
+(function(){
+ 'use strict';
+ const legalOpen=document.getElementById('clLegalNotesOpen');
+ const clearOpen=document.getElementById('clClearDataOpen');
+ const legal=document.getElementById('clLegalOverlay');
+ const clear=document.getElementById('clClearOverlay');
+ const drawer=document.getElementById('libraryDrawer');
+ const viewer=document.getElementById('libraryViewport');
+ if(!legalOpen||!clearOpen||!legal||!clear||!drawer)return;
+ let active=null,previous=null,drawerY=0,readerY=0,oldBodyOverflow='',oldHtmlOverflow='';
+ function focusSafe(element){if(!element)return;try{element.focus({preventScroll:true})}catch(e){element.focus()}}
+ function focusable(root){return Array.from(root.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(x=>!x.hidden&&x.getClientRects().length>0)}
+ function openOverlay(overlay,trigger){
+  if(active)return;
+  previous=trigger||document.activeElement;drawerY=drawer.scrollTop;readerY=viewer?viewer.scrollTop:0;
+  oldBodyOverflow=document.body.style.overflow;oldHtmlOverflow=document.documentElement.style.overflow;
+  document.body.style.overflow='hidden';document.documentElement.style.overflow='hidden';
+  overlay.hidden=false;active=overlay;
+  const scroller=overlay.querySelector('.cl-modal-scroll');if(scroller)scroller.scrollTop=0;
+  focusSafe(overlay.querySelector('.cl-modal-x'));
+ }
+ function closeOverlay(){
+  if(!active)return;
+  active.hidden=true;active=null;
+  document.body.style.overflow=oldBodyOverflow;
+  document.documentElement.style.overflow=oldHtmlOverflow;
+  drawer.scrollTop=drawerY;if(viewer)viewer.scrollTop=readerY;
+  focusSafe(previous);previous=null;
+ }
+ legalOpen.addEventListener('click',()=>openOverlay(legal,legalOpen));
+ clearOpen.addEventListener('click',()=>openOverlay(clear,clearOpen));
+ document.getElementById('clLegalClose').addEventListener('click',closeOverlay);
+ document.getElementById('clLegalCloseBottom').addEventListener('click',closeOverlay);
+ document.getElementById('clClearClose').addEventListener('click',closeOverlay);
+ document.getElementById('clClearCancel').addEventListener('click',closeOverlay);
+ [legal,clear].forEach(overlay=>overlay.addEventListener('click',event=>{if(event.target===overlay)closeOverlay()}));
+ document.addEventListener('keydown',event=>{
+  if(!active)return;
+  if(event.key==='Escape'){event.preventDefault();closeOverlay();return}
+  if(event.key!=='Tab')return;
+  const nodes=focusable(active);if(!nodes.length){event.preventDefault();focusSafe(active.querySelector('.cl-modal-shell'));return}
+  const first=nodes[0],last=nodes[nodes.length-1];
+  if(event.shiftKey && (document.activeElement===first || !active.contains(document.activeElement))){event.preventDefault();focusSafe(last)}
+  else if(!event.shiftKey && (document.activeElement===last || !active.contains(document.activeElement))){event.preventDefault();focusSafe(first)}
+ });
+ // Clear only COME LUPI app data; never other websites' data or the browser history.
+ document.getElementById('clClearConfirm').addEventListener('click',()=>{
+  const confirm=document.getElementById('clClearConfirm');
+  const feedback=document.getElementById('clClearFeedback');
+  confirm.disabled=true;
+  let count=0;
+  try{
+   if(typeof window.ComeLupiClearStoredData!=='function')throw new Error('Funzione di cancellazione non disponibile');
+   count=window.ComeLupiClearStoredData();
+   const stillThere=[];
+   try{for(let i=0;i<localStorage.length;i++){const name=localStorage.key(i);if(name&&(/^(comelupi(?:_|$)|come_lupi_)/i).test(name))stillThere.push(name)}}catch(e){}
+   if(stillThere.length)throw new Error('Alcuni elementi non sono stati rimossi: verifica le autorizzazioni del browser');
+   feedback.hidden=false;
+   feedback.textContent='Dati locali di COME LUPI cancellati ('+count+' voci salvate). Cronologia, file scaricati e dati di GitHub rimangono invariati. L’app viene ricaricata.';
+   setTimeout(()=>window.location.reload(),1100);
+  }catch(e){
+   feedback.hidden=false;feedback.textContent='Non è stato possibile verificare la cancellazione completa. '+(e&&e.message?e.message:'Controlla le impostazioni del browser.')+' Puoi cancellare manualmente i dati del sito dalle impostazioni del browser.';
+   confirm.disabled=false;
+  }
+ });
+})();
+</script>
 </body></html>
