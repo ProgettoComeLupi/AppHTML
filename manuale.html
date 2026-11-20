@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#681a29">
+  <meta name="description" content="Manuale del Progetto COME LUPI — in fase di allestimento">
+  <title>Manuale | Progetto COME LUPI</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: #390e1c; }
+    body {
+      margin: 0; min-height: 100svh; padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+      display: grid; place-items: center; overflow-x: hidden; color: #fff5ed;
+      background: radial-gradient(ellipse at 20% 15%, #a83c4b 0%, transparent 43%),
+                  radial-gradient(ellipse at 80% 85%, #882538 0%, transparent 52%),
+                  linear-gradient(145deg, #711b2c 0%, #4b1325 56%, #260b18 100%);
+    }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .12;
+      background: repeating-linear-gradient(135deg, transparent 0 12px, #fff 12.5px, transparent 13px 30px);
+      mask-image: linear-gradient(to bottom, transparent, black 52%, transparent);
+    }
+    main { position: relative; width: min(100%, 640px); text-align: center; padding: clamp(36px, 7vw, 70px) clamp(24px, 6vw, 55px);
+      border: 1px solid rgba(255,235,224,.28); border-radius: 26px;
+      background: linear-gradient(145deg, rgba(172,65,77,.38), rgba(68,14,31,.62));
+      box-shadow: 0 26px 70px rgba(21,3,12,.4), inset 0 1px rgba(255,255,255,.12);
+      backdrop-filter: blur(5px);
+    }
+    .rule { width: 58px; height: 2px; margin: 0 auto 32px; background: linear-gradient(90deg, transparent, #e8bdad, transparent); }
+    .eyebrow { margin: 0 0 12px; font-size: clamp(13px, 2.6vw, 17px); font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: #f4d7cc; }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 600; font-size: clamp(44px, 10vw, 75px); letter-spacing: .035em; line-height: 1.05; text-shadow: 0 4px 24px rgba(12,0,5,.35); }
+    .divider { width: 120px; height: 1px; margin: 34px auto; background: linear-gradient(90deg, transparent, rgba(255,233,220,.75), transparent); }
+    p.message { margin: 0; font-size: clamp(18px, 3.8vw, 25px); line-height: 1.5; font-weight: 400; color: #fff0e5; }
+    .footer { margin-top: 45px; color: #f0cabc; font-size: 13px; letter-spacing: .03em; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(240,202,188,.55); }
+    .footer a:hover, .footer a:focus-visible { color: white; border-color: white; }
+    @media (prefers-reduced-motion: no-preference) { main { animation: enter .7s ease-out both; } @keyframes enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } } }
+  </style>
+</head>
+<body>
+  <main aria-labelledby="heading">
+    <div class="rule" aria-hidden="true"></div>
+    <p class="eyebrow">Progetto</p>
+    <h1 id="heading">COME LUPI</h1>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="message">Manuale in fase di allestimento</p>
+    <div class="footer"><a href="./">Torna all'app</a></div>
+  </main>
+</body>
+</html>
