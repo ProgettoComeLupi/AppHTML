@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 0.9.76</title><style>
+<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 0.9.79</title><style>
 :root{--ink:#181818;--muted:#686868;--line:#dcd9d3;--paper:#f6f3ee;--white:#fff;--silver:#ece9e3;--dark:#151515;--accent:#8c7869}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--paper);color:var(--ink)}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #8c7869;outline-offset:2px}a{color:inherit}body{overflow-x:hidden}.app{display:none;min-height:100vh}.app.ready{display:block}header{position:sticky;top:0;z-index:15;background:#191919;color:white;display:flex;align-items:center;padding:10px clamp(12px,3vw,35px);gap:10px;min-height:65px;box-shadow:0 4px 20px #0002}.brand{font:26px Georgia,serif;letter-spacing:.12em;flex:1}.brand small{display:block;letter-spacing:.18em;font:10px system-ui;color:#bcbcbc;margin-top:1px}.topbutton{border:1px solid #666;color:#fff;background:transparent;padding:9px 12px;border-radius:3px}.exit{background:white;color:#161616;font-weight:750;border-color:white}.tabs{background:#fff;border-bottom:1px solid var(--line);display:flex;overflow-x:auto;scrollbar-width:thin;position:sticky;top:65px;z-index:14;justify-content:center}.tabs button{border:0;background:transparent;white-space:nowrap;padding:16px 16px 13px;font-size:13px;color:#555;border-bottom:3px solid transparent}.tabs button[aria-selected=true]{color:#111;border-bottom-color:#161616;font-weight:750}main{max-width:1160px;margin:auto;padding:24px 20px 70px}.panel{display:none}.panel.active{display:block}.hero-heading{margin-bottom:22px}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#83776d;font-weight:800}.hero-heading h1{font:clamp(31px,5vw,49px)/1.08 Georgia,serif;letter-spacing:-.025em;margin:10px 0}.hero-heading p{max-width:790px;color:#666;line-height:1.7;margin:8px 0}.card{background:white;border:1px solid var(--line);border-radius:8px;padding:22px;box-shadow:0 4px 24px #00000005}.columns{display:grid;grid-template-columns:1fr 310px;gap:20px}.btn{background:#1a1a1a;color:white;border:1px solid #1a1a1a;padding:11px 14px;border-radius:4px;font-weight:650}.btn.secondary{background:white;color:#222;border-color:#cfcac2}.btn.ghost{background:#f6f4f0;color:#222;border-color:#e0dcd5}.btn.danger{background:#711e23;border-color:#711e23;color:white}.btn.small{padding:7px 10px;font-size:12px}.row{display:flex;align-items:center;flex-wrap:wrap;gap:9px}.between{justify-content:space-between}.muted{color:#6d6a65}.tiny{font-size:12px}.viewer{border:1px solid #d3cfc6;background:#dedad4;border-radius:7px;overflow:hidden}.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;padding:10px;background:#242424;color:white}.toolbar button{background:#484848;color:white;border:1px solid #626262;border-radius:3px;min-width:37px;min-height:35px;padding:6px 10px}.toolbar input{width:64px;border:1px solid #777;background:#fff;border-radius:3px;padding:6px;text-align:center}.page-wrap{height:min(75vh,820px);min-height:390px;overflow:auto;touch-action:pan-y;background:linear-gradient(140deg,#d7d2ca,#bdb9b3);display:flex;justify-content:center;align-items:flex-start;padding:20px}.bookpage{display:block;width:min(100%,510px);max-width:none;height:auto;box-shadow:0 6px 24px #0004;transform-origin:top center;user-select:none;-webkit-user-drag:none}.pdf-frame{width:100%;height:min(76vh,800px);border:0;background:white;display:none}.reader-aside h3{font:25px Georgia,serif;margin-top:0}.reader-aside textarea,.noteinput,textarea{width:100%;min-height:130px;padding:12px;background:#fff;border:1px solid #ccc5ba;border-radius:4px;resize:vertical}.noteinput{min-height:100px}.asideblock{border-top:1px solid #e8e2d8;padding:18px 0}.stat{padding:9px 0;border-bottom:1px solid #e6e0d8;color:#555;font-size:13px}.warning{background:#ece8e2;border-left:3px solid #4d4d4d;padding:13px 15px;font-size:13px;line-height:1.5;margin:14px 0}.section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.section-grid h3,.card h3{font:24px Georgia,serif;margin:0 0 12px}.section-grid p,.card p{line-height:1.68}.qitem{padding:18px 0;border-top:1px solid #e5e1db}.qitem p{font-weight:650;margin:0 0 12px}.choices{display:flex;gap:8px;flex-wrap:wrap}.choices label{cursor:pointer;font-size:13px;border:1px solid #d8d2ca;border-radius:4px;padding:10px 13px}.choices label:has(input:checked){background:#252525;color:white}.choices input{margin-right:5px;accent-color:#5c5248}.result{padding:19px;background:#f5f2ee;border-left:3px solid #222;margin-top:20px;line-height:1.7}.help-number{display:flex;justify-content:space-between;gap:14px;align-items:center}.help-number strong{font:34px Georgia,serif}.call{background:#1b1b1b;color:#fff;text-decoration:none;padding:12px 18px;border-radius:4px;display:inline-block}.resource{border:1px solid #dedad3;background:white;border-radius:8px;padding:20px}.resource h3{margin-top:4px;font:25px Georgia,serif}.resource p{line-height:1.65}.resource .label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#777}.legalitem{border-bottom:1px solid #e5e1d9;padding:18px 0}.legalitem summary{font:21px Georgia,serif;cursor:pointer;list-style-position:outside}.legalitem p,.legalitem li{line-height:1.75}.search{width:100%;border:1px solid #d8d3cb;border-radius:5px;padding:13px 15px;margin:3px 0 18px}.glossary-layout{display:grid;grid-template-columns:360px 1fr;gap:18px}.gloss-list{background:white;border:1px solid #e3ded6;max-height:73vh;overflow:auto;border-radius:6px}.gloss-list button{width:100%;display:block;text-align:left;padding:11px 15px;border:0;border-bottom:1px solid #eeeae4;background:white}.gloss-list button.sel{background:#242424;color:white}.gloss-list small{display:block;color:#888;font-size:11px;margin-top:4px}.gloss-list button.sel small{color:#bbb}.gloss-detail{min-height:300px}.gloss-detail h2{font:32px Georgia,serif;margin:5px 0 7px}.gloss-detail .definition{white-space:pre-line;font:17px/1.75 Georgia,serif}.footer{border-top:1px solid #ddd6cb;padding:24px;text-align:center;color:#78726a;font-size:12px}.splash{position:fixed;inset:0;z-index:99;display:grid;grid-template-columns:minmax(300px,1fr) minmax(320px,1fr);background:#111;color:white;min-height:100vh}.splash-art{background:#f7f5f1;display:flex;align-items:center;justify-content:center;overflow:hidden}.splash-art img{height:100%;width:100%;object-fit:contain;max-height:100vh}.splash-copy{padding:clamp(30px,7vw,90px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.splash-copy h1{font:clamp(56px,9vw,110px)/.9 Georgia,serif;letter-spacing:.1em;margin:24px 0}.splash-copy p{max-width:460px;font:19px/1.7 Georgia,serif;color:#d1ccc5}.splash-copy button{margin-top:20px;background:#faf8f4;color:#222;padding:16px 28px;border:0;font-weight:800;letter-spacing:.1em}.splash-copy .credit{font-size:12px;color:#999;margin-top:25px}.splash-copy .micro{font-size:11px;letter-spacing:.18em;color:#aba49a}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:50;background:#252525;color:white;padding:12px 20px;border-radius:4px;display:none;box-shadow:0 8px 20px #0005}.hidden{display:none!important}@media(max-width:800px){.splash{grid-template-columns:1fr;grid-template-rows:48vh 1fr}.splash-art img{height:100%;width:100%;object-fit:contain}.splash-copy{padding:23px 30px;justify-content:flex-start}.splash-copy h1{font-size:48px;margin:12px 0}.splash-copy p{font-size:15px;margin:6px 0}.splash-copy button{padding:13px 18px;margin-top:12px}.splash-copy .credit{margin-top:12px}.columns,.glossary-layout,.section-grid{grid-template-columns:1fr}.gloss-list{max-height:250px}.tabs{justify-content:flex-start}.tabs button{padding:14px 13px;font-size:12px}main{padding:18px 13px 55px}.card{padding:17px}.page-wrap{height:65vh;min-height:360px;padding:9px}.reader-aside{order:-1}.brand{font-size:19px}.brand small{font-size:9px}.topbutton{font-size:11px;padding:8px}.toolbar{gap:5px}.toolbar button{min-width:33px;padding:5px 7px}}
 
 :root{--ink:#241719;--muted:#766366;--line:#e5c9c7;--paper:#fff8f5;--white:#fff;--silver:#fff0ed;--dark:#54050c;--accent:#a00916;--red:#a30916;--reddeep:#650810;--rose:#f7e3e1}
@@ -1014,7 +1014,13 @@ html body #app #info.identity-panel .identity-meta a{color:#fffaf7!important;fon
 
  </div><div class="tree-meaning-actions"><button id="treeEnter" type="button">Entra nell’app →</button><button id="treeBack" type="button">Torna all’albero</button></div>
 </dialog>
-<div class="app" id="app" inert><div id="androidStatusSafeBand" class="android-system-band android-system-band-top" aria-hidden="true"></div><div id="androidNavigationSafeBand" class="android-system-band android-system-band-bottom" aria-hidden="true"></div><header><button type="button" aria-label="Apri la mappa dei segnali" aria-controls="riskMapDrawer" aria-expanded="false" class="topbutton cover-trigger risk-map-trigger" id="home" title="Apri o chiudi la mappa dei segnali">✥</button><div class="brand">PROGETTO COME LUPI</div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="14.7" cy="4.2" r="1.8" fill="currentColor" stroke="none"/><path d="m12.9 7.1-2.8 4.1 3.4 2.3 2.9-1.1M11.1 8.6 7 9.9l-2.1 3M13.5 13.5l-2 3.4-3.4 3M13.5 13.5l3.5 2.3 2.3 3.3" stroke-width="2.1"/></svg></button><button type="button" id="libraryButton" class="library-header-btn" title="Apri la Biblioteca" aria-label="Apri la Biblioteca" aria-controls="libraryDrawer" aria-expanded="false"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.8C9 4.8 5.7 4.4 2 5.1v13.6c3.8-.7 7.2-.1 10 2 2.8-2.1 6.2-2.7 10-2V5.1c-3.7-.7-7-.3-10 1.7Z"/><path d="M12 6.8v13.9"/></svg></button><button type="button" class="topbutton fullscreen-toggle" id="fullscreenToggle" aria-label="Attiva schermo intero" title="Schermo intero (se consentito dal browser)" aria-pressed="false"><span class="fullscreen-glyph" aria-hidden="true">⛶</span></button><button aria-label="Uscita rapida: apre una pagina vuota" class="topbutton exit" id="quick" title="Uscita rapida: apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg></button></header>
+<div class="app" id="app" inert><header><button type="button" aria-label="Apri la mappa dei segnali" aria-controls="riskMapDrawer" aria-expanded="false" class="topbutton cover-trigger risk-map-trigger" id="home" title="Apri o chiudi la mappa dei segnali">✥</button><div class="brand" aria-label="COME LUPI versione 0.9.76 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v0.9.76</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
+  <g fill="#eac1c2">
+    <g transform="translate(4.5 5) scale(.15)"><path d="M1 39 L0 42 L11 52 L24 41 L32 42 L33 45 L22 57 L22 104 L20 107 L15 108 L6 108 L5 107 L3 109 L3 121 L4 122 L34 122 L36 120 L37 117 L37 83 L40 82 L46 88 L62 109 L63 112 L63 138 L65 140 L78 140 L80 132 L80 107 L79 103 L59 77 L61 74 L83 74 L84 73 L84 57 L74 57 L71 55 L71 52 L74 49 L76 44 L76 36 L72 28 L63 25 L17 25 Z"/><path d="M81 0 L77 2 L72 8 L72 18 L79 25 L91 25 L97 19 L98 9 L93 2 L88 0 Z"/></g>
+    <g transform="translate(29 12) scale(.19)"><path d="M52 21 L41 8 L32 0 L32 9 L30 12 L1 12 L0 13 L0 31 L1 32 L28 32 L32 36 L33 43 L52 24 Z"/></g>
+    <g transform="translate(48.3 1.5) scale(.143)"><path d="M4 0 L2 1 L2 12 L1 13 L2 52 L1 53 L0 199 L8 199 L9 200 L84 200 L85 199 L87 2 L86 1 L72 1 L71 0 L69 1 L68 0 L55 0 L54 1 L49 0 L40 0 L39 1 L9 1 Z"/></g>
+  </g>
+</svg></button><button type="button" id="libraryButton" class="library-header-btn" title="Apri la Biblioteca" aria-label="Apri la Biblioteca" aria-controls="libraryDrawer" aria-expanded="false"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.8C9 4.8 5.7 4.4 2 5.1v13.6c3.8-.7 7.2-.1 10 2 2.8-2.1 6.2-2.7 10-2V5.1c-3.7-.7-7-.3-10 1.7Z"/><path d="M12 6.8v13.9"/></svg></button><button type="button" class="topbutton fullscreen-toggle" id="fullscreenToggle" aria-label="Attiva schermo intero" title="Schermo intero (se consentito dal browser)" aria-pressed="false"><span class="fullscreen-glyph" aria-hidden="true">⛶</span></button><button aria-label="Uscita rapida: apre una pagina vuota" class="topbutton exit" id="quick" title="Uscita rapida: apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg></button></header>
 <section id="riskMapDrawer" class="risk-map-drawer" role="region" aria-label="Mappa tridimensionale dei dieci nuclei tematici" aria-hidden="true" inert>
   <button type="button" id="riskMapClose" class="risk-map-close" aria-label="Chiudi la mappa 3D" title="Chiudi la mappa 3D">×</button>
   <div id="riskMapStage" class="risk-map-stage" aria-label="Mappa tridimensionale: trascina in ogni direzione per ruotare, usa due dita per ingrandire e tocca una sfera per i dettagli" tabindex="0">
@@ -1050,7 +1056,15 @@ html body #app #info.identity-panel .identity-meta a{color:#fffaf7!important;fon
         <button type="button" class="identity-feature" data-feature-info="riflettere" aria-haspopup="dialog" aria-controls="identityFeatureOverlay" aria-label="Riflettere: scopri i questionari"><strong>Riflettere</strong><span>Questionari di consapevolezza</span></button>
         <button type="button" class="identity-feature" data-feature-info="comprendere" aria-haspopup="dialog" aria-controls="identityFeatureOverlay" aria-label="Comprendere: scopri la mappa e il glossario"><strong>Comprendere</strong><span>Glossario e approfondimenti</span></button>
         <button type="button" class="identity-feature" data-feature-info="orientarsi" aria-haspopup="dialog" aria-controls="identityFeatureOverlay" aria-label="Orientarsi: scopri gli strumenti di aiuto e tutela"><strong>Orientarsi</strong><span>Aiuto, contatti e tutele</span></button>
-</div><div class="identity-meta"><span>V <strong>0.9.76</strong> · di <strong>Matilde Pagano e Luciano Maiorano</strong></span><span class="identity-contact">Contatti: <a href="mailto:progettocomelupi@gmail.com">progettocomelupi@gmail.com</a></span></div>
+</div>
+      <div class="cl-fs-quicklinks" role="group" aria-label="Accessi rapidi in schermo intero">
+        <button type="button" id="clFsNuclei" class="cl-fs-quicklink" title="Mappa dei nuclei della violenza"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="7" r="2.1"/><circle cx="18" cy="5" r="2.1"/><circle cx="17" cy="18" r="2.1"/><circle cx="6" cy="17" r="2.1"/><path d="m7 6 9-1M18 7l-1 9M15 19l-7-2M5 9v6M8 8l7 8"/></svg></span><span class="cl-fs-quicklabel">Mappa dei nuclei della violenza</span></button>
+        <button type="button" id="clFsLastResult" class="cl-fs-quicklink" title="Esito ultimo questionario"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m4 19 1-5 9-9 4 4-9 9-5 1Z"/><path d="m12 7 4 4M5 14l4 4"/><path d="m13.5 3.5 2-2a2 2 0 0 1 2.8 0l3.2 3.2a2 2 0 0 1 0 2.8l-2.1 2.1"/><path d="M13.2 20h8M18.2 14v6"/></svg></span><span class="cl-fs-quicklabel">Esito ultimo questionario</span></button>
+        <button type="button" id="clFsPrepare" class="cl-fs-quicklink" title="Prepara querela"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 20 6v6.3c0 5.2-3.8 8.1-8 9.2-4.2-1.1-8-4-8-9.2V6l8-3.3Z"/><path d="m12 7.1 1.3 2.7 3 .4-2.2 2.1.6 3-2.7-1.4-2.7 1.4.6-3-2.2-2.1 3-.4L12 7.1Z"/></svg></span><span class="cl-fs-quicklabel">Prepara querela</span></button>
+        <button type="button" id="clFsLibrary" class="cl-fs-quicklink" title="Biblioteca"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5c-2.7-1.6-6-2.1-9-1.5V4.2c3.3-.4 6.3.1 9 1.8 2.7-1.7 5.7-2.2 9-1.8V19c-3-.6-6.3-.1-9 1.5Z"/><path d="M12 6v14.5"/></svg></span><span class="cl-fs-quicklabel">Biblioteca</span></button>
+        <button type="button" id="clFsClear" class="cl-fs-quicklink" title="Cancella dati"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></svg></span><span class="cl-fs-quicklabel">Cancella dati</span></button>
+      </div>
+<div class="identity-meta"><span>V <strong>0.9.79</strong> · di <strong>Matilde Pagano e Luciano Maiorano</strong></span><span class="identity-contact">Contatti: <a href="mailto:progettocomelupi@gmail.com">progettocomelupi@gmail.com</a></span></div>
     </div>
   </div>
 </section>
@@ -2677,6 +2691,8 @@ function renderOutcome(t,entry){
  requestAnimationFrame(()=>{if(!mapDetails.isConnected||target.classList.contains('hidden'))return;mountResultMap();showMapFirst();});
 }
 function review(i){const h=history[i],t=findPath(h?.id);if(!t)return;currentEntry=h;renderOutcome(t,h)}
+window.ComeLupiHasLatestOutcome=function(){return history.length>0 && !!findPath(history[0]?.id);};
+window.ComeLupiShowLatestOutcome=function(){if(!window.ComeLupiHasLatestOutcome())return false;review(0);return true;};
 $('testNext').onclick=()=>forward(false);$('testSkip').onclick=()=>forward(true);$('testPrevious').onclick=()=>{capture();recordDraft();if(index>0){index--;show()}};$('testBack').onclick=home;
 $('testChoices').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('input')){e.preventDefault();forward(false)}});
 $('consentQ').addEventListener('change',e=>{
@@ -4815,7 +4831,7 @@ body.come-lupi-immersive #app .page-wrap{height:max(230px,calc(100dvh - 195px - 
   'use strict';
   const button=document.getElementById('fullscreenToggle');
   if(!button)return;
-  let immersiveFallback=false;
+  let immersiveFallback=true;
   function update(){
     const isNative=!!document.fullscreenElement;
     const on=isNative||immersiveFallback;
@@ -4839,7 +4855,6 @@ body.come-lupi-immersive #app .page-wrap{height:max(230px,calc(100dvh - 195px - 
       update();
       return;
     }
-    if(immersiveFallback){immersiveFallback=false;update();return}
     // A user gesture is mandatory. The browser may block the request.
     if(typeof document.documentElement.requestFullscreen==='function'){
       try{
@@ -4853,7 +4868,21 @@ body.come-lupi-immersive #app .page-wrap{height:max(230px,calc(100dvh - 195px - 
     update();
     hint('Il browser non consente lo schermo intero: attivata la modalità immersiva interna. Le barre di Android restano gestite dal sistema.');
   });
-  document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)immersiveFallback=false;update()});
+  // On a first deliberate touch, request the native mode whenever the browser permits it.
+  // Browsers refuse requestFullscreen on initial page load without user activation.
+  let firstGestureAttempted=false;
+  function firstGesture(e){
+    if(firstGestureAttempted || document.fullscreenElement || !document.documentElement.requestFullscreen)return;
+    if(e.target?.closest?.('#fullscreenToggle,.tree-fullscreen'))return;
+    firstGestureAttempted=true;
+    try{
+      const request=document.documentElement.requestFullscreen({navigationUI:'hide'});
+      if(request?.then)request.then(()=>{immersiveFallback=false;update()}).catch(()=>{immersiveFallback=true;update()});
+    }catch(err){immersiveFallback=true;update()}
+  }
+  document.addEventListener('pointerdown',firstGesture,{capture:true});
+  document.addEventListener('keydown',firstGesture,{capture:true});
+  document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)immersiveFallback=true;update()});
   document.addEventListener('fullscreenerror',()=>{if(!document.fullscreenElement){immersiveFallback=true;update()}});
   update();
 })();
@@ -8546,15 +8575,31 @@ html body #app #info.identity-panel .identity-meta>span{display:block!important;
 @media(prefers-reduced-motion:reduce){#treeSplash .tree-thought.is-visible{animation-name:come-lupi-thought-still}@keyframes come-lupi-thought-still{0%{opacity:0}7.4074%,83.9506%{opacity:1}100%{opacity:0}}}
 </style>
 <style id="come-lupi-splash-fullscreen-style">
-#treeSplash .tree-fullscreen{position:absolute;left:calc(10px + env(safe-area-inset-left,0px));bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:9;display:grid;place-items:center;width:32px;height:32px;min-width:32px;min-height:32px;padding:6px;border:0;border-radius:7px;background:transparent;color:#642b39;cursor:pointer;touch-action:manipulation}
-#treeSplash .tree-fullscreen svg{display:block;width:18px;height:18px}
-#treeSplash .tree-fullscreen:focus-visible{outline:2px solid #641c31;outline-offset:3px}
+/* Pulsante Full Screen delle animazioni iniziale e finale: fondo trasparente.
+   Bordo e pittogramma bordeaux con un leggero profilo chiaro per contrasto
+   su zone scure e chiare della scena, senza riempire il pulsante. */
+#treeSplash .tree-fullscreen{
+ position:absolute;left:calc(10px + env(safe-area-inset-left,0px));
+ bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:9;
+ display:grid;place-items:center;width:32px;height:32px;
+ min-width:32px;min-height:32px;padding:5px;
+ border:2px solid #5b1430;border-radius:7px;
+ background:transparent!important;color:#4c0b26!important;
+ box-shadow:0 0 0 1px rgba(255,244,226,.83),0 0 8px rgba(255,244,226,.38);
+ cursor:pointer;touch-action:manipulation;
+}
+#treeSplash .tree-fullscreen svg{
+ display:block;width:18px;height:18px;
+ filter:drop-shadow(0 0 1px rgba(255,245,227,.95));
+}
+#treeSplash .tree-fullscreen:hover{background:transparent!important;border-color:#3e071e}
+#treeSplash .tree-fullscreen:focus-visible{outline:3px solid #fff0d9;outline-offset:3px}
 </style>
 <script id="come-lupi-splash-fullscreen">
 (function(){
  const splash=document.getElementById('treeSplash'),original=document.getElementById('fullscreenToggle');if(!splash||!original)return;
  const button=document.createElement('button');button.type='button';button.className='tree-fullscreen';
- button.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>';
+ button.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>';
  function update(){const on=original.getAttribute('aria-pressed')==='true';button.setAttribute('aria-pressed',String(on));button.setAttribute('aria-label',on?'Esci da schermo intero':'Attiva schermo intero');button.title=on?'Esci da schermo intero':'Schermo intero'}
  button.addEventListener('click',()=>original.click());
  const observer=new MutationObserver(()=>{if(!splash.isConnected){observer.disconnect();return}update()});observer.observe(original,{attributes:true,attributeFilter:['aria-pressed']});
@@ -8791,44 +8836,6 @@ body.come-lupi-immersive #treeSplash[data-scene="exit"] .tree-exit-back{bottom:c
 <style id="come-lupi-exit-header-contrast">
 #treeSplash[data-scene="exit"] .tree-top p,#treeSplash[data-scene="exit"] .tree-top h1,#treeSplash[data-scene="exit"] .tree-top .tree-touch-hint{color:#4c0c1c!important;text-shadow:0 1px 0 #fffdf5,0 0 3px #fffdf5,0 0 8px #fff7e9,0 0 16px #fff5e4e6,0 2px 3px #2e071b65}
 #treeSplash[data-scene="exit"] .tree-top h1{font-weight:700!important}
-</style><style id="come-lupi-info-heading-shoes">
-html body #app #info.identity-panel .identity-welcome-copy{text-align:left!important;min-width:0}
-html body #app #info.identity-panel .identity-heading-row{display:flex;align-items:center;justify-content:flex-start;gap:clamp(12px,2vw,22px);width:100%;min-width:0;text-align:left}
-html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{display:block!important;visibility:visible!important;position:static!important;opacity:.8!important;width:clamp(115px,18vw,180px)!important;height:auto!important;max-height:150px!important;object-fit:contain!important;flex:0 0 auto!important;align-self:center!important;transform:translateY(-8px)!important;filter:none!important;pointer-events:none}
-html body #app #info.identity-panel .identity-heading-row>h1{font-size:clamp(28.9px,4.675vw,58.65px)!important;text-align:left!important;margin:0!important;min-width:0;max-width:none!important;flex:1;line-height:1.05!important}
-html body #app #info.identity-panel .identity-heading-row>h1 em{text-align:left!important}
-@media(max-width:720px){html body #app #info.identity-panel .identity-heading-row>h1{font-size:clamp(23.8px,7.65vw,44.2px)!important}html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{width:115px!important;max-height:115px!important}}
-@media(min-width:1024px) and (hover:hover) and (pointer:fine){html body #app #info.identity-panel .identity-heading-row>h1{font-size:clamp(28.9px,3.06vw,52.7px)!important}}
-</style><style id="come-lupi-info-opening-copy-tuning">
-html body #app #info.identity-panel .identity-heading-row{align-items:flex-start!important}
-html body #app #info.identity-panel .identity-heading-row>h1{margin-top:clamp(10px,1.55vh,18px)!important}
-html body #app #info.identity-panel .identity-welcome-intro{max-width:56ch!important;margin:16px 0 0!important;font-size:clamp(12px,1.32vw,15px)!important;line-height:1.42!important}
-html body #app #info.identity-panel .identity-welcome-routes{margin-top:12px!important;gap:7px!important}
-html body #app #info.identity-panel .identity-welcome-routes>button{min-height:43px!important;padding:7px 31px 7px 11px!important;gap:2px!important}
-html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:clamp(15px,1.9vw,21px)!important;line-height:1.08!important}
-html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:clamp(10px,1.06vw,12px)!important;line-height:1.2!important}
-html body #app #info.identity-panel .identity-welcome-routes>button .identity-welcome-arrow{font-size:15px!important;right:10px!important}
-@media(max-width:720px){
-  html body #app #info.identity-panel .identity-heading-row{gap:10px!important}
-  html body #app #info.identity-panel .identity-heading-row>h1{margin-top:12px!important}
-  html body #app #info.identity-panel .identity-welcome-intro{font-size:11px!important;line-height:1.36!important;max-width:31ch!important;margin-top:12px!important}
-  html body #app #info.identity-panel .identity-welcome-routes{margin-top:10px!important;gap:6px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{min-height:39px!important;padding:6px 27px 6px 10px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:14px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:9.5px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button .identity-welcome-arrow{font-size:14px!important;right:9px!important}
-}
-@media(max-width:420px){
-  html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{width:104px!important;max-height:104px!important}
-  html body #app #info.identity-panel .identity-heading-row>h1{margin-top:14px!important}
-  html body #app #info.identity-panel .identity-welcome-intro{font-size:10.5px!important;line-height:1.34!important;max-width:29ch!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:13.2px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:9.2px!important}
-}
-</style><style id="come-lupi-info-buttons-spacing">
-html body #app #info.identity-panel .identity-features{margin-top:12px!important}
-</style><style id="come-lupi-info-button-vertical-center">
-html body #app #info.identity-panel .identity-features>.identity-feature{justify-content:center!important}
 </style><style id="come-lupi-opening-woman-ground">
 #treeSplash:not([data-scene="exit"]) .tree-woman{bottom:1.5%}
 </style><style id="come-lupi-questionnaire-paired-categories">
@@ -8898,361 +8905,6 @@ html body #app #testOutcome .outcome-narrative-card .narrative-evidence blockquo
 #exitDedicationNext:focus-visible{outline:3px solid #78202a;outline-offset:1px}
 #exitDedication .exit-dedication-copy:focus{outline:none}
 @media(max-height:540px){#exitDedicationNext{width:38px;height:38px;font-size:28px}}
-</style>
-<style id="come-lupi-home-mobile-compact-20261119">
-/* Unicamente schermata INFO iniziale, per smartphone. */
-@media(max-width:720px){
-  html body #app #info.identity-panel .identity-body{padding:10px 12px 8px!important}
-  html body #app #info.identity-panel .identity-welcome{margin:0 0 10px!important;padding:12px 12px 12px!important;gap:10px!important}
-  html body #app #info.identity-panel .identity-welcome-copy{padding-top:clamp(18px,3.1dvh,27px)!important}
-  html body #app #info.identity-panel .identity-welcome-label{font-size:10px!important;line-height:1.2!important;margin-bottom:8px!important}
-  html body #app #info.identity-panel .identity-heading-row{align-items:flex-start!important;gap:9px!important}
-  html body #app #info.identity-panel .identity-heading-row>h1{margin-top:11px!important}
-  html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{width:104px!important;max-height:104px!important;transform:translateY(-4px)!important}
-  html body #app #info.identity-panel .identity-welcome-intro{display:block!important;width:100%!important;max-width:100%!important;font-size:11px!important;line-height:1.37!important;margin:12px 0 0!important}
-  html body #app #info.identity-panel .identity-welcome-routes{gap:5px!important;margin-top:8px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{min-height:0!important;padding:6px 30px 6px 10px!important;border-radius:9px!important;gap:2px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:13.6px!important;line-height:1.1!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:9.7px!important;line-height:1.2!important}
-  html body #app #info.identity-panel .identity-welcome-routes .identity-welcome-arrow{font-size:14px!important;right:9px!important}
-  html body #app #info.identity-panel .identity-features{gap:5px!important;margin:0!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{padding:5px 7px!important;gap:2px!important;border-radius:8px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature strong{font-size:11.2px!important;line-height:1.08!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature span{font-size:8.7px!important;line-height:1.17!important;max-width:17ch!important}
-  html body #app #info.identity-panel .identity-meta{margin-top:6px!important;padding-top:5px!important;gap:2px!important;font-size:8.8px!important}
-}
-@media(max-width:390px){
-  html body #app #info.identity-panel .identity-body{padding:9px 11px 7px!important}
-  html body #app #info.identity-panel .identity-welcome{padding:11px 11px 10px!important}
-  html body #app #info.identity-panel .identity-welcome-copy{padding-top:19px!important}
-  html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{width:96px!important;max-height:96px!important}
-  html body #app #info.identity-panel .identity-heading-row>h1{font-size:clamp(21px,6.2vw,27px)!important;line-height:1.04!important}
-  html body #app #info.identity-panel .identity-welcome-intro{font-size:10.6px!important;line-height:1.34!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{padding:6px 29px 6px 9px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:13.2px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:9.3px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{padding:4px 6px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature strong{font-size:10.8px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature span{font-size:8.3px!important}
-  html body #app #info.identity-panel .identity-meta{font-size:8.5px!important}
-}
-@media(max-width:720px) and (max-height:660px){
-  html body #app #info.identity-panel .identity-welcome-copy{padding-top:12px!important}
-  html body #app #info.identity-panel .identity-welcome-intro{margin-top:8px!important}
-  html body #app #info.identity-panel .identity-welcome{gap:7px!important;padding-top:9px!important;padding-bottom:9px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{padding-top:5px!important;padding-bottom:5px!important}
-}
-</style>
-
-<style id="come-lupi-info-testo-accanto-scarpe-fix">
-/* Ambito esclusivo: copertina INFO. Il testo descrittivo precede la domanda, affiancato alle scarpe. */
-html body #app #info.identity-panel .identity-heading-row{
-  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
-  align-items:start!important;gap:10px!important;width:100%!important;min-width:0!important;
-}
-html body #app #info.identity-panel .identity-heading-row>.identity-welcome-intro{
-  display:block!important;min-width:0!important;max-width:none!important;width:auto!important;
-  margin:0!important;overflow-wrap:normal!important;
-  color:#fff0e9!important;font:400 clamp(12px,1.35vw,15px)/1.4 system-ui,sans-serif!important;
-}
-html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{
-  display:block!important;visibility:visible!important;position:static!important;
-  width:100%!important;max-width:180px!important;max-height:none!important;height:auto!important;
-  margin:0!important;justify-self:end!important;align-self:start!important;
-  opacity:.88!important;object-fit:contain!important;transform:none!important;
-  pointer-events:none!important;filter:none!important;
-}
-html body #app #info.identity-panel .identity-welcome-copy>h1{
-  display:block!important;max-width:none!important;width:100%!important;
-  margin:15px 0 0!important;text-align:left!important;
-  font-size:clamp(27px,4.2vw,52px)!important;line-height:1.08!important;
-}
-html body #app #info.identity-panel .identity-welcome-copy>h1 em{display:inline!important}
-@media(max-width:720px){
-  html body #app #info.identity-panel .identity-welcome-copy{padding-top:clamp(15px,2.3dvh,22px)!important}
-  html body #app #info.identity-panel .identity-welcome-label{margin-bottom:10px!important}
-  html body #app #info.identity-panel .identity-heading-row{gap:9px!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
-  html body #app #info.identity-panel .identity-heading-row>.identity-welcome-intro{
-    font-size:clamp(11.3px,3.16vw,12.4px)!important;line-height:1.35!important;
-  }
-  html body #app #info.identity-panel .identity-heading-row>.info-red-shoes{
-    width:100%!important;max-width:165px!important;max-height:none!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-copy>h1{
-    font-size:clamp(22px,6.15vw,31px)!important;margin-top:12px!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-routes{margin-top:8px!important}
-}
-@media(max-width:390px){
-  html body #app #info.identity-panel .identity-heading-row{gap:8px!important}
-  html body #app #info.identity-panel .identity-heading-row>.identity-welcome-intro{
-    font-size:11.1px!important;line-height:1.31!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-copy>h1{margin-top:10px!important}
-}
-@media(max-width:720px) and (max-height:710px){
-  html body #app #info.identity-panel .identity-welcome-copy{padding-top:9px!important}
-  html body #app #info.identity-panel .identity-welcome-label{margin-bottom:6px!important}
-  html body #app #info.identity-panel .identity-heading-row>.identity-welcome-intro{
-    font-size:10.5px!important;line-height:1.26!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-copy>h1{margin-top:8px!important}
-  html body #app #info.identity-panel .identity-welcome-routes{margin-top:5px!important;gap:4px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{padding-top:5px!important;padding-bottom:5px!important}
-}
-</style>
-
-<style id="come-lupi-info-spazio-prima-domanda-e-pulsanti">
-/* Ritocco esclusivo alla schermata INFO: una riga vuota prima della domanda e pulsanti più leggibili. */
-@media(max-width:720px){
-  html body #app #info.identity-panel .identity-welcome-copy>h1{margin-top:27px!important}
-  html body #app #info.identity-panel .identity-welcome-routes{gap:6px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{
-    padding:8px 30px 8px 11px!important;min-height:44px!important
-  }
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:14.4px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:10.1px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{
-    padding:7px 8px!important;min-height:41px!important;gap:3px!important
-  }
-  html body #app #info.identity-panel .identity-features>.identity-feature strong{font-size:11.9px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature span{font-size:9.1px!important;line-height:1.2!important}
-}
-@media(max-width:390px){
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:13.9px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:9.7px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature strong{font-size:11.4px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature span{font-size:8.8px!important}
-}
-@media(max-width:720px) and (max-height:710px){
-  html body #app #info.identity-panel .identity-welcome-copy>h1{margin-top:23px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{padding-top:7px!important;padding-bottom:7px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{padding-top:6px!important;padding-bottom:6px!important}
-}
-</style>
-
-<style id="come-lupi-info-small-height-fit">
-/* Solo smartphone poco alti: riquadri tutti visibili, senza sacrificare la riga vuota prima della domanda. */
-@media(max-width:720px) and (max-height:790px){
-  html body #app #info.identity-panel .identity-body{padding:3px 8px 3px!important}
-  html body #app #info.identity-panel .identity-welcome{padding:5px 8px 6px!important;gap:4px!important;margin-bottom:4px!important}
-  html body #app #info.identity-panel .identity-welcome-copy{padding-top:0!important}
-  html body #app #info.identity-panel .identity-welcome-label{margin-bottom:5px!important}
-  html body #app #info.identity-panel .identity-welcome-copy>h1{margin-top:23px!important}
-  html body #app #info.identity-panel .identity-welcome-routes{margin-top:4px!important;gap:3px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button{padding:4px 29px 4px 10px!important;min-height:40px!important;gap:2px!important}
-  html body #app #info.identity-panel .identity-features{margin:0!important;gap:3px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{min-height:0!important;padding:3px 7px!important;gap:2px!important}
-  html body #app #info.identity-panel .identity-meta{margin-top:3px!important;padding-top:3px!important}
-}
-@media(max-width:720px) and (max-height:710px){
-  html body #app #info.identity-panel .identity-welcome-routes>button{padding-top:3px!important;padding-bottom:3px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{padding-top:2px!important;padding-bottom:2px!important}
-}
-</style>
-
-<style id="come-lupi-info-layout-adattivo-20261119">
-/* Solo INFO su smartphone in verticale: misure dinamiche dello spazio effettivo,
-   tre azioni principali lievemente più grandi e quattro riquadri di oltre il 30% più ampi. */
-@media (max-width:720px) and (orientation:portrait){
-  html body #app:has(#info.active) main,
-  html body.come-lupi-immersive #app:has(#info.active) > main{
-    height:var(--cl-info-main-height,calc(100dvh - 128px))!important;
-    max-height:var(--cl-info-main-height,calc(100dvh - 128px))!important;
-    min-height:0!important;
-    padding:4px 7px!important;
-    overflow:hidden!important;
-  }
-  html body #app #info.identity-panel .identity-scene{height:100%!important;max-height:100%!important;min-height:0!important}
-  html body #app #info.identity-panel .identity-body,
-  html body.come-lupi-immersive #app #info.identity-panel .identity-body{
-    box-sizing:border-box!important;
-    padding:calc(2px + 7px * var(--cl-info-breath,0)) 9px!important;
-    gap:calc(4px + 7px * var(--cl-info-breath,0))!important;
-    justify-content:safe center!important;
-    overflow-y:auto!important;
-    overscroll-behavior:contain!important;
-    scrollbar-width:none;
-  }
-  html body #app #info.identity-panel .identity-body::-webkit-scrollbar{width:0;height:0}
-  html body #app #info.identity-panel .identity-welcome{
-    margin:0!important;
-    padding:calc(5px + 7px * var(--cl-info-breath,0)) 10px calc(5px + 5px * var(--cl-info-breath,0))!important;
-    gap:calc(4px + 5px * var(--cl-info-breath,0))!important;
-    width:100%!important;
-    flex-shrink:0!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-copy{
-    padding-top:calc(0px + 8px * var(--cl-info-breath,0))!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-label{
-    margin-bottom:calc(5px + 4px * var(--cl-info-breath,0))!important;
-  }
-  /* La riga di respiro prima della domanda non viene sacrificata. */
-  html body #app #info.identity-panel .identity-welcome-copy>h1{
-    margin-top:calc(16px + 9px * var(--cl-info-breath,0))!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-routes{
-    margin-top:calc(5px + 4px * var(--cl-info-breath,0))!important;
-    gap:calc(4px + 3px * var(--cl-info-breath,0))!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-routes>button{
-    min-height:47px!important;
-    padding:7px 31px 7px 11px!important;
-    gap:2px!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{
-    font-size:15px!important;line-height:1.12!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-routes>button span{
-    font-size:10.4px!important;line-height:1.23!important;
-  }
-  html body #app #info.identity-panel .identity-features{
-    box-sizing:border-box!important;
-    display:grid!important;
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    width:100%!important;
-    max-width:360px!important;
-    align-self:center!important;
-    gap:calc(5px + 3px * var(--cl-info-breath,0))!important;
-    margin:0!important;
-    flex-shrink:0!important;
-  }
-  html body #app #info.identity-panel .identity-features>.identity-feature{
-    box-sizing:border-box!important;
-    min-width:0!important;
-    width:100%!important;
-    min-height:calc(56px + 6px * var(--cl-info-breath,0))!important;
-    padding:8px 10px!important;
-    gap:3px!important;
-    border-radius:9px!important;
-    justify-content:center!important;
-  }
-  html body #app #info.identity-panel .identity-features>.identity-feature strong{
-    font-size:14.4px!important;
-    line-height:1.12!important;
-  }
-  html body #app #info.identity-panel .identity-features>.identity-feature span{
-    font-size:10.3px!important;
-    line-height:1.18!important;
-    max-width:100%!important;
-  }
-  html body #app #info.identity-panel .identity-meta{
-    margin:0!important;
-    padding-top:calc(2px + 3px * var(--cl-info-breath,0))!important;
-    flex-shrink:0!important;
-  }
-}
-@media(max-width:720px) and (orientation:portrait) and (max-height:710px){
-  html body #app #info.identity-panel .identity-welcome-routes>button{
-    min-height:45px!important;padding-top:6px!important;padding-bottom:6px!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-routes>button strong{font-size:14.5px!important}
-  html body #app #info.identity-panel .identity-welcome-routes>button span{font-size:10px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature{
-    min-height:53px!important;padding:7px 9px!important;
-  }
-  html body #app #info.identity-panel .identity-features>.identity-feature strong{font-size:13.9px!important}
-  html body #app #info.identity-panel .identity-features>.identity-feature span{font-size:10.1px!important}
-}
-</style>
-<script id="come-lupi-info-adaptive-measure-20261119">
-(function(){
-  'use strict';
-  const app=document.getElementById('app');
-  const info=document.getElementById('info');
-  const head=app?.querySelector(':scope > header');
-  const tabs=app?.querySelector(':scope > .tabs');
-  if(!app||!info||!head||!tabs)return;
-  let frame=0;
-  function measure(){
-    frame=0;
-    const portrait=window.matchMedia('(max-width:720px) and (orientation:portrait)').matches;
-    if(!portrait){
-      app.style.removeProperty('--cl-info-main-height');
-      app.style.removeProperty('--cl-info-breath');
-      return;
-    }
-    const viewport=window.visualViewport;
-    const visibleBottom=viewport?viewport.offsetTop+viewport.height:window.innerHeight;
-    const headBottom=head.getBoundingClientRect().bottom;
-    const navTop=tabs.getBoundingClientRect().top;
-    // Usa l'area realmente visibile fra la testata e il menu inferiore.
-    const available=Math.floor(Math.max(280,Math.min(navTop,visibleBottom)-headBottom-2));
-    app.style.setProperty('--cl-info-main-height',available+'px');
-    // La distanza verticale cresce con l'altezza, senza schiacciare i pulsanti.
-    let breathing=Math.max(0,Math.min(1,(available-510)/160));
-    const body=info.querySelector('.identity-body');
-    // Recupera prima gli spazi decorativi, senza ridurre la misura dei pulsanti.
-    for(let i=0;i<7;i++){
-      app.style.setProperty('--cl-info-breath',breathing.toFixed(3));
-      if(!body || body.scrollHeight<=body.clientHeight+1 || breathing===0)break;
-      const overflow=body.scrollHeight-body.clientHeight;
-      breathing=Math.max(0,breathing-Math.max(.09,overflow/75));
-    }
-  }
-  function schedule(){if(!frame)frame=requestAnimationFrame(measure)}
-  schedule();
-  window.addEventListener('resize',schedule,{passive:true});
-  window.addEventListener('orientationchange',schedule,{passive:true});
-  window.visualViewport?.addEventListener('resize',schedule,{passive:true});
-  window.visualViewport?.addEventListener('scroll',schedule,{passive:true});
-  // Alcuni browser mostrano o nascondono le barre senza inviare resize alla finestra.
-  if(typeof ResizeObserver==='function'){
-    const ro=new ResizeObserver(schedule);
-    ro.observe(head);
-    ro.observe(tabs);
-  }
-  // Ricalcola anche all'ingresso nell'app, dopo la schermata introduttiva.
-  if(typeof MutationObserver==='function'){
-    const mo=new MutationObserver(schedule);
-    mo.observe(app,{attributes:true,attributeFilter:['class']});
-    mo.observe(info,{attributes:true,attributeFilter:['class']});
-  }
-})();
-</script>
-
-<style id="come-lupi-info-align-paragraph-question-20261119">
-/* Esclusivamente la schermata iniziale INFO, versione smartphone.
-   Il testo resta invariato; cambia solo l'allineamento orizzontale. */
-@media(max-width:720px) and (orientation:portrait){
-  html body #app #info.identity-panel .identity-welcome-copy{
-    --cl-paragraph-inset: 19px; /* circa tre caratteri del testo */
-    --cl-intro-column-gap: 9px;
-    --cl-extra-text-width: 10px;
-  }
-  /* Compensazione minima: il testo rientra senza generare righe extra, scarpe sempre a destra. */
-  html body #app #info.identity-panel .identity-heading-row{
-    grid-template-columns:minmax(0,calc(50% + var(--cl-extra-text-width))) minmax(0,1fr)!important;
-  }
-  html body #app #info.identity-panel .identity-heading-row>.identity-welcome-intro{
-    margin-left:var(--cl-paragraph-inset)!important;
-    min-width:0!important;
-  }
-  /* Intestazione centrata sulla porzione occupata dal paragrafo, non sullo schermo intero. */
-  html body #app #info.identity-panel .identity-welcome-label{
-    box-sizing:border-box!important;
-    margin-left:var(--cl-paragraph-inset)!important;
-    width:calc((100% - var(--cl-intro-column-gap)) / 2 + var(--cl-extra-text-width) - var(--cl-paragraph-inset))!important;
-    max-width:none!important;
-    text-align:center!important;
-    letter-spacing:.12em!important;
-    white-space:nowrap!important;
-  }
-  /* Domanda centrata sulla stessa larghezza dei tre pulsanti principali. */
-  html body #app #info.identity-panel .identity-welcome-copy>h1{
-    display:block!important;
-    width:100%!important;
-    text-align:center!important;
-  }
-  html body #app #info.identity-panel .identity-welcome-copy>h1 em{
-    text-align:center!important;
-  }
-}
-@media(max-width:360px) and (orientation:portrait){
-  html body #app #info.identity-panel .identity-welcome-copy{--cl-paragraph-inset:17px;--cl-intro-column-gap:8px}
-  html body #app #info.identity-panel .identity-welcome-label{letter-spacing:.075em!important}
-}
 </style>
 <style id="come-lupi-20261119-project-banner-modal">
 /* Finestra informativa del solo banner: non modifica navigazione e comandi. */
@@ -9744,6 +9396,7 @@ html body #app #info.identity-panel .identity-welcome-copy>h1 em{display:inline!
  }
  legalOpen.addEventListener('click',()=>openOverlay(legal,legalOpen));
  clearOpen.addEventListener('click',()=>openOverlay(clear,clearOpen));
+ window.ComeLupiShowClearConfirmation=function(trigger){openOverlay(clear,trigger||clearOpen);};
  document.getElementById('clLegalClose').addEventListener('click',closeOverlay);
  document.getElementById('clLegalCloseBottom').addEventListener('click',closeOverlay);
  document.getElementById('clClearClose').addEventListener('click',closeOverlay);
@@ -10085,4 +9738,460 @@ html body #app nav.tabs button[aria-selected="true"] .navico{
   #app nav.tabs,#app nav.tabs button{touch-action:pan-y!important}
 }
 </style>
+
+<style id="come-lupi-emergency-exit-icon-reference-20261119">
+/* Pictogramma ricavato dal cartello campione: uomo in corsa, freccia, porta. */
+html body #app>header #clEmergencyExit svg.cl-running-exit-sign{
+  width:min(100%,65px)!important;
+  height:32px!important;
+  max-height:calc(100% - 1px)!important;
+  display:block!important;
+  flex:0 1 auto!important;
+  overflow:visible!important;
+  pointer-events:none!important;
+}
+</style>
+
+<style id="come-lupi-0976-no-android-immersive-bands">
+/* The former Android protective stripes are obsolete.
+   Remove both their artwork and the unused clearance in fullscreen. */
+html body.come-lupi-immersive{
+ --immersive-top-band:0px!important;
+ --immersive-bottom-band:0px!important;
+ --app-android-clearance:0px!important;
+}
+html body #app .android-system-band{display:none!important}
+</style>
+
+<style id="come-lupi-0976-fullscreen-proportions-20261120">
+/* Nessun cambiamento alla visualizzazione normale: solo modalità immersiva.
+   Mobile: la barra superiore passa da 44px a 74.8px (+70%). */
+@media(max-width:899px){
+  html body.come-lupi-immersive #app > header{
+    box-sizing:border-box!important;
+    height:74.8px!important;
+    min-height:74.8px!important;
+    max-height:74.8px!important;
+    display:flex!important;
+    align-items:center!important;
+    padding-top:3px!important;
+    padding-bottom:3px!important;
+  }
+  /* Si riserva alla testata lo spazio reale, eliminando il vecchio limite di 44px. */
+  html body.come-lupi-immersive #app:has(#info.active) > main{
+    margin-top:30.8px!important;
+  }
+}
+@media (min-width:721px) and (max-width:899px){
+  html body.come-lupi-immersive #app:has(#info.active) > main{
+    height:calc(100dvh - 74.8px - 80px)!important;
+    max-height:calc(100dvh - 74.8px - 80px)!important;
+    min-height:0!important;
+  }
+}
+/* La nuova altezza delle azioni si applica a telefono e desktop in fullscreen.
+   Le misure esatte sono calcolate sul layout originale del dispositivo: +30%.
+   Il riquadro principale delle opzioni viene ampliato del 20% quando lo spazio lo consente. */
+
+
+
+/* Anche dove la schermata è troppo bassa per contenere le nuove misure,
+   le azioni rimangono raggiungibili attraverso il solo scroll del riquadro. */
+html body.come-lupi-immersive #app #info.identity-panel .identity-body{
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain!important;
+  justify-content:safe center!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .identity-scene{
+  max-height:100%!important;
+}
+</style>
+<!-- 0.9.79: retired obsolete fullscreen sizing script; Info is sized by unified layout only. -->
+
+<style id="come-lupi-fullscreen-quicklinks-nav25-20261120">
+/* La visualizzazione normale non cambia. Cinque scorciatoie dopo i quattro pulsanti Info,
+   disponibili soltanto in modalita' schermo intero. */
+#app #info.identity-panel .cl-fs-quicklinks{display:none!important}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklinks{
+ display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ gap:clamp(4px,.9vw,11px)!important;
+ margin:clamp(7px,1.3dvh,14px) auto 0!important;
+ padding:0!important;box-sizing:border-box!important;
+ flex:0 0 auto!important;align-self:stretch!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklink{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;min-width:0!important;
+ min-height:clamp(78px,10dvh,99px)!important;
+ padding:8px 3px!important;gap:5px!important;
+ color:#662238!important;text-align:center!important;
+ background:linear-gradient(150deg,#f8e9e1,#e8c7c3)!important;
+ border:1px solid #c99199!important;border-radius:11px!important;
+ box-shadow:0 3px 9px rgba(73,15,33,.11)!important;
+ cursor:pointer!important;touch-action:manipulation!important;
+ font-family:system-ui,-apple-system,'Segoe UI',sans-serif!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklink:hover{background:linear-gradient(160deg,#f9e9e1,#dcaeae)!important}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklink:focus-visible{outline:3px solid #751427!important;outline-offset:2px!important}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quickicon{display:block!important;line-height:0!important;flex:0 0 auto!important}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quickicon svg{
+ display:block!important;width:clamp(20px,2.3vw,28px)!important;height:clamp(20px,2.3vw,28px)!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklabel{
+ display:block!important;font-size:clamp(9.2px,1.06vw,12px)!important;
+ line-height:1.16!important;font-weight:700!important;
+ overflow-wrap:normal!important;word-break:normal!important;
+ hyphens:auto!important;max-width:100%!important;
+}
+/* La barra delle sei sezioni cresce del 25% rispetto all'altezza originale misurata.
+   Per questo la misura viene applicata come variabile anziche' come valore fisso. */
+html body.come-lupi-immersive:not([data-cl-fs-nav-measuring]) #app nav.tabs{
+ height:var(--cl-fs-nav-height,70px)!important;
+ min-height:var(--cl-fs-nav-height,70px)!important;
+ max-height:var(--cl-fs-nav-height,70px)!important;
+ box-sizing:border-box!important;
+ align-items:center!important;
+}
+html body.come-lupi-immersive #app nav.tabs button{align-self:stretch!important;justify-content:center!important}
+@media(max-width:899px){
+ html body.come-lupi-immersive #app:has(#info.active)>main{
+  height:calc(100dvh - 74.8px - 80px - var(--cl-fs-nav-extra,14px))!important;
+  max-height:calc(100dvh - 74.8px - 80px - var(--cl-fs-nav-extra,14px))!important;
+ }
+ html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklink{min-height:clamp(73px,9.5dvh,91px)!important;gap:4px!important;padding:6px 2px!important}
+ html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklabel{font-size:clamp(8.7px,2.35vw,11px)!important;line-height:1.13!important}
+}
+@media(max-width:390px){
+ html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklinks{gap:4px!important}
+ html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklabel{font-size:8.7px!important;line-height:1.12!important}
+}
+/* I cinque comandi restano contenuti nella stessa area scorrevole delle altre opzioni. */
+html body.come-lupi-immersive #app #info.identity-panel .identity-body{overflow-y:auto!important;overflow-x:hidden!important}
+</style>
+<script id="come-lupi-fullscreen-quicklinks-nav25-handlers-20261120">
+(function(){
+ 'use strict';
+ const byId=id=>document.getElementById(id);
+ function navTo(tab){const target=document.querySelector('#app nav.tabs button[data-tab="'+tab+'"]');if(!target)return false;target.click();return true;}
+ byId('clFsNuclei')?.addEventListener('click',()=>byId('home')?.click());
+ byId('clFsLastResult')?.addEventListener('click',()=>{
+  // Nessun risultato: nessun alert, navigazione, cambio di focus o uscita dal Full Screen.
+  if(!window.ComeLupiHasLatestOutcome?.())return;
+  if(navTo('signals'))window.ComeLupiShowLatestOutcome?.();
+ });
+ byId('clFsPrepare')?.addEventListener('click',()=>{if(navTo('legal'))byId('denunciaStart')?.click()});
+ byId('clFsLibrary')?.addEventListener('click',()=>{if(typeof window.ComeLupiLibraryOpen==='function')window.ComeLupiLibraryOpen();else byId('libraryButton')?.click()});
+ byId('clFsClear')?.addEventListener('click',e=>{
+  if(typeof window.ComeLupiShowClearConfirmation==='function')window.ComeLupiShowClearConfirmation(e.currentTarget);
+  else byId('clClearDataOpen')?.click();
+ });
+ // Rileva l'altezza effettiva della barra menu nel browser sul dispositivo.
+ // Disattiva brevemente il solo incremento per misurare l'altezza originale.
+ const nav=document.querySelector('#app nav.tabs');
+ if(!nav)return;
+ let pending=0;
+ function update(){
+  pending=0;
+  if(!document.body.classList.contains('come-lupi-immersive'))return;
+  document.body.setAttribute('data-cl-fs-nav-measuring','');
+  const before=nav.getBoundingClientRect().height;
+  document.body.removeAttribute('data-cl-fs-nav-measuring');
+  if(before<=0)return;
+  nav.style.setProperty('--cl-fs-nav-height',(before*1.25).toFixed(2)+'px');
+  document.body.style.setProperty('--cl-fs-nav-extra',(before*.25).toFixed(2)+'px');
+ }
+ function schedule(){if(!pending)pending=requestAnimationFrame(update)}
+ schedule();
+ document.addEventListener('fullscreenchange',schedule);
+ window.addEventListener('resize',schedule,{passive:true});
+ window.addEventListener('orientationchange',schedule,{passive:true});
+ window.visualViewport?.addEventListener('resize',schedule,{passive:true});
+ if(typeof MutationObserver==='function')new MutationObserver(schedule).observe(document.body,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+
+<style id="come-lupi-menu-titolo-versione-20261120">
+/* Unicamente il titolo nella barra menu; la finestra del progetto resta apribile. */
+html body #app>header>.brand,
+html body.come-lupi-immersive #app>header>.brand{
+  display:flex!important; flex:1 1 auto!important; min-width:0!important;
+  align-items:baseline!important; justify-content:flex-start!important;
+  gap:clamp(4px,.65vw,9px)!important;
+  white-space:nowrap!important; text-overflow:clip!important; overflow:hidden!important;
+  font:500 clamp(14px,1.72vw,23px)/1.16 Georgia,'Times New Roman',serif!important;
+  letter-spacing:.04em!important; color:#fff8f3!important;
+  margin-left:clamp(5px,1vw,14px)!important;
+}
+html body #app>header>.brand .cl-brand-name{
+  display:inline-block!important; flex:0 1 auto!important; min-width:0!important;
+  font:inherit!important; color:inherit!important; white-space:nowrap!important;
+}
+html body #app>header>.brand .cl-brand-version{
+  display:inline-block!important; flex:0 0 auto!important;
+  font:600 .59em/1.1 system-ui,-apple-system,'Segoe UI',sans-serif!important;
+  letter-spacing:0!important; color:#f4d9d5!important;
+}
+@media(max-width:720px){
+ html body #app>header>.brand,
+ html body.come-lupi-immersive #app>header>.brand{
+  font-size:clamp(12.6px,3.65vw,16px)!important;
+  gap:4px!important; margin-left:4px!important; letter-spacing:.015em!important;
+ }
+}
+@media(max-width:355px){
+ html body #app>header>.brand,
+ html body.come-lupi-immersive #app>header>.brand{
+  font-size:12px!important; gap:3px!important; margin-left:2px!important;
+ }
+}
+</style>
+
+<style id="come-lupi-0976-fullscreen-banner-clearance-20261120">
+/* Solo schermo intero su mobile: il menu superiore e' ora 74,8px anziche' 44px.
+   Le sezioni diverse da Info devono quindi iniziare 30,8px piu' in basso.
+   Info possiede gia' tale compensazione: NON applicarla una seconda volta. */
+@media(max-width:899px){
+ html body.come-lupi-immersive #app:not(:has(#info.active)) > main{
+   margin-top:30.8px!important;
+   scroll-padding-top:calc(74.8px + 8px)!important;
+ }
+ /* Il lettore occupa la sola altezza disponibile tra testata e barra inferiore,
+    senza essere spinto sotto il menu delle sezioni dall'aumento del margine. */
+ html body.come-lupi-immersive #app:has(#reader.active) > main{
+   height:calc(100dvh - 74.8px - var(--cl-fs-nav-height,75px) - 8px)!important;
+   max-height:calc(100dvh - 74.8px - var(--cl-fs-nav-height,75px) - 8px)!important;
+   min-height:0!important;
+ }
+}
+</style>
+
+<style>
+/* 0.9.79 — stable measured Info layout, natural text geometry, no forced scroll. */
+html body #app:has(#info.active) > main,
+html body.come-lupi-immersive #app:has(#info.active) > main{
+ position:fixed!important;left:0!important;right:0!important;
+ top:var(--cl-info-top,56px)!important;bottom:var(--cl-info-bottom,64px)!important;
+ height:auto!important;min-height:0!important;max-height:none!important;
+ width:100%!important;max-width:1200px!important;margin:0 auto!important;
+ padding:var(--cl-out,10px)!important;overflow:hidden!important;
+ box-sizing:border-box!important;z-index:1!important;
+}
+html body #app #info.identity-panel,
+html body #app #info.identity-panel .identity-scene{
+ height:100%!important;max-height:100%!important;min-height:0!important;
+ box-sizing:border-box!important;overflow:hidden!important;
+}
+html body #app #info.identity-panel .identity-body,
+html body.come-lupi-immersive #app #info.identity-panel .identity-body{
+ position:relative!important;display:flex!important;flex-direction:column!important;
+ width:100%!important;max-width:none!important;height:100%!important;min-height:0!important;
+ padding:var(--cl-inset-y,14px) var(--cl-inset-x,18px)!important;
+ box-sizing:border-box!important;align-items:stretch!important;
+ justify-content:space-between!important;gap:var(--cl-flow,9px)!important;
+ overflow-x:hidden!important;overflow-y:hidden!important;
+ scrollbar-width:thin!important;
+}
+html body #app #info.identity-panel.cl-info-fallback .identity-body{overflow-y:auto!important;justify-content:flex-start!important}
+html body #app #info.identity-panel .identity-body > *{flex-shrink:0!important;min-height:0!important}
+html body #app #info.identity-panel .identity-welcome,
+html body.come-lupi-immersive #app #info.identity-panel .identity-welcome{
+ box-sizing:border-box!important;min-height:0!important;height:auto!important;
+ width:100%!important;max-width:100%!important;margin:0!important;
+ padding:var(--cl-wel-pad,14px)!important;gap:0!important;
+}
+html body #app #info.identity-panel .identity-welcome-copy{padding:0!important;min-height:0!important}
+html body #app #info.identity-panel .identity-welcome-label{
+ margin:0 0 var(--cl-label-gap,7px)!important;
+ font-size:var(--cl-label-font,12px)!important;line-height:1.13!important;
+}
+html body #app #info.identity-panel .identity-heading-row{
+ display:grid!important;grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr)!important;
+ gap:var(--cl-heading-gap,12px)!important;align-items:center!important;
+ width:100%!important;min-height:0!important;
+}
+html body #app #info.identity-panel .identity-heading-row > .identity-welcome-intro{
+ display:block!important;position:static!important;width:100%!important;max-width:none!important;
+ font:400 var(--cl-intro-font,14px)/var(--cl-intro-leading,1.34) system-ui,sans-serif!important;
+ margin:0!important;padding:0!important;min-height:0!important;
+}
+html body #app #info.identity-panel .identity-heading-row > .info-red-shoes{
+ display:block!important;position:static!important;visibility:visible!important;
+ width:min(100%,var(--cl-shoe-size,175px))!important;
+ height:auto!important;max-height:var(--cl-shoe-max-height,140px)!important;
+ object-fit:contain!important;margin:0!important;transform:none!important;
+ justify-self:center!important;align-self:center!important;
+}
+html body #app #info.identity-panel .identity-welcome-copy > h1,
+html body #app #info.identity-panel .identity-welcome h1{
+ display:block!important;width:100%!important;max-width:100%!important;
+ font-size:var(--cl-question-font,34px)!important;line-height:1.07!important;
+ margin:var(--cl-question-gap,9px) 0 0!important;text-align:center!important;
+}
+html body #app #info.identity-panel .identity-welcome-routes{
+ display:grid!important;grid-template-columns:1fr!important;
+ margin:var(--cl-routes-before,9px) 0 0!important;
+ gap:var(--cl-routes-gap,5px)!important;min-height:0!important;
+}
+html body #app #info.identity-panel .identity-welcome-routes > button,
+html body.come-lupi-immersive #app #info.identity-panel .identity-welcome-routes > button{
+ box-sizing:border-box!important;min-height:var(--cl-route-h,51px)!important;
+ height:auto!important;padding:var(--cl-route-pad,6px) 14px!important;
+ margin:0!important;line-height:1.12!important;
+}
+html body #app #info.identity-panel .identity-welcome-routes > button strong{
+ font-size:var(--cl-route-title,18px)!important;line-height:1.12!important;
+}
+html body #app #info.identity-panel .identity-welcome-routes > button span{
+ font-size:var(--cl-route-sub,12px)!important;line-height:1.15!important;
+}
+html body #app #info.identity-panel .identity-features,
+html body.come-lupi-immersive #app #info.identity-panel .identity-features{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ width:min(100%,var(--cl-grid-width,740px))!important;max-width:none!important;
+ align-self:center!important;flex:0 0 auto!important;
+ gap:var(--cl-feature-gap,7px)!important;margin:0 auto!important;
+}
+html body #app #info.identity-panel .identity-features > .identity-feature,
+html body.come-lupi-immersive #app #info.identity-panel .identity-features > .identity-feature{
+ box-sizing:border-box!important;min-height:var(--cl-feature-h,58px)!important;
+ height:auto!important;max-height:none!important;
+ padding:var(--cl-feature-pad,7px) 12px!important;
+ display:flex!important;flex-direction:column!important;justify-content:center!important;
+}
+html body #app #info.identity-panel .identity-features > .identity-feature strong{
+ font-size:var(--cl-feature-title,19px)!important;line-height:1.12!important;
+}
+html body #app #info.identity-panel .identity-features > .identity-feature span{
+ font-size:var(--cl-feature-sub,11px)!important;line-height:1.16!important;
+}
+html body #app #info.identity-panel .cl-fs-quicklinks{display:none!important}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklinks{
+ display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ width:min(100%,var(--cl-grid-width,740px))!important;max-width:none!important;
+ gap:var(--cl-shortcut-gap,7px)!important;
+ margin:0 auto!important;padding:0!important;align-self:center!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklink{
+ box-sizing:border-box!important;width:100%!important;min-width:0!important;
+ min-height:var(--cl-shortcut-h,64px)!important;
+ height:var(--cl-shortcut-h,64px)!important;max-height:none!important;
+ aspect-ratio:auto!important;padding:4px 3px!important;gap:3px!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quickicon svg{
+ width:var(--cl-shortcut-icon,19px)!important;height:var(--cl-shortcut-icon,19px)!important;
+}
+html body.come-lupi-immersive #app #info.identity-panel .cl-fs-quicklabel{
+ font-size:var(--cl-shortcut-font,10px)!important;line-height:1.10!important;
+}
+html body #app #info.identity-panel .identity-meta,
+html body.come-lupi-immersive #app #info.identity-panel .identity-meta{
+ display:flex!important;flex-wrap:wrap!important;flex-direction:row!important;
+ width:100%!important;min-height:0!important;margin:0 auto!important;
+ padding:var(--cl-meta-pad,5px) 10px 0!important;
+ align-items:center!important;justify-content:center!important;
+ gap:2px 12px!important;font-size:var(--cl-meta-font,10px)!important;
+ line-height:1.2!important;text-align:center!important;
+}
+@media(max-width:650px){
+ html body #app #info.identity-panel .identity-heading-row{grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr)!important}
+ html body #app #info.identity-panel .identity-features > .identity-feature{padding-left:8px!important;padding-right:8px!important}
+}
+@media(max-height:520px) and (orientation:landscape){
+ html body #app #info.identity-panel .identity-body{gap:4px!important}
+}
+
+</style>
+<script>
+(function(){
+ 'use strict';
+ const app=document.getElementById('app'),info=document.getElementById('info');
+ const head=app?.querySelector(':scope > header'),nav=app?.querySelector(':scope > nav.tabs');
+ if(!app||!info||!head||!nav)return;
+ let raf=0,running=false;
+ const set=(n,v)=>app.style.setProperty(n,typeof v==='number'?Math.round(v*100)/100+'px':v);
+ const density=(v,scale,floor)=>Math.max(floor,v*scale);
+ function measure(){
+  raf=0;if(running||!info.classList.contains('active'))return;
+  running=true;
+  try{
+   const viewport=window.visualViewport;
+   const vt=viewport?viewport.offsetTop:0;
+   const vh=viewport?viewport.height:window.innerHeight;
+   const bottom=vt+vh,hr=head.getBoundingClientRect(),nr=nav.getBoundingClientRect();
+   const navAtBottom=nr.top>=bottom*.52;
+   const top=Math.max(vt,navAtBottom?hr.bottom:Math.max(hr.bottom,nr.bottom));
+   const baseBottom=navAtBottom?Math.min(nr.top,bottom):bottom;
+   // Fixed coordinates are measured from the viewport; never subtract the header twice.
+   set('--cl-info-top',Math.max(0,top));set('--cl-info-bottom',Math.max(0,window.innerHeight-baseBottom));
+   const space=Math.max(130,baseBottom-top);
+   const mobile=window.innerWidth<650,thin=space<630;
+   set('--cl-out',mobile?7:Math.min(14,Math.max(8,space*.012)));
+   set('--cl-grid-width',Math.min(mobile?780:810,window.innerWidth-(mobile?48:100)));
+   const body=info.querySelector('.identity-body');
+   const welcome=info.querySelector('.identity-welcome'),features=info.querySelector('.identity-features');
+   const shortcuts=info.querySelector('.cl-fs-quicklinks'),meta=info.querySelector('.identity-meta');
+   const immersive=document.body.classList.contains('come-lupi-immersive');
+   // Do not toggle fallback during every measurement: that was triggering the observer and flicker.
+   const blocks=[welcome,features,...(immersive?[shortcuts]:[]),meta].filter(Boolean);
+   let found=false;
+   const baseScale=space>960?1.13:space>790?1.04:space>690?0.98:space>580?.90:.83;
+   // The actual content's measured height decides compression, not a guessed viewport breakpoint.
+   for(let k=0;k<19;k++){
+    const z=baseScale-k*.026;
+    set('--cl-inset-y',density(mobile?14:18,z,7));
+    set('--cl-inset-x',density(mobile?17:24,z,11));
+    set('--cl-wel-pad',density(mobile?15:20,z,7));
+    set('--cl-flow',density(mobile?9:12,z,4));
+    set('--cl-label-font',density(mobile?12:13,z,9));
+    set('--cl-label-gap',density(8,z,3));
+    set('--cl-heading-gap',density(mobile?9:18,z,5));
+    set('--cl-intro-font',density(mobile?13.8:16,z,mobile?10:11));
+    set('--cl-intro-leading',Math.max(1.17,1.38-(1-z)*.26).toFixed(3));
+    set('--cl-shoe-size',density(mobile?170:220,z,95));
+    set('--cl-shoe-max-height',density(mobile?150:180,z,76));
+    set('--cl-question-font',density(mobile?34:46,z,mobile?23:29));
+    set('--cl-question-gap',density(11,z,3));
+    set('--cl-routes-before',density(10,z,4));
+    set('--cl-routes-gap',density(7,z,3));
+    set('--cl-route-h',density(mobile?52:60,z,37));
+    set('--cl-route-pad',density(7,z,3));
+    set('--cl-route-title',density(mobile?18:24,z,13));
+    set('--cl-route-sub',density(mobile?12.5:14,z,10));
+    set('--cl-feature-gap',density(9,z,4));
+    set('--cl-feature-h',density(mobile?62:75,z,43));
+    set('--cl-feature-pad',density(9,z,4));
+    set('--cl-feature-title',density(mobile?19:24,z,13));
+    set('--cl-feature-sub',density(mobile?12:14,z,9));
+    set('--cl-shortcut-gap',density(8,z,4));
+    set('--cl-shortcut-h',density(mobile?70:83,z,46));
+    set('--cl-shortcut-icon',density(21,z,14));
+    set('--cl-shortcut-font',density(mobile?10.4:11.5,z,8.5));
+    set('--cl-meta-pad',density(7,z,3));
+    set('--cl-meta-font',density(mobile?10:11,z,8.5));
+    // Force reflow: text wraps and intrinsic button heights are accounted for.
+    const cs=getComputedStyle(body);const pad=parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);
+    const gaps=(blocks.length-1)*parseFloat(cs.gap||'0');
+    const actual=blocks.reduce((sum,el)=>sum+el.getBoundingClientRect().height,0);
+    if(actual+pad+gaps<=body.clientHeight-3){found=true;break;}
+   }
+   // Keep all blocks visible when physically possible, with the spare height distributed
+   // by justify-content:space-between. Scroll is reserved only for impossible screens.
+   info.classList.toggle('cl-info-fallback',!found);
+  }finally{running=false;}
+ }
+ function schedule(){if(!raf)raf=requestAnimationFrame(measure)}
+ schedule();window.addEventListener('resize',schedule,{passive:true});
+ window.addEventListener('orientationchange',schedule,{passive:true});
+ window.visualViewport?.addEventListener('resize',schedule,{passive:true});
+ window.visualViewport?.addEventListener('scroll',schedule,{passive:true});
+ document.addEventListener('fullscreenchange',schedule);
+ const mo=new MutationObserver(schedule);
+ mo.observe(document.body,{attributes:true,attributeFilter:['class']});
+ mo.observe(info,{attributes:true,attributeFilter:['class']});
+ const ro=new ResizeObserver(schedule);ro.observe(head);ro.observe(nav);
+ document.fonts?.ready.then(schedule);
+})();
+</script>
 </body></html>
