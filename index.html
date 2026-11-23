@@ -1327,7 +1327,7 @@ body[data-cl-profile="man"] .cl-restart-confirm-backdrop{
 
  </div><div class="tree-meaning-actions"><button id="treeBack" type="button">Torna all’albero</button><button id="treeEnter" type="button">Entra nell’app →</button></div>
 </dialog>
-<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.0.94 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.0.94</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
+<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.0.95 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.0.95</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
   <g fill="#eac1c2">
     <g transform="translate(4.5 5) scale(.15)"><path d="M1 39 L0 42 L11 52 L24 41 L32 42 L33 45 L22 57 L22 104 L20 107 L15 108 L6 108 L5 107 L3 109 L3 121 L4 122 L34 122 L36 120 L37 117 L37 83 L40 82 L46 88 L62 109 L63 112 L63 138 L65 140 L78 140 L80 132 L80 107 L79 103 L59 77 L61 74 L83 74 L84 73 L84 57 L74 57 L71 55 L71 52 L74 49 L76 44 L76 36 L72 28 L63 25 L17 25 Z"/><path d="M81 0 L77 2 L72 8 L72 18 L79 25 L91 25 L97 19 L98 9 L93 2 L88 0 Z"/></g>
     <g transform="translate(29 12) scale(.19)"><path d="M52 21 L41 8 L32 0 L32 9 L30 12 L1 12 L0 13 L0 31 L1 32 L28 32 L32 36 L33 43 L52 24 Z"/></g>
@@ -1412,7 +1412,12 @@ body[data-cl-profile="man"] .cl-restart-confirm-backdrop{
       <div id="clProfileProgressRow" class="cl-profile-progress-row">
        <button type="button" id="clProfileProgress" class="cl-profile-progress" aria-haspopup="dialog" aria-controls="clProfileSummaryOverlay" aria-label="Apri il riepilogo dei questionari pertinenti">
        <div class="cl-profile-progress-label"><span id="clProfileProgressName">Il tuo percorso</span><strong id="clProfileProgressCount">0/0 questionari</strong></div>
-       <div class="cl-profile-track" aria-hidden="true"><span id="clProfileProgressFill"></span></div>
+       <div class="cl-profile-tracks">
+        <div class="cl-profile-track" aria-hidden="true"><span id="clProfileProgressFill"></span></div>
+        <div id="clProfileAttentionTrack" class="cl-profile-attention-track" role="img" aria-label="Indicatore dei segnali nelle risposte, non misura il rischio" hidden>
+         <span class="cl-profile-attention-marker" aria-hidden="true"></span>
+        </div>
+       </div>
        <div class="cl-profile-progress-bottom"><span id="clProfileSignal" class="cl-profile-signal">Le risposte non misurano il rischio.</span><span id="clProfileNext" class="cl-profile-next">Prossimo questionario</span></div>
       </button>
        <div id="clProfileSideActions" class="cl-profile-side-actions" hidden>
@@ -14712,7 +14717,22 @@ html body.come-lupi-immersive #app #info.identity-panel .identity-features > .id
  function paintProgress(){
   if(!current)return;
   const r=readState(),bar=$('clProfileProgress');
-  if(bar){bar.dataset.tone=r.tone;bar.dataset.profile=current;bar.dataset.complete=String(r.total>0&&r.done===r.total);bar.setAttribute('aria-label','Riepilogo del percorso '+profiles[current].label+': '+r.done+' questionari completati su '+r.total+'. Tocca per aprire risultati e consigli.');}
+  const complete=r.total>0&&r.done===r.total;
+  if(bar){
+   bar.dataset.tone=r.tone;bar.dataset.profile=current;bar.dataset.complete=String(complete);
+   bar.setAttribute('aria-label','Riepilogo del percorso '+profiles[current].label+': '+r.done+' questionari completati su '+r.total+'. '+(complete?'Percorso concluso: si consiglia di leggere il libro COME LUPI. ':'')+'Tocca per aprire risultati e consigli.');
+  }
+  // Manteniamo la barra di avanzamento e, soltanto al completamento, le affianchiamo
+  // una striscia di attenzione: esprime nuclei richiamati, NON probabilità né livello clinico di rischio.
+  const attention=$('clProfileAttentionTrack');
+  if(attention){
+   const descriptions={red:'Richiami importanti nelle risposte',yellow:'Alcuni nuclei richiamati',green:'Nessun nucleo evidenziato tra quelli esplorati',neutral:'Risposte insufficienti per interpretare i segnali'};
+   attention.hidden=!complete;
+   attention.dataset.tone=r.tone;
+   const detail=descriptions[r.tone]||descriptions.neutral;
+   attention.setAttribute('aria-label',detail+'. Indicatore orientativo, non misura la sicurezza né il rischio.');
+   attention.title=detail+'; non equivale a una valutazione del rischio.';
+  }
   if($('clProfileProgressName'))$('clProfileProgressName').textContent='Il tuo percorso';
   if($('clProfileProgressCount'))$('clProfileProgressCount').textContent=r.done+'/'+r.total+' completati';
   if($('clProfileProgressFill'))$('clProfileProgressFill').style.width=r.percentage.toFixed(2)+'%';
@@ -14757,8 +14777,8 @@ html body.come-lupi-immersive #app #info.identity-panel .identity-features > .id
   const next=$('clProfileNext');
   if(next){
    const title=r.next?(r.next.id==='orientamento_approfondito_r72'?'Primo orientamento':r.next.id==='relazione_quotidiana_r73'?'La relazione quotidiana':r.next.id==='sicurezza_e_distanza_r73'?'Corpo, sicurezza e separazione':r.next.title):'Percorso principale completato';
-   next.textContent=(r.next?'Prossimo: ':'')+title;
-   next.title=r.next?'Da fare: '+title:'Tutti i questionari principali pertinenti sono stati completati';
+   next.textContent=complete?'Dopo il percorso: leggi COME LUPI':(r.next?'Prossimo: ':'')+title;
+   next.title=complete?'Percorso completato. Ti suggeriamo ora di leggere il libro integrale COME LUPI e di confrontarlo con le tue risposte. Tocca questo riquadro per aprire il riepilogo.':r.next?'Da fare: '+title:'Tutti i questionari principali pertinenti sono stati completati';
   }
  }
  function paintQuestions(){
@@ -19076,6 +19096,54 @@ html body[data-cl-profile="man"] #clFirstOrientationNotice a.cl-orient-112[href=
 }
 html body #clFirstOrientationNotice a.cl-orient-112[href="tel:112"]:is(:hover,:focus-visible){
   filter:brightness(1.06)!important;
+}
+</style>
+
+<style id="cl-1095-progress-book-suggestion">
+/* Nessuna nuova riga nella schermata i: avanzamento e indicatore dei segnali
+   condividono lo spazio che prima era occupato dalla sola barra di progresso. */
+html body #app #info.identity-panel #clProfileProgress .cl-profile-tracks{
+ display:flex!important;align-items:center!important;gap:6px!important;
+ width:100%!important;min-height:8px!important;height:8px!important;
+}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-tracks>.cl-profile-track{
+ flex:1 1 auto!important;width:auto!important;min-width:0!important;
+}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track{
+ display:block!important;position:relative!important;flex:0 0 29%!important;
+ width:29%!important;height:8px!important;min-height:8px!important;
+ box-sizing:border-box!important;overflow:visible!important;
+ border-radius:99px!important;border:1px solid rgba(255,233,226,.45)!important;
+ background:linear-gradient(90deg,#80b8a0 0 32%,#e5bb66 33% 65%,#bf455b 66% 100%)!important;
+ box-shadow:inset 0 1px 2px rgba(23,0,12,.18)!important;
+}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track[hidden]{display:none!important;}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track[data-tone="neutral"]{
+ background:linear-gradient(90deg,rgba(255,240,235,.25),rgba(255,240,235,.12))!important;
+}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-marker{
+ position:absolute;top:-3px;left:14%;height:12px;width:5px;border-radius:5px;
+ border:1px solid rgba(65,27,40,.48);background:#fff9f0;
+ box-shadow:0 0 0 1px rgba(255,250,244,.60),0 1px 3px rgba(25,3,12,.30);
+ transform:translateX(-50%);transition:left .24s ease;
+}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track[data-tone="yellow"] .cl-profile-attention-marker{left:49%}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track[data-tone="red"] .cl-profile-attention-marker{left:84%}
+html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track[data-tone="neutral"] .cl-profile-attention-marker{display:none}
+/* Evidenzia il suggerimento soltanto a questionari completati senza creare
+   un altro elemento navigabile dentro il pulsante-riepilogo. */
+html body #app #info.identity-panel #clProfileProgress[data-complete="true"] .cl-profile-next{
+ max-width:47%!important;flex:0 0 47%!important;text-align:center!important;
+ border-color:rgba(255,242,235,.55)!important;
+ background:linear-gradient(120deg,rgba(255,239,228,.23),rgba(255,210,208,.15))!important;
+ color:#fff6eb!important;font-weight:800!important;
+}
+@media(max-width:420px){
+ html body #app #info.identity-panel #clProfileProgress .cl-profile-tracks{gap:4px!important}
+ html body #app #info.identity-panel #clProfileProgress .cl-profile-attention-track{flex-basis:25%!important;width:25%!important}
+ html body #app #info.identity-panel #clProfileProgress[data-complete="true"] .cl-profile-next{
+  max-width:45%!important;flex-basis:45%!important;
+ }
 }
 </style>
 </body></html>
