@@ -1424,6 +1424,54 @@ html body #app > header #clEmergencyExit{position:relative;z-index:2147483646!im
 #app #signals #testHome .first-orientation[hidden]{display:none!important}
 #app #signals #testStage #quickFirstReading,#app #signals #testStage #testQuickReading{display:none!important}
 </style>
+<!-- COME LUPI - PWA: incollare subito prima di </head> -->
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="apple-touch-icon" href="icons/icon-192.png"/>
+<script id="cl-pwa">
+(function(){
+ 'use strict';
+ // Nessuna proposta automatica di installazione: si installa solo dal menu del browser.
+ window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); });
+ if(!('serviceWorker' in navigator)) return;
+ var lastCheck = 0;
+ function check(){
+  var now = Date.now();
+  if(now - lastCheck < 30*60*1000 || !navigator.onLine) return;   // al massimo ogni 30 minuti
+  lastCheck = now;
+  navigator.serviceWorker.ready.then(function(r){
+   if(r.active) r.active.postMessage({type:'comelupi-check-update'});
+   r.update().catch(function(){});
+  });
+ }
+ function banner(){
+  if(document.getElementById('cl-update-banner')) return;
+  var b = document.createElement('div');
+  b.id = 'cl-update-banner';
+  b.setAttribute('role','status');
+  b.style.cssText = 'position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:2147483647;'+
+   'background:#3b0a18;color:#f3e6d0;border:1px solid #d6b478;border-radius:12px;padding:12px 14px;'+
+   'font:15px/1.4 system-ui,sans-serif;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 6px 24px rgba(0,0,0,.35)';
+  b.innerHTML = '<span style="flex:1 1 200px">È disponibile una versione aggiornata di Come Lupi.</span>';
+  var ok = document.createElement('button'), no = document.createElement('button');
+  ok.textContent = 'Aggiorna'; no.textContent = 'Più tardi';
+  [ok,no].forEach(function(x){ x.type='button'; x.style.cssText='font:inherit;border-radius:8px;padding:6px 12px;cursor:pointer;border:1px solid #d6b478'; });
+  ok.style.background = '#d6b478'; ok.style.color = '#3b0a18';
+  no.style.background = 'transparent'; no.style.color = '#f3e6d0';
+  ok.onclick = function(){ location.reload(); };
+  no.onclick = function(){ b.remove(); };
+  b.appendChild(ok); b.appendChild(no);
+  document.body.appendChild(b);
+ }
+ navigator.serviceWorker.addEventListener('message', function(e){
+  if(e.data && e.data.type === 'comelupi-update-ready') banner();
+ });
+ window.addEventListener('load', function(){
+  navigator.serviceWorker.register('sw.js').catch(function(){});
+ });
+ window.addEventListener('online', function(){ lastCheck = 0; check(); });
+ document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'visible') check(); });
+})();
+</script>
 </head><body>
 <section id="treeSplash" aria-label="L’albero delle parole di Progetto Come Lupi" style="visibility:hidden!important;opacity:0!important">
  <div class="tree-top"><p>PROGETTO COME LUPI</p><h1>...se ti senti dire questo...</h1><span class="tree-touch-hint">(Tocca i biglietti appesi all’albero)</span></div>
