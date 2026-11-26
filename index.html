@@ -26308,6 +26308,828 @@ html body * {
   display: none;
   background: transparent;
 }
+
+/* ===== Mappa 3D nell’esito complessivo (copia degli stili della mappa del singolo esito) ===== */
+#clProfileSummaryOverlay #clSummaryRiskMap {
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(249,207,205,.32);
+  background: linear-gradient(153deg,#7a1029 0%,#530717 55%,#3d0611 100%);
+  color: #fff6ee;
+  box-shadow: 0 18px 36px rgba(43,3,15,.2),inset 0 1px 0 rgba(255,255,255,.1);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage {
+  height: clamp(320px,46vw,470px);
+  position: relative;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 40% 40%,rgba(247,179,189,.13),transparent 47%),radial-gradient(ellipse at 70% 75%,rgba(15,0,7,.25),transparent 67%);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage:active {
+  cursor: grabbing;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage::before {
+  position: absolute;
+  content: "";
+  inset: 12px;
+  border: 1px solid rgba(255,228,210,.08);
+  border-radius: 15px;
+  pointer-events: none;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  outline: none;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 20px;
+  background: linear-gradient(125deg,rgba(43,2,11,.85),rgba(90,7,25,.74));
+  border-top: 1px solid rgba(255,232,215,.14);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-detail>div {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-count] {
+  display: block;
+  color: #f3bdb9;
+  letter-spacing: .18em;
+  font: 700 10px system-ui,sans-serif;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-title] {
+  margin: 4px 0 6px;
+  font: 26px/1.1 Georgia,serif;
+  color: #fff9ef;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-description] {
+  margin: 0 0 6px !important;
+  font: 14px/1.4 Georgia,serif;
+  color: #f8dcd4;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-chapter] {
+  font: 12px/1.5 system-ui,sans-serif;
+  color: #fff0dc;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-info] {
+  font: 12px/1.5 system-ui,sans-serif;
+  color: #f1ccc9;
+  margin: 8px 0 0 !important;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-read] {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255,239,224,.8);
+  border-radius: 30px;
+  background: linear-gradient(125deg,#fff7ee,#eed5cb);
+  font-weight: 750;
+  color: #650e20;
+  box-shadow: 0 7px 18px rgba(23,0,8,.18);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap [data-read]:disabled {
+  opacity: .55;
+  cursor: default;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-caption {
+  padding: 10px 16px 13px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #f9d9cf;
+  border-top: 1px solid rgba(250,215,200,.10);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i {
+  display: inline-block;
+  border-radius: 50%;
+  background: radial-gradient(circle at 29% 26%,#ffd1d1,#a63c5b 60%,#571028);
+  vertical-align: middle;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i.low {
+  opacity: .25;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i.mid {
+  opacity: .65;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i.high {
+  opacity: 1;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage:focus-visible {
+  outline: 3px solid #fee0cf;
+  outline-offset: -5px;
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap {
+    border-radius: 17px;
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage {
+    height: clamp(295px,98vw,405px);
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-detail {
+    padding: 14px 13px;
+    gap: 11px;
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap [data-title] {
+    font-size: 22px;
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap [data-description] {
+    font-size: 13px;
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap [data-info] {
+    font-size: 11px;
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-caption {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+}
+@media (max-height:480px) and (orientation:landscape) {
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage {
+    height: 330px;
+  }
+}
+#clProfileSummaryOverlay .flat-map-label-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+  isolation: isolate;
+}
+#clProfileSummaryOverlay .flat-map-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  max-width: 45vw;
+  padding: 3px 4px;
+  transform: translate(-50%,-50%);
+  border-radius: 6px;
+  pointer-events: none;
+  color: #fff9f1;
+  text-align: center;
+  line-height: 1.13;
+  letter-spacing: 0;
+  font-family: Georgia,"Times New Roman",serif;
+  font-weight: 700;
+  text-shadow: 0 1px 3px #24020d,0 2px 7px #24020d,0 0 10px #24020d;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: auto;
+  background: radial-gradient(ellipse,rgba(38,2,13,.27) 0,rgba(38,2,13,.08) 65%,transparent 100%);
+  transition: color .12s ease;
+}
+#clProfileSummaryOverlay .flat-map-label.is-selected {
+  color: #fff6d5;
+  text-shadow: 0 1px 3px #24020d,0 2px 9px #24020d,0 0 12px #ffe1b291;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap canvas {
+  z-index: 2;
+}
+@media (max-width:420px) {
+#clProfileSummaryOverlay .flat-map-label {
+    line-height: 1.08;
+    padding: 2px 3px;
+    max-width: 42vw;
+  }
+}
+#clProfileSummaryOverlay #clSummaryRiskMap {
+  margin: 5px 0 16px !important;
+}
+#clProfileSummaryOverlay .result-nucleus-overlay[hidden] {
+  display: none !important;
+}
+#clProfileSummaryOverlay .result-nucleus-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(14px,env(safe-area-inset-top)) 12px max(14px,env(safe-area-inset-bottom));
+  background: rgba(23,0,8,.77);
+  backdrop-filter: blur(5px);
+}
+#clProfileSummaryOverlay .result-nucleus-window {
+  position: relative;
+  width: min(610px,100%);
+  max-height: min(85dvh,770px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: linear-gradient(180deg,#fffefa,#fff1ed);
+  border: 1px solid #e2b8b3;
+  border-radius: 20px;
+  padding: 25px clamp(16px,3.5vw,29px) 19px;
+  box-shadow: 0 25px 65px #19020b88;
+  color: #42242b;
+  scrollbar-width: thin;
+}
+#clProfileSummaryOverlay .result-nucleus-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  display: grid;
+  place-items: center;
+  min-width: 42px;
+  min-height: 42px;
+  border: 1px solid #e6bfc0;
+  border-radius: 50%;
+  background: #fff5f3;
+  color: #7e0d1b;
+  font: bold 27px/1 system-ui;
+  cursor: pointer;
+}
+#clProfileSummaryOverlay .result-nucleus-close:focus-visible {
+  outline: 3px solid #9f1728;
+  outline-offset: 2px;
+}
+#clProfileSummaryOverlay .result-nucleus-eyebrow {
+  display: block;
+  padding-right: 52px;
+  color: #a02d3c;
+  font: 700 10px/1.4 system-ui,sans-serif;
+  letter-spacing: .12em;
+}
+#clProfileSummaryOverlay .result-nucleus-window h2 {
+  font: 29px/1.16 Georgia,serif;
+  color: #750b1a;
+  margin: 9px 50px 9px 0;
+}
+#clProfileSummaryOverlay .result-nucleus-window h3 {
+  font: 21px/1.27 Georgia,serif;
+  color: #71111b;
+  margin: 20px 0 11px;
+}
+#clProfileSummaryOverlay .result-nucleus-intro {
+  margin: 8px 0;
+  color: #67454a;
+}
+#clProfileSummaryOverlay .result-nucleus-triggers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#clProfileSummaryOverlay .result-nucleus-trigger {
+  padding: 14px 15px;
+  background: #fff;
+  border: 1px solid #edd3d0;
+  border-radius: 13px;
+  box-shadow: 0 3px 13px #64101b0c;
+}
+#clProfileSummaryOverlay .result-nucleus-question-id {
+  font: 750 10px/1.3 system-ui,sans-serif;
+  letter-spacing: .06em;
+  color: #a42b3b;
+}
+#clProfileSummaryOverlay .result-nucleus-question {
+  font: 700 16px/1.42 Georgia,serif;
+  color: #351e24;
+  margin: 7px 0;
+}
+#clProfileSummaryOverlay .result-nucleus-answer {
+  color: #4e2c32;
+}
+#clProfileSummaryOverlay .result-nucleus-reason {
+  border-top: 1px solid #f1e2de;
+  margin: 8px 0 0;
+  padding-top: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #785159;
+}
+#clProfileSummaryOverlay .result-nucleus-notice {
+  font-size: 11px;
+  line-height: 1.55;
+  margin: 15px 0 0;
+  color: #7e5960;
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay .result-nucleus-overlay {
+    padding: 10px 9px calc(10px + env(safe-area-inset-bottom));
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay .result-nucleus-window {
+    max-height: 88dvh;
+    border-radius: 16px;
+    padding: 20px 14px 17px;
+  }
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay .result-nucleus-window h2 {
+    font-size: 25px;
+  }
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale {
+  gap: 6px 17px;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale span {
+  display: inline-flex;
+  align-items: center;
+  white-space: normal;
+  gap: 5px;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  margin-right: 0 !important;
+  border: 1px solid rgba(255,255,255,.45);
+  opacity: 1 !important;
+  box-shadow: 0 0 10px rgba(255,235,215,.14);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i.low {
+  background: radial-gradient(circle at 30% 27%,#fffbc1,#ffe12e 48%,#b18709);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i.mid {
+  background: radial-gradient(circle at 30% 27%,#fff1b4,#ff9025 48%,#c15b08);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale i.high {
+  background: radial-gradient(circle at 30% 27%,#ffc3b9,#ee0c2b 48%,#ad071c);
+}
+@media (max-width:700px) {
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-scale {
+    justify-content: flex-start;
+    gap: 5px 11px;
+  }
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] {
+  border-color: rgba(193,214,235,.34);
+  background: linear-gradient(150deg,#17314c 0%,#0f2339 55%,#0d1b2d 100%);
+  box-shadow: 0 18px 36px rgba(7,15,26,.28),inset 0 1px 0 rgba(255,255,255,.08);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] .result-3d-stage {
+  background: radial-gradient(ellipse at 38% 39%,rgba(133,187,231,.16),transparent 47%),radial-gradient(ellipse at 68% 75%,rgba(2,10,19,.34),transparent 68%);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] .result-3d-detail {
+  background: linear-gradient(125deg,rgba(8,22,37,.92),rgba(22,49,76,.80));
+  border-top-color: rgba(222,239,255,.12);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] [data-count] {
+  color: #b9d5f0;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] [data-title] {
+  color: #f6fbff;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] [data-description] {
+  color: #d9e8f6;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] [data-chapter] {
+  color: #ecf5ff;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] [data-info] {
+  color: #cadced;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] [data-read] {
+  background: linear-gradient(125deg,#f4f9ff,#d9e5f2);
+  color: #153252;
+  border-color: rgba(240,248,255,.86);
+}
+#clProfileSummaryOverlay #clSummaryRiskMap[data-audience="men"] .result-3d-caption {
+  color: #d5e3f2;
+  border-top-color: rgba(225,240,255,.08);
+}
+#clProfileSummaryOverlay #signals:has(#testOutcome:not(.hidden)) #clSummaryRiskMap {
+  margin: 4px 0 12px !important;
+}
+#clProfileSummaryOverlay .result-nucleus-frequency {
+  background: #fff1d6;
+  border: 1px solid #e6af62;
+  border-radius: 9px;
+  padding: 10px 12px;
+  margin: 12px 0 2px;
+}
+#clProfileSummaryOverlay .result-nucleus-frequency p {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 6px;
+  color: #6c360d;
+}
+#clProfileSummaryOverlay .result-nucleus-frequency strong {
+  color: #8b1d16;
+  font-size: 13px;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-frequency-ring {
+  display: block;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  border: 3px solid #ffefab;
+  box-shadow: 0 0 0 2px #dd3b16,0 0 13px 5px #ffad4fa8,inset 0 0 9px #ffb25db3;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: .98;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-frequency-ring[hidden] {
+  display: none !important;
+}
+#clProfileSummaryOverlay .flat-map-label[hidden] {
+  display: none !important;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .result-3d-stage {
+  contain: paint;
+}
+#clProfileSummaryOverlay #clSummaryRiskMap .flat-map-label {
+  transition: color .18s ease,text-shadow .18s ease;
+}
+@media (prefers-reduced-motion:reduce) {
+#clProfileSummaryOverlay #clSummaryRiskMap .flat-map-label {
+    transition: none !important;
+  }
+}
+#clProfileSummaryOverlay .result-nucleus-intro {
+  white-space: normal !important;
+  line-height: 1.72 !important;
+  font-size: 13px !important;
+}
+#clProfileSummaryOverlay .result-nucleus-situation,
+#clProfileSummaryOverlay .result-nucleus-answer {
+  line-height: 1.52;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+#clProfileSummaryOverlay .result-nucleus-situation strong,
+#clProfileSummaryOverlay .result-nucleus-answer strong {
+  color: #762033;
+  font-weight: 800;
+}
+#clProfileSummaryOverlay .result-nucleus-trigger {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,227,214,.19);
+}
+#clProfileSummaryOverlay #testOutcome #resultMapDetails #clSummaryRiskMap {
+  margin: 4px 0 12px !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap {
+  background: radial-gradient(ellipse at 26% 18%,rgba(216,149,199,.18),transparent 48%),linear-gradient(145deg,#4e2749,#2d1937 56%,#241629) !important;
+  border: 2px solid #b88fac !important;
+  color: #fff8fd !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap {
+  background: radial-gradient(ellipse at 26% 18%,rgba(174,173,233,.21),transparent 48%),linear-gradient(145deg,#353253,#201e3c 56%,#1a1c32) !important;
+  border: 2px solid #9994c0 !important;
+  color: #f9f8ff !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap .result-3d-stage {
+  background: radial-gradient(ellipse at 40% 40%,rgba(235,175,215,.22),transparent 50%),radial-gradient(ellipse at 70% 78%,rgba(20,8,30,.32),transparent 70%) !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap .result-3d-stage {
+  background: radial-gradient(ellipse at 40% 40%,rgba(188,189,245,.20),transparent 50%),radial-gradient(ellipse at 70% 78%,rgba(8,11,30,.35),transparent 70%) !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap .result-3d-detail {
+  background: linear-gradient(125deg,#34203d,#593451) !important;
+  border-top-color: #aa87a9 !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap .result-3d-detail {
+  background: linear-gradient(125deg,#292743,#444066) !important;
+  border-top-color: #a3a1c9 !important;
+}
+html body:is([data-cl-profile="helper"],[data-cl-profile="man"]) #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap :is([data-title],[data-description],[data-chapter],[data-info],.result-3d-caption,.result-3d-scale) {
+  color: #faf6ff !important;
+  text-shadow: none !important;
+}
+html body:is([data-cl-profile="helper"],[data-cl-profile="man"]) #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap [data-count] {
+  color: #e7d4f4 !important;
+}
+html body:is([data-cl-profile="helper"],[data-cl-profile="man"]) #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap [data-read] {
+  background: var(--cl-profile-soft-light) !important;
+  color: var(--cl-profile-ink) !important;
+  border-color: #fff7ff !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap .result-3d-scale i {
+  background: radial-gradient(circle at 30% 24%,#faf2ff,#9284ce 59%,#413768) !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay #signals #testOutcome #clSummaryRiskMap .result-3d-scale i.high {
+  background: radial-gradient(circle at 30% 24%,#ffe3f5,#b23d82 59%,#63254c) !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-overlay {
+  background: rgba(17,15,36,.79) !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-window {
+  background: linear-gradient(180deg,#fdfcff,#eeeafb) !important;
+  border: 2px solid #b4aad9 !important;
+  color: #302b44 !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-close {
+  background: #f0ebfc !important;
+  color: #3c315f !important;
+  border-color: #b6acd4 !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-eyebrow,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-question-id {
+  color: #5b427d !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-window h2,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-window h3,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-answer strong {
+  color: #382f64 !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-intro,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-question,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-answer,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-reason,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-notice,
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-situation {
+  color: #342d4e !important;
+}
+html body[data-cl-profile="man"] #clProfileSummaryOverlay .result-nucleus-trigger {
+  background: #fff !important;
+  border-color: #d3cbea !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-overlay {
+  background: rgba(28,14,34,.79) !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-window {
+  background: linear-gradient(180deg,#fffaff,#f1e8f2) !important;
+  border: 2px solid #c5a6c4 !important;
+  color: #3d2a3f !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-close {
+  background: #f5eaf6 !important;
+  color: #513056 !important;
+  border-color: #c9a7ca !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-eyebrow,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-question-id {
+  color: #6b3873 !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-window h2,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-window h3,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-answer strong {
+  color: #4c2756 !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-intro,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-question,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-answer,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-reason,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-notice,
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-situation {
+  color: #3e3043 !important;
+}
+html body[data-cl-profile="helper"] #clProfileSummaryOverlay .result-nucleus-trigger {
+  background: #fffcff !important;
+  border-color: #dcc7df !important;
+}
+#clProfileSummaryOverlay #signals #testOutcome #resultMapDetails:not([open]) #clSummaryRiskMap {
+  display: none !important;
+}
+#clProfileSummaryOverlay .cl-summary-map {
+  margin: 18px 0 6px;
+}
+#clProfileSummaryOverlay .cl-summary-map > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,214,222,.42);
+  background: rgba(255,240,236,.10);
+  color: #fff4ef;
+  font: 700 15px/1.35 system-ui,sans-serif;
+  text-align: center;
+  transition: transform 160ms cubic-bezier(.23,1,.32,1), background-color 200ms ease;
+}
+#clProfileSummaryOverlay .cl-summary-map > summary::-webkit-details-marker { display: none; }
+#clProfileSummaryOverlay .cl-summary-map > summary:active { transform: scale(.98); }
+#clProfileSummaryOverlay .cl-summary-map > summary .result-map-toggle-hint {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  opacity: .8;
+}
+#clProfileSummaryOverlay .cl-summary-map[open] > summary { margin-bottom: 12px; }
+
+/* ===== Livello grafico 26/11/2026: carta, profondità, movimento ===== */
+:root {
+  --clx-ease-out: cubic-bezier(.23,1,.32,1);
+  --clx-ease-io: cubic-bezier(.77,0,.175,1);
+  --clx-ease-drawer: cubic-bezier(.32,.72,0,1);
+  --clx-lift-1: inset 0 1px 0 rgba(255,255,255,.78), 0 1px 2px rgba(74,9,28,.08), 0 8px 18px -12px rgba(74,9,28,.34);
+  --clx-lift-2: inset 0 1px 0 rgba(255,255,255,.82), 0 2px 5px rgba(74,9,28,.07), 0 22px 40px -22px rgba(74,9,28,.50);
+  --clx-dark-lift: inset 0 1px 0 rgba(255,226,230,.20), inset 0 -1px 0 rgba(20,0,8,.30), 0 10px 24px -14px rgba(20,0,8,.70);
+}
+
+/* 1. Il segno distintivo: le intestazioni delle sezioni finiscono con un bordo di carta strappata. */
+html body #app main section.panel :is(.test-top,.hero-heading,.legal-index-hero) {
+  border-radius: 20px 20px 0 0 !important;
+  padding-bottom: 26px !important;
+  position: relative;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%2016%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H400V6.4%20L400%206.4%20L397.3%2011.5%20L381.4%209.6%20L368.4%203.2%20L355.7%207.7%20L340.3%2011.7%20L329.7%208.9%20L317.8%2010.1%20L308.6%2012.1%20L296.9%2010.9%20L284.2%202.9%20L273.3%204.2%20L259.8%207.1%20L252.6%2013.3%20L243.7%2010.5%20L228.9%208.3%20L217.2%205.2%20L204.2%2011.2%20L195.2%207.5%20L183.4%206.0%20L173.1%2010.0%20L165.0%203.2%20L158.4%208.5%20L148.7%209.5%20L136.9%204.5%20L122.7%205.9%20L115.5%204.1%20L106.6%2011.9%20L100.2%2013.2%20L90.2%208.8%20L74.7%209.4%20L66.5%203.9%20L52.2%207.2%20L45.3%203.3%20L35.0%202.9%20L23.9%203.1%20L14.2%208.4%20L7.5%209.7%20L0.0%206.1%20Z%22%20fill%3D%22%23000%22/%3E%3C/svg%3E") bottom / 100% 16px no-repeat, linear-gradient(#000 0 0) top / 100% calc(100% - 15px) no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%2016%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H400V6.4%20L400%206.4%20L397.3%2011.5%20L381.4%209.6%20L368.4%203.2%20L355.7%207.7%20L340.3%2011.7%20L329.7%208.9%20L317.8%2010.1%20L308.6%2012.1%20L296.9%2010.9%20L284.2%202.9%20L273.3%204.2%20L259.8%207.1%20L252.6%2013.3%20L243.7%2010.5%20L228.9%208.3%20L217.2%205.2%20L204.2%2011.2%20L195.2%207.5%20L183.4%206.0%20L173.1%2010.0%20L165.0%203.2%20L158.4%208.5%20L148.7%209.5%20L136.9%204.5%20L122.7%205.9%20L115.5%204.1%20L106.6%2011.9%20L100.2%2013.2%20L90.2%208.8%20L74.7%209.4%20L66.5%203.9%20L52.2%207.2%20L45.3%203.3%20L35.0%202.9%20L23.9%203.1%20L14.2%208.4%20L7.5%209.7%20L0.0%206.1%20Z%22%20fill%3D%22%23000%22/%3E%3C/svg%3E") bottom / 100% 16px no-repeat, linear-gradient(#000 0 0) top / 100% calc(100% - 15px) no-repeat;
+  box-shadow: inset 0 1px 0 rgba(255,226,230,.22) !important;
+}
+html body #app#app main section.panel :is(.test-top,.hero-heading,.legal-index-hero) h1 {
+  font-size: clamp(31px, 8.4vw, 40px) !important;
+  letter-spacing: -.018em !important;
+  line-height: 1.02 !important;
+  text-wrap: balance;
+}
+html body #app#app main section.panel :is(.test-top,.hero-heading,.legal-index-hero) p {
+  color: rgba(255,240,236,.88) !important;
+  text-wrap: pretty;
+}
+
+html body #app main section.panel :is(.test-top,.hero-heading,.legal-index-hero) > .clx-tear {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 16px;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%2016%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0.0%206.1%20L7.5%209.7%20L14.2%208.4%20L23.9%203.1%20L35.0%202.9%20L45.3%203.3%20L52.2%207.2%20L66.5%203.9%20L74.7%209.4%20L90.2%208.8%20L100.2%2013.2%20L106.6%2011.9%20L115.5%204.1%20L122.7%205.9%20L136.9%204.5%20L148.7%209.5%20L158.4%208.5%20L165.0%203.2%20L173.1%2010.0%20L183.4%206.0%20L195.2%207.5%20L204.2%2011.2%20L217.2%205.2%20L228.9%208.3%20L243.7%2010.5%20L252.6%2013.3%20L259.8%207.1%20L273.3%204.2%20L284.2%202.9%20L296.9%2010.9%20L308.6%2012.1%20L317.8%2010.1%20L329.7%208.9%20L340.3%2011.7%20L355.7%207.7%20L368.4%203.2%20L381.4%209.6%20L397.3%2011.5%20L400%206.4%22%20fill%3D%22none%22%20stroke%3D%22%23ffe9ec%22%20stroke-opacity%3D%22.75%22%20stroke-width%3D%222.2%22%20vector-effect%3D%22non-scaling-stroke%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+  z-index: 3;
+}
+/* Grana leggera di carta sullo sfondo delle pagine. */
+html body #app {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.85%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%200%200%200%200%20.07%200%200%200%200%20.14%200%200%200%20.55%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23n%29%22%20opacity%3D%22.22%22/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Inizio: le quattro strade sono biglietti di carta appesi a un filo rosso, come sull'albero delle parole. */
+html body #app#app #info .identity-features > .identity-feature {
+  position: relative;
+  overflow: visible !important;
+  border-radius: 3px !important;
+  border: 1px solid rgba(255,255,255,.55) !important;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.85%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%200%200%200%200%20.07%200%200%200%200%20.14%200%200%200%20.55%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23n%29%22%20opacity%3D%22.22%22/%3E%3C/svg%3E") 0 0 / 180px 180px, linear-gradient(168deg,#fbf2ec 0%,#f1e1d9 100%) !important;
+  color: #6a3a46 !important;
+  box-shadow: 0 1px 2px rgba(20,0,8,.35), 0 14px 22px -14px rgba(20,0,8,.75) !important;
+  rotate: -1.1deg;
+  transition-property: rotate, scale, box-shadow !important;
+  transition-duration: 220ms !important;
+  transition-timing-function: var(--clx-ease-out) !important;
+}
+html body #app#app #info .identity-features > .identity-feature:nth-child(2) { rotate: .9deg; }
+html body #app#app #info .identity-features > .identity-feature:nth-child(3) { rotate: .7deg; }
+html body #app#app #info .identity-features > .identity-feature:nth-child(4) { rotate: -.8deg; }
+html body #app#app #info .identity-features > .identity-feature strong {
+  color: #7d1530 !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  letter-spacing: -.005em;
+}
+html body #app#app #info .identity-features > .identity-feature span {
+  color: #6f4a54 !important;
+}
+html body #app#app #info .identity-features > .identity-feature::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  width: 1.5px;
+  height: 12px;
+  translate: -50% 0;
+  background: linear-gradient(#e0475f,#a3162c);
+  pointer-events: none;
+}
+html body #app#app #info .identity-features > .identity-feature::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -12px;
+  width: 6px;
+  height: 6px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%,#ff7a8c,#a3162c 70%);
+  box-shadow: 0 1px 2px rgba(20,0,8,.5);
+  pointer-events: none;
+}
+html body[data-cl-profile="helper"] #app#app #info .identity-features > .identity-feature::before { background: linear-gradient(#d07aa8,#8e3a6a); }
+html body[data-cl-profile="helper"] #app#app #info .identity-features > .identity-feature::after { background: radial-gradient(circle at 35% 35%,#f0a8cd,#8e3a6a 70%); }
+html body[data-cl-profile="man"] #app#app #info .identity-features > .identity-feature::before { background: linear-gradient(#a79ae0,#5a4c97); }
+html body[data-cl-profile="man"] #app#app #info .identity-features > .identity-feature::after { background: radial-gradient(circle at 35% 35%,#c9c0f2,#5a4c97 70%); }
+html body #app#app #info .identity-features > .identity-feature:active {
+  rotate: 0deg;
+  scale: .97;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #app#app #info .identity-features > .identity-feature { transition-duration: 0ms !important; }
+}
+
+/* 2. Profondità: le schede di carta si appoggiano sulla pagina, con ombre tinte di vinaccia. */
+html body #app main section.panel :is(.test-choice-card,.legal-nav-item,.help-first-card,.resource,.help-safety-card,.help-lookup,.cl-profile-quiz-head) {
+  box-shadow: var(--clx-lift-1) !important;
+  border-color: rgba(122,32,54,.13) !important;
+}
+html body #app main section.panel .test-choice-card {
+  box-shadow: var(--clx-lift-2) !important;
+}
+html body #app main section.panel#info :is(.cl-profile-progress,.cl-info-profile-badge) {
+  box-shadow: var(--clx-dark-lift) !important;
+}
+html body #app #signals .test-question-card,
+html body #app #signals .test-stage {
+  box-shadow: var(--clx-lift-2) !important;
+}
+
+/* 3. Risposta al tocco: ciò che si preme affonda appena (solo scale, che si somma alle trasformazioni esistenti). */
+html body #app :is(.btn,.legal-nav-item,.identity-feature,.cl-profile-progress,.cl-info-profile-badge,.test-choice-card .btn,nav.tabs > button,.help-first-card a,.help-first-card button,.cl-result-home-button,.cl-summary-map > summary),
+html body :is(#clFirstOrientationNotice .cl-profile-card,#clFirstOrientationNotice button,.cl-modal-x,.project-modal-close,.result-nucleus-close) {
+  transition-property: scale, background-color, color, border-color, box-shadow, opacity !important;
+  transition-duration: 160ms !important;
+  transition-timing-function: var(--clx-ease-out) !important;
+}
+html body #app :is(.btn,nav.tabs > button,.help-first-card a,.help-first-card button,.test-choice-card .btn,.cl-result-home-button):active,
+html body :is(#clFirstOrientationNotice button,.cl-modal-x,.project-modal-close,.result-nucleus-close):active {
+  scale: .96;
+}
+html body #app :is(.legal-nav-item,.identity-feature,.cl-profile-progress,.cl-info-profile-badge,.cl-summary-map > summary):active,
+html body #clFirstOrientationNotice .cl-profile-card:active {
+  scale: .985;
+}
+
+/* 4. Barra delle sezioni: l'indicatore scivola sotto la sezione attiva invece di saltare. */
+html body #app nav.tabs { isolation: isolate; }
+html body #app nav.tabs > button { position: relative; z-index: 1; }
+html body #app nav.tabs.clx-has-ink > button[aria-selected="true"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+html body #app nav.tabs > .clx-nav-ink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  background: linear-gradient(145deg,#e9c8c4 0%,#dbacae 100%);
+  border: 1px solid rgba(111,37,56,.24);
+  box-shadow: 0 4px 11px rgba(43,4,13,.15), inset 0 1px 0 rgba(255,246,239,.28);
+  transition: transform 320ms var(--clx-ease-io), opacity 200ms ease;
+  will-change: transform;
+}
+html body[data-cl-profile="helper"] #app nav.tabs > .clx-nav-ink {
+  background: linear-gradient(140deg,#f1d4e2,#d8a6c2);
+  border-color: rgba(255,245,249,.75);
+  box-shadow: 0 5px 15px rgba(16,13,38,.27), inset 0 1px 0 rgba(255,255,255,.4);
+}
+html body[data-cl-profile="man"] #app nav.tabs > .clx-nav-ink {
+  background: linear-gradient(140deg,#e3def3,#bcb3df);
+  border-color: rgba(255,245,249,.75);
+  box-shadow: 0 5px 15px rgba(16,13,38,.27), inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+/* 5. Cambio di sezione: il pannello entra con una breve dissolvenza dal basso (240 ms, ease-out). */
+@keyframes clxPanelIn {
+  from { opacity: 0; translate: 0 8px; }
+}
+html body #app main > section.panel.active {
+  animation: clxPanelIn 240ms var(--clx-ease-out) backwards;
+}
+
+/* 6. Finestre e pannelli salgono dal basso come fogli. */
+@keyframes clxSheetIn {
+  from { opacity: 0; translate: 0 22px; scale: .985; }
+}
+@keyframes clxFadeIn {
+  from { opacity: 0; }
+}
+html body :is(.cl-profile-summary-modal,#projectInfoDialog .project-modal-paper,#clLegalOverlay .cl-modal-shell,#clClearOverlay .cl-modal-shell,.result-nucleus-window,.cl126-gloss-dialog,#cl130TermDialog,#libraryDrawer) {
+  animation: clxSheetIn 360ms var(--clx-ease-drawer) backwards;
+}
+html body #clProfileSummaryOverlay:not([hidden]) {
+  animation: clxFadeIn 220ms ease backwards;
+}
+
+/* 7. Movimento ridotto: solo dissolvenze, nessuno spostamento. */
+@media (prefers-reduced-motion: reduce) {
+  html body #app main > section.panel.active { animation: clxFadeIn 160ms ease backwards; }
+  html body :is(.cl-profile-summary-modal,#projectInfoDialog .project-modal-paper,#clLegalOverlay .cl-modal-shell,#clClearOverlay .cl-modal-shell,.result-nucleus-window,.cl126-gloss-dialog,#cl130TermDialog,#libraryDrawer) { animation: clxFadeIn 160ms ease backwards; }
+  html body #app nav.tabs > .clx-nav-ink { transition: opacity 160ms ease; }
+  html body #app :is(.btn,.legal-nav-item,.identity-feature,.cl-profile-progress,nav.tabs > button):active { scale: 1; }
+}
 </style>
 <script>
 (function(){
@@ -29635,7 +30457,7 @@ window.ComeLupiQuestionsAPI={readingEvidence:()=>{
   return clWomanSafetyFromSamples(samples);
  },
  readingEvidenceAvailable:()=>window.ComeLupiQuestionsAPI.readingEvidence().some(record=>record.items.length>0),
- dump:()=>({frequencyScale:FREQUENCY_SCALE,history:JSON.parse(JSON.stringify(history)),drafts:JSON.parse(JSON.stringify(drafts))}),load:(data)=>{
+ dump:()=>({frequencyScale:FREQUENCY_SCALE,history:JSON.parse(JSON.stringify(history)),drafts:JSON.parse(JSON.stringify(drafts))}),combinedMap:(ids)=>{const questions=[],answers=[],frequencies={},frequencyPrompts={};let audience='';for(const id of (ids||[])){const entry=history.find(x=>x&&x.id===id);const t=findPath(id);if(!entry||!t||!Array.isArray(entry.answers)||entry.answers.length!==t.qs.length)continue;audience=audience||t.audience;const offset=questions.length;t.qs.forEach((q,i)=>{questions.push(q);answers.push(entry.answers[i]);});for(const [k,v] of Object.entries(entry.frequencies||{})){const i=Number(k);frequencies[offset+i]=v;try{frequencyPrompts[offset+i]=frequencyPromptFor(t,entry,i)}catch(_){}}}return questions.length?{audience,questions,answers,frequencies,frequencyChoices:FREQUENCY_CHOICES,frequencyPrompts}:null;},load:(data)=>{
  if(data?.frequencyScale!==FREQUENCY_SCALE){showMsg('I questionari di questo archivio usano una scala di frequenza precedente. Le compilazioni attuali non sono state modificate.');return false;}
  const all=Array.isArray(data?.history)?data.history:[];history=all.slice(0,200).map(h=>{const t=findPath(h?.id);if(!t||!Array.isArray(h.answers)||h.answers.length!==t.qs.length)return null;return{id:t.id,date:typeof h.date==='string'?h.date.slice(0,45):new Date().toISOString(),answers:h.answers.map(a=>a===null?null:(Number.isInteger(a)&&a>=-1&&a<4?a:-1)),frequencies:normalizeFrequencies(h.frequencies,t),outcome:String(h.outcome||'Riflessione').slice(0,150),questionOrder:Array.isArray(h.questionOrder)?h.questionOrder.filter(x=>Number.isInteger(x)&&x>=0&&x<t.qs.length||typeof x==='string'&&/^f:\d+$/.test(x)).slice(0,3*t.qs.length):null,choiceOrders:h.choiceOrders&&typeof h.choiceOrders==='object'?Object.fromEntries(Object.entries(h.choiceOrders).filter(([k,v])=>/^\d+$/.test(k)&&Array.isArray(v)&&v.length===t.qs[Number(k)]?.[1]?.length&&v.every(x=>Number.isInteger(x)&&x>=0&&x<v.length)&&new Set(v).size===v.length)):null}}).filter(Boolean);
  drafts=normalizeDrafts(data?.drafts);
@@ -31204,7 +32026,7 @@ function compute(data){
 window.ComeLupiResult3DMap={
  mount(data){
   if(current?.destroy)current.destroy();
-  const root=document.getElementById('resultRiskMap');
+  const root=data?.root||document.getElementById('resultRiskMap');
   if(!root)return null;
   root.dataset.audience=data?.audience||'';
   const allEvidence=compute(data);
@@ -35330,6 +36152,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
    });
    layer.querySelector('[data-cl126-close]')?.focus({preventScroll:true});
   }));
+  window.ComeLupiSummaryMap?.attach(body,profiles[current]?.ids||[]);
   addSummaryPrintControl(body);
   returnFocus=document.activeElement;overlay.hidden=false;activeModal=true;
   markSummaryViewed();
@@ -36393,5 +37216,91 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
 
 
 
+<script id="cl-summary-map-20261126">
+(function(){
+ 'use strict';
+ const markup="<div id=\"resultRiskMap\" class=\"result-3d\" role=\"region\" aria-label=\"Mappa tridimensionale dei temi richiamati dalle risposte\">\n  <div class=\"result-3d-stage\" tabindex=\"0\" aria-label=\"Mappa 3D: trascina per ruotare, usa due dita per ingrandire, tocca le sfere per i dettagli\">\n    <canvas aria-label=\"Sfere pertinenti alle risposte, con intensità proporzionale alla rilevanza\"></canvas>\n  </div>\n  <div class=\"result-3d-detail\" aria-live=\"polite\"><div>\n    <span data-count>MAPPA DELLE RISPOSTE</span><h3 data-title>Seleziona una sfera</h3>\n    <p data-description>Ruota la mappa con il dito. Tocca un nucleo per leggere la spiegazione e aprire il capitolo collegato.</p>\n    <div data-chapter></div><p data-info></p>\n  </div><button type=\"button\" data-read disabled>Leggi l’episodio ↗</button></div>\n  <div class=\"result-3d-caption\">Sono visualizzati <strong>soltanto i nuclei richiamati da almeno una risposta</strong>. Colore e opacità mostrano il peso crescente dei richiami nelle risposte, <strong>non una misura clinica della gravità né una previsione del pericolo</strong>.\n    <div class=\"result-3d-scale\"><span><i class=\"low\"></i>Giallo · richiamo lieve</span><span><i class=\"mid\"></i>Arancione · da approfondire</span><span><i class=\"high\"></i>Rosso · richiamo elevato</span></div>\n  </div>\n</div>";
+ const overlay=document.getElementById('clProfileSummaryOverlay');
+ if(!markup||!overlay)return;
+ let mounted=false;
+ function remountQuestionnaireMap(){
+  // La mappa è unica: se l'esito del singolo questionario aveva la sua aperta, la ricostruiamo.
+  const d=document.getElementById('resultMapDetails');
+  if(d&&d.isConnected&&d.open&&!document.getElementById('testOutcome')?.classList.contains('hidden')){d.open=false;requestAnimationFrame(()=>{d.open=true;});}
+ }
+ function clear(){
+  if(!mounted)return;
+  window.ComeLupiResult3DMap?.clear?.();mounted=false;
+  overlay.querySelectorAll(':scope > .result-nucleus-overlay').forEach(n=>n.remove());
+  remountQuestionnaireMap();
+ }
+ function label(audience,any){
+  if(!any)return 'Guarda la mappa 3D dei temi esplorati nel percorso (nessun nucleo richiamato)';
+  if(audience==='helper')return 'Guarda la mappa delle scelte di aiuto emerse nell’intero percorso';
+  if(audience==='men')return 'Guarda la mappa dei comportamenti dichiarati nell’intero percorso';
+  return 'Guarda la mappa dei nuclei della violenza emersi nell’intero percorso';
+ }
+ function attach(body,ids){
+  if(!body)return;
+  body.querySelector(':scope > .cl-summary-map')?.remove();
+  clear();
+  const data=window.ComeLupiQuestionsAPI?.combinedMap?.(ids);
+  if(!data)return;
+  const any=(window.ComeLupiResultNuclei?.evaluate?.(data)||[]).some(e=>e.relevant);
+  const d=document.createElement('details');
+  d.className='compact-disclosure cl-summary-map';
+  d.innerHTML='<summary><span class="cl1112-map-call">'+label(data.audience,any)+'</span> <span class="result-map-toggle-hint">(tocca per aprire o chiudere)</span></summary>'+markup.replace('id="resultRiskMap"','id="clSummaryRiskMap"');
+  const firstDetails=body.querySelector(':scope > details, :scope > .cl-summary-section details');
+  const anchor=[...body.children].find(c=>c.tagName==='DETAILS'||c.querySelector?.(':scope > details'));
+  if(anchor)body.insertBefore(d,anchor);else body.appendChild(d);
+  d.addEventListener('toggle',()=>{
+   if(!d.open){clear();return;}
+   requestAnimationFrame(()=>{
+    if(!d.open||overlay.hidden)return;
+    const viewer=window.ComeLupiResult3DMap?.mount({...data,root:d.querySelector('#clSummaryRiskMap')});
+    mounted=!!viewer;
+    // La finestra di dettaglio di una sfera deve stare sopra l'esito complessivo.
+    const pop=[...document.querySelectorAll('#app > .result-nucleus-overlay')].pop();
+    if(pop)overlay.appendChild(pop);
+   });
+  });
+ }
+ new MutationObserver(()=>{if(overlay.hidden){overlay.querySelectorAll('.cl-summary-map[open]').forEach(d=>d.open=false);clear();}}).observe(overlay,{attributes:true,attributeFilter:['hidden']});
+ window.ComeLupiSummaryMap={attach,clear};
+})();
+</script>
+<script id="clx-nav-ink-20261126">
+(function(){
+ 'use strict';
+ const nav=document.querySelector('#app nav.tabs');
+ if(!nav)return;
+ const ink=document.createElement('span');
+ ink.className='clx-nav-ink';ink.setAttribute('aria-hidden','true');ink.style.opacity='0';
+ nav.prepend(ink);nav.classList.add('clx-has-ink');
+ let placed=false,frame=0;
+ function place(){
+  frame=0;
+  const a=nav.querySelector(':scope > button[aria-selected="true"]');
+  if(!a||!a.offsetWidth||getComputedStyle(nav).display==='none'){ink.style.opacity='0';return;}
+  const nr=nav.getBoundingClientRect(),r=a.getBoundingClientRect();
+  const x=r.left-nr.left-nav.clientLeft+nav.scrollLeft,y=r.top-nr.top-nav.clientTop+nav.scrollTop;
+  if(!placed)ink.style.transition='none';
+  ink.style.width=r.width+'px';ink.style.height=r.height+'px';
+  ink.style.transform='translate('+x+'px,'+y+'px)';
+  ink.style.opacity='1';
+  if(!placed){ink.getBoundingClientRect();ink.style.transition='';placed=true;}
+ }
+ const schedule=()=>{if(!frame)frame=requestAnimationFrame(place);};
+ new MutationObserver(schedule).observe(nav,{subtree:true,attributes:true,attributeFilter:['aria-selected','class','hidden']});
+ if(typeof ResizeObserver==='function')new ResizeObserver(schedule).observe(nav);
+ addEventListener('resize',schedule,{passive:true});
+ addEventListener('orientationchange',schedule,{passive:true});
+ schedule();
+ // Fibre di carta lungo lo strappo delle intestazioni.
+ const addTears=()=>document.querySelectorAll('#app main section.panel :is(.test-top,.hero-heading,.legal-index-hero)').forEach(h=>{if(!h.querySelector(':scope > .clx-tear')){const t=document.createElement('span');t.className='clx-tear';t.setAttribute('aria-hidden','true');h.appendChild(t);}});
+ addTears();
+ new MutationObserver(()=>{if(!frame)requestAnimationFrame(addTears)}).observe(document.querySelector('#app main')||document.body,{childList:true,subtree:true});
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "280ae458d20548ae856cf4258ab01ab6"}'></script><!-- End Cloudflare Web Analytics -->
 </body></html>
