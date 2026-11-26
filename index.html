@@ -27130,6 +27130,185 @@ html body #clProfileSummaryOverlay:not([hidden]) {
   html body #app nav.tabs > .clx-nav-ink { transition: opacity 160ms ease; }
   html body #app :is(.btn,.legal-nav-item,.identity-feature,.cl-profile-progress,nav.tabs > button):active { scale: 1; }
 }
+
+/* ===== Livello grafico 2 (26/11/2026): carta e filo rosso in questionari, esiti, glossario, libro, finestre ===== */
+html body {
+  --clx-thread-a: #a3162c; --clx-thread-b: #e0475f; --clx-knot-hi: #ff8a9a;
+  --clx-cord: repeating-linear-gradient(118deg, var(--clx-thread-a) 0 2.6px, var(--clx-thread-b) 2.6px 4.6px);
+  --clx-knot: radial-gradient(circle at 35% 32%, var(--clx-knot-hi), var(--clx-thread-a) 68%);
+}
+html body[data-cl-profile="helper"] { --clx-thread-a: #8e3a6a; --clx-thread-b: #d07aa8; --clx-knot-hi: #f3b6d5; }
+html body[data-cl-profile="man"] { --clx-thread-a: #5a4c97; --clx-thread-b: #a79ae0; --clx-knot-hi: #d4ccf6; }
+
+/* --- Questionario: l'avanzamento è un filo rosso con il nodo che cammina --- */
+html body #app #signals .test-progress {
+  overflow: visible !important;
+  height: 3px !important;
+  border-radius: 0 !important;
+  background: repeating-linear-gradient(90deg, rgba(122,32,54,.26) 0 5px, transparent 5px 9px) !important;
+}
+html body #app #signals #testProgressBar {
+  position: relative;
+  height: 100% !important;
+  border-radius: 2px !important;
+  background: var(--clx-cord) !important;
+  box-shadow: 0 1px 1px rgba(60,0,15,.22);
+}
+html body #app #signals #testProgressBar::after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: var(--clx-knot);
+  box-shadow: 0 1px 2px rgba(20,0,8,.45);
+}
+
+/* Il foglio della domanda è strappato dal blocco, in alto. */
+html body #app #signals .test-question-card {
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.85%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%200%200%200%200%20.07%200%200%200%200%20.14%200%200%200%20.55%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23n%29%22%20opacity%3D%22.16%22/%3E%3C/svg%3E") !important;
+  background-size: 180px 180px !important;
+}
+html body #app #signals .test-question-card::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  height: 9px;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%2010%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H400V4%20L400%204%20L392.2%202.8%20L379.3%203.3%20L367.0%207.3%20L359.6%202.8%20L350.8%202.2%20L340.0%202.3%20L328.4%202.6%20L319.4%204.9%20L312.8%206.3%20L307.3%202.1%20L300.1%202.2%20L288.2%207.3%20L280.2%202.0%20L272.8%206.2%20L262.1%201.9%20L253.6%207.4%20L244.3%207.0%20L237.4%201.5%20L224.8%207.2%20L216.3%206.6%20L207.7%206.1%20L202.1%203.2%20L195.0%203.4%20L183.7%206.5%20L169.7%207.5%20L162.2%204.2%20L151.2%204.5%20L140.5%204.6%20L127.9%204.1%20L118.7%201.7%20L111.5%202.6%20L106.0%204.7%20L100.9%202.4%20L90.3%205.4%20L76.7%207.4%20L71.3%205.7%20L59.0%202.0%20L51.3%202.1%20L39.1%205.3%20L29.5%202.6%20L19.2%204.5%20L10.0%207.0%20L0.0%204.2%20Z%22%20fill%3D%22%23fff9f7%22/%3E%3Cpath%20d%3D%22M0.0%204.2%20L10.0%207.0%20L19.2%204.5%20L29.5%202.6%20L39.1%205.3%20L51.3%202.1%20L59.0%202.0%20L71.3%205.7%20L76.7%207.4%20L90.3%205.4%20L100.9%202.4%20L106.0%204.7%20L111.5%202.6%20L118.7%201.7%20L127.9%204.1%20L140.5%204.6%20L151.2%204.5%20L162.2%204.2%20L169.7%207.5%20L183.7%206.5%20L195.0%203.4%20L202.1%203.2%20L207.7%206.1%20L216.3%206.6%20L224.8%207.2%20L237.4%201.5%20L244.3%207.0%20L253.6%207.4%20L262.1%201.9%20L272.8%206.2%20L280.2%202.0%20L288.2%207.3%20L300.1%202.2%20L307.3%202.1%20L312.8%206.3%20L319.4%204.9%20L328.4%202.6%20L340.0%202.3%20L350.8%202.2%20L359.6%202.8%20L367.0%207.3%20L379.3%203.3%20L392.2%202.8%20L400%204%22%20fill%3D%22none%22%20stroke%3D%22%23e0bfb8%22%20stroke-width%3D%221%22%20vector-effect%3D%22non-scaling-stroke%22/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Le risposte sono biglietti: quella scelta viene legata al filo. */
+html body #app #signals .test-option {
+  position: relative;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 1px rgba(74,9,28,.06), 0 7px 12px -10px rgba(74,9,28,.42) !important;
+  transition-property: scale, box-shadow, background-color, border-color !important;
+  transition-duration: 160ms !important;
+  transition-timing-function: var(--clx-ease-out) !important;
+}
+html body:not([data-cl-profile="helper"]):not([data-cl-profile="man"]) #app #signals .test-option { background: linear-gradient(172deg,#fffdfb,#fbf1ec) !important; }
+html body:not([data-cl-profile="helper"]):not([data-cl-profile="man"]) #app #signals .test-option:has(input:checked) { background: linear-gradient(172deg,#fdeae6,#f7dad5) !important; }
+html body #app #signals .test-option:has(input:checked) {
+  border-color: color-mix(in srgb, var(--clx-thread-a) 55%, transparent) !important;
+  box-shadow: inset 3px 0 0 var(--clx-thread-a), 0 9px 16px -11px rgba(74,9,28,.6) !important;
+}
+html body #app #signals .test-option:has(input:checked)::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: var(--clx-knot);
+  box-shadow: 0 1px 2px rgba(20,0,8,.4);
+  pointer-events: none;
+}
+html body #app #signals .test-option:active { scale: .985; }
+
+/* --- Esiti: il titolo è sottolineato da un tratto di filo, l'avviso di sicurezza è appuntato --- */
+html body #app :is(.cl132-outcome-heading h3, #testOutcome .cl123-next > h3),
+html body #clProfileSummaryOverlay .cl-profile-summary-modal h2 {
+  text-wrap: balance;
+}
+html body #app .cl132-outcome-heading h3::after,
+html body #clProfileSummaryOverlay .cl-profile-summary-modal > h2::after,
+html body #clProfileSummaryOverlay .cl-profile-summary-modal > header h2::after {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 3px;
+  margin-top: 9px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(118deg, #ff9fae 0 2.6px, #e0475f 2.6px 4.6px);
+  box-shadow: 0 1px 1px rgba(20,0,8,.35);
+}
+html body[data-cl-profile="helper"] #app .cl132-outcome-heading h3::after,
+html body #clProfileSummaryOverlay[data-profile="helper"] .cl-profile-summary-modal :is(> h2, > header h2)::after {
+  background: repeating-linear-gradient(118deg, #f6c4dc 0 2.6px, #c86b9c 2.6px 4.6px);
+}
+html body[data-cl-profile="man"] #app .cl132-outcome-heading h3::after,
+html body #clProfileSummaryOverlay[data-profile="man"] .cl-profile-summary-modal :is(> h2, > header h2)::after {
+  background: repeating-linear-gradient(118deg, #ddd6fa 0 2.6px, #9686d8 2.6px 4.6px);
+}
+html body #app .cl-outcome-safety-narrative {
+  position: relative;
+  box-shadow: 0 1px 2px rgba(20,0,8,.35), 0 16px 26px -18px rgba(20,0,8,.8) !important;
+}
+html body #app .cl-outcome-safety-narrative::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 11px;
+  height: 11px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: var(--clx-knot);
+  box-shadow: 0 1px 3px rgba(20,0,8,.55);
+  pointer-events: none;
+}
+html body #app #testOutcome :is(.cl129-term,.cl123-review-row,.cl118-practical,.cl-woman-protection-guide),
+html body #clProfileSummaryOverlay :is(.cl129-term,.cl123-review-row,.cl118-practical) {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 1px 2px rgba(20,0,8,.10), 0 14px 24px -18px rgba(20,0,8,.55) !important;
+}
+html body #app #testOutcome .test-result > details > summary,
+html body #app #testOutcome .test-result > details > summary * { transition: scale 160ms var(--clx-ease-out); }
+html body #app #testOutcome .test-result > details > summary:active { scale: .985; }
+
+/* --- Glossario: le voci sono schede d'archivio con il doppio margine rosso --- */
+html body #app #gloss #glossList > button:not([aria-expanded="true"]) {
+  background-image: linear-gradient(90deg, transparent 0 7px, color-mix(in srgb, var(--clx-thread-a) 46%, transparent) 7px 8px, transparent 8px 10px, color-mix(in srgb, var(--clx-thread-a) 28%, transparent) 10px 11px, transparent 11px) !important;
+}
+html body #app #gloss #glossList > button { transition: scale 160ms var(--clx-ease-out), background-color 160ms ease; }
+html body #app #gloss #glossList > button:active { scale: .985; }
+html body #app #gloss #glossFlyout {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22180%22%20height%3D%22180%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.85%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%200%200%200%200%20.07%200%200%200%200%20.14%200%200%200%20.55%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23n%29%22%20opacity%3D%22.16%22/%3E%3C/svg%3E"), linear-gradient(155deg,#f7eaec 0%,#f0dce1 58%,#eacfd7 100%) !important;
+  background-size: 180px 180px, auto !important;
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
+html body[data-cl-profile="helper"] #app #gloss #glossFlyout,
+html body[data-cl-profile="man"] #app #gloss #glossFlyout { background-image: none !important; }
+
+/* --- Libro: la pagina poggia sul tavolo --- */
+html body #app #reader #bookpage {
+  box-shadow: 0 1px 2px rgba(40,0,10,.22), 0 24px 34px -24px rgba(40,0,10,.65) !important;
+}
+
+/* --- Finestre: le testate scure finiscono strappate, come le intestazioni delle sezioni --- */
+html body :is(.cl136-partial-head, #cl130TermDialog .cl130-dialog-head, #cl129ExitConfirm .cl130-dialog-head, #app #reader #tocPopover .toc-head) {
+  padding-bottom: calc(var(--clx-pb, 12px) + 10px) !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%2016%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H400V6.4%20L400%206.4%20L397.3%2011.5%20L381.4%209.6%20L368.4%203.2%20L355.7%207.7%20L340.3%2011.7%20L329.7%208.9%20L317.8%2010.1%20L308.6%2012.1%20L296.9%2010.9%20L284.2%202.9%20L273.3%204.2%20L259.8%207.1%20L252.6%2013.3%20L243.7%2010.5%20L228.9%208.3%20L217.2%205.2%20L204.2%2011.2%20L195.2%207.5%20L183.4%206.0%20L173.1%2010.0%20L165.0%203.2%20L158.4%208.5%20L148.7%209.5%20L136.9%204.5%20L122.7%205.9%20L115.5%204.1%20L106.6%2011.9%20L100.2%2013.2%20L90.2%208.8%20L74.7%209.4%20L66.5%203.9%20L52.2%207.2%20L45.3%203.3%20L35.0%202.9%20L23.9%203.1%20L14.2%208.4%20L7.5%209.7%20L0.0%206.1%20Z%22%20fill%3D%22%23000%22/%3E%3C/svg%3E") bottom / 100% 12px no-repeat, linear-gradient(#000 0 0) top / 100% calc(100% - 11px) no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%2016%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%200H400V6.4%20L400%206.4%20L397.3%2011.5%20L381.4%209.6%20L368.4%203.2%20L355.7%207.7%20L340.3%2011.7%20L329.7%208.9%20L317.8%2010.1%20L308.6%2012.1%20L296.9%2010.9%20L284.2%202.9%20L273.3%204.2%20L259.8%207.1%20L252.6%2013.3%20L243.7%2010.5%20L228.9%208.3%20L217.2%205.2%20L204.2%2011.2%20L195.2%207.5%20L183.4%206.0%20L173.1%2010.0%20L165.0%203.2%20L158.4%208.5%20L148.7%209.5%20L136.9%204.5%20L122.7%205.9%20L115.5%204.1%20L106.6%2011.9%20L100.2%2013.2%20L90.2%208.8%20L74.7%209.4%20L66.5%203.9%20L52.2%207.2%20L45.3%203.3%20L35.0%202.9%20L23.9%203.1%20L14.2%208.4%20L7.5%209.7%20L0.0%206.1%20Z%22%20fill%3D%22%23000%22/%3E%3C/svg%3E") bottom / 100% 12px no-repeat, linear-gradient(#000 0 0) top / 100% calc(100% - 11px) no-repeat;
+}
+html body :is(#cl136PartialDialog, #cl130TermDialog, #cl129ExitConfirm, #testImmediateAlert:not([hidden])) {
+  animation: clxSheetIn 360ms var(--clx-ease-drawer) backwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body :is(#cl136PartialDialog, #cl130TermDialog, #cl129ExitConfirm, #testImmediateAlert:not([hidden])) { animation: clxFadeIn 160ms ease backwards; }
+  html body #app :is(#signals .test-option, #gloss #glossList > button, #testOutcome .test-result > details > summary):active { scale: 1; }
+}
+
+/* ===== Accessibilità 26/11/2026: testo funzionale mai sotto 11px ===== */
+html body #app#app nav.tabs > button span:not(.navico) { font-size: 10.5px !important; letter-spacing: -.005em; }
+html body #app#app#app :is(.cl-profile-quiz-status, .test-meta, .quick-support-links a small, .help-first-kicker, .cl-fs-quicklabel, #cl109SituationCount) {
+  font-size: 11px !important;
+}
+html body #app#app#app .test-meta { letter-spacing: .02em !important; }
+html body #app#app #info .identity-features > .identity-feature span { font-size: 11px !important; line-height: 1.3 !important; }
+html body #app #reader #pageWrap:focus-visible { outline: 2px solid #a3162c; outline-offset: -2px; }
+.clx-sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 </style>
 <script>
 (function(){
@@ -37300,6 +37479,59 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
  const addTears=()=>document.querySelectorAll('#app main section.panel :is(.test-top,.hero-heading,.legal-index-hero)').forEach(h=>{if(!h.querySelector(':scope > .clx-tear')){const t=document.createElement('span');t.className='clx-tear';t.setAttribute('aria-hidden','true');h.appendChild(t);}});
  addTears();
  new MutationObserver(()=>{if(!frame)requestAnimationFrame(addTears)}).observe(document.querySelector('#app main')||document.body,{childList:true,subtree:true});
+})();
+</script>
+<script id="clx-quiz-turn-20261126">
+(function(){
+ 'use strict';
+ // Quando cambia la domanda, il nuovo foglio compare con una breve dissolvenza dal basso (WAAPI, interrompibile).
+ const prompt=document.getElementById('testPrompt');
+ if(!prompt||typeof Element.prototype.animate!=='function')return;
+ const rm=matchMedia('(prefers-reduced-motion: reduce)');
+ let last=prompt.textContent,frame=0;
+ function play(){
+  frame=0;
+  const t=prompt.textContent;if(t===last)return;last=t;
+  const stage=document.getElementById('testStage');
+  if(!stage||stage.classList.contains('hidden')||!stage.offsetParent)return;
+  ['testTheme','testPrompt','testScenario','cl113QuestionContent'].forEach((id,i)=>{
+   const el=document.getElementById(id);if(!el||!el.offsetParent)return;
+   el.getAnimations().forEach(a=>a.id==='clxTurn'&&a.cancel());
+   const a=el.animate(rm.matches?[{opacity:0},{opacity:1}]:[{opacity:0,translate:'0 6px'},{opacity:1,translate:'0 0'}],
+    {duration:rm.matches?140:220,delay:rm.matches?0:i*30,easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'});
+   a.id='clxTurn';
+  });
+ }
+ new MutationObserver(()=>{if(!frame)frame=requestAnimationFrame(play)}).observe(prompt,{childList:true,characterData:true,subtree:true});
+})();
+</script>
+<script id="clx-a11y-20261126">
+(function(){
+ 'use strict';
+ // Il nome accessibile deve contenere il testo visibile (WCAG 2.5.3): chi usa il controllo vocale pronuncia ciò che vede.
+ const norm=s=>(s||'').replace(/\s+/g,' ').trim();
+ function fixNames(){
+  document.querySelectorAll('[aria-label]').forEach(el=>{
+   if(el.dataset.clxName===el.getAttribute('aria-label'))return;
+   const label=norm(el.getAttribute('aria-label'));
+   const vis=norm(el.innerText);
+   if(!vis||vis.length>220||!el.getClientRects().length)return;
+   if(label.toLowerCase().includes(vis.toLowerCase()))return;
+   const next=vis+' – '+label;
+   el.setAttribute('aria-label',next);el.dataset.clxName=next;
+  });
+ }
+ // Pagina del libro scorrevole raggiungibile da tastiera; titolo di primo livello per la sezione Libro.
+ function fixReader(){
+  const w=document.getElementById('pageWrap');
+  if(w&&!w.hasAttribute('tabindex')){w.tabIndex=0;w.setAttribute('role','region');w.setAttribute('aria-label','Pagina del libro');}
+  const r=document.getElementById('reader');
+  if(r&&!r.querySelector('h1')){const t=document.createElement('h1');t.className='clx-sr-only';t.textContent='Libro: Come lupi';r.prepend(t);}
+ }
+ let frame=0;
+ const run=()=>{frame=0;fixNames();fixReader();};
+ run();
+ new MutationObserver(()=>{if(!frame)frame=setTimeout(run,400)}).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['aria-label']});
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "280ae458d20548ae856cf4258ab01ab6"}'></script><!-- End Cloudflare Web Analytics -->
