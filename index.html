@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 1.1.43</title><script id="cl-session-gate-1071">
+<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 1.2.0</title><script id="cl-session-gate-1071">
 /* Prima di ogni lettura di dati persistenti: una nuova apertura non eredita
    contenuti intimi senza scelta esplicita. Non cancellare mai le copie presenti. */
 (function(){
@@ -27859,6 +27859,22 @@ html body #app #info.identity-panel .identity-welcome-routes > button[data-info-
 #clxClear .cc-go:disabled { background: #c9b3b7; cursor: default; }
 #clxClear .cc-status { font-size: 14px; color: #2f5a2a; font-weight: 600; }
 #clxClear .cc-status.err { color: #8a1e1e; }
+
+/* ===== Conferma uscita senza salvataggio ===== */
+#clxNoSave { width: min(400px, calc(100vw - 24px)); margin: auto; padding: 0; border: 0; border-radius: 18px; background: #fffaf7; color: #3b0a1a;
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; box-shadow: 0 0 0 1px rgba(110,21,48,.08), 0 24px 60px -16px rgba(30,0,10,.6); }
+#clxNoSave::backdrop { background: rgba(19,1,7,.72); }
+#clxNoSave[open] { animation: clxMenuIn 200ms cubic-bezier(.23,1,.32,1); }
+#clxNoSave .ns-in { padding: 20px 18px 16px; display: grid; gap: 12px; }
+#clxNoSave h2 { margin: 0; font: 600 21px/1.2 Georgia, "Times New Roman", serif; color: #6e1530; }
+#clxNoSave p { margin: 0; font-size: 14.5px; color: #5a3540; }
+#clxNoSave .ns-status { color: #2f5a2a; font-weight: 600; }
+#clxNoSave .ns-actions { display: grid; gap: 8px; margin-top: 4px; }
+#clxNoSave .ns-actions button { min-height: 48px; border-radius: 999px; font: 600 15px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif; cursor: pointer; transition: scale 160ms cubic-bezier(.23,1,.32,1); }
+#clxNoSave .ns-actions button:active { scale: .97; }
+#clxNoSave .ns-save { background: #8a1e3a; color: #fff; border: 0; }
+#clxNoSave .ns-go { background: transparent; color: #6e1530; border: 1.5px solid rgba(110,21,48,.35); }
+#clxNoSave .ns-stay { background: transparent; color: #6e1530; border: 0; text-decoration: underline; text-underline-offset: 3px; }
 </style>
 <script>
 (function(){
@@ -27969,7 +27985,7 @@ html body #app #info.identity-panel .identity-welcome-routes > button[data-info-
 
  </div><div class="tree-meaning-actions"><button id="treeBack" type="button">Torna all’albero</button><button id="treeEnter" type="button">Entra nell’app →</button></div>
 </dialog>
-<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.1.43 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.1.43</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
+<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.2.0 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.2.0</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
   <g fill="#eac1c2">
     <g transform="translate(4.5 5) scale(.15)"><path d="M1 39 L0 42 L11 52 L24 41 L32 42 L33 45 L22 57 L22 104 L20 107 L15 108 L6 108 L5 107 L3 109 L3 121 L4 122 L34 122 L36 120 L37 117 L37 83 L40 82 L46 88 L62 109 L63 112 L63 138 L65 140 L78 140 L80 132 L80 107 L79 103 L59 77 L61 74 L83 74 L84 73 L84 57 L74 57 L71 55 L71 52 L74 49 L76 44 L76 36 L72 28 L63 25 L17 25 Z"/><path d="M81 0 L77 2 L72 8 L72 18 L79 25 L91 25 L97 19 L98 9 L93 2 L88 0 Z"/></g>
     <g transform="translate(29 12) scale(.19)"><path d="M52 21 L41 8 L32 0 L32 9 L30 12 L1 12 L0 13 L0 31 L1 32 L28 32 L32 36 L33 43 L52 24 Z"/></g>
@@ -28080,7 +28096,7 @@ html body #app #info.identity-panel .identity-welcome-routes > button[data-info-
         <button type="button" id="clFsTree" class="cl-fs-quicklink" title="Albero delle parole" aria-label="Apri l’albero delle parole senza riavviare l’app"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-4"/><path d="M8 21h8"/><path d="M12 17c-1.2-2.1-4.6-2.1-4.6-5 0-1.5 1-2.7 2.3-3.1-.2-2.4 1.4-4.4 3.7-4.4 2.2 0 4 1.8 4 4 1.7.1 3 1.5 3 3.2 0 2.4-2.3 3.8-4.4 4.3"/><path d="M12 17c1.1-1.8 4.2-1.7 4.2-4.3"/><path d="M12 13c-1.2 0-2.2-.9-2.2-2.1"/></svg></span><span class="cl-fs-quicklabel">Albero delle parole</span></button>
         <button type="button" id="clFsClear" class="cl-fs-quicklink" title="Cancella dati"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></svg></span><span class="cl-fs-quicklabel">Cancella dati</span></button>
       </div>
-<div class="identity-meta"><span>V <strong>1.1.43</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span><span class="identity-contact">Contatti: <a href="mailto:info@comelupi.it">info@comelupi.it</a></span></div>
+<div class="identity-meta"><span>V <strong>1.2.0</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span><span class="identity-contact">Contatti: <a href="mailto:info@comelupi.it">info@comelupi.it</a></span></div>
     </div>
   </div>
 </section>
@@ -29448,7 +29464,7 @@ function revealCurrentQuestion(){
    window.scrollTo({top,behavior:'instant'});
  });
 }
-// 1.1.43 — destinazione di ritorno della singola compilazione, solo in memoria.
+// 1.2.0 — destinazione di ritorno della singola compilazione, solo in memoria.
 let cl137QuestionnaireOrigin='signals';
 function start(i,resume,origin='signals'){cl137QuestionnaireOrigin=origin==='info'?'info':'signals';cl115StepNonce++;cl113Advancing=false;if($('testImmediateAlert'))$('testImmediateAlert').dataset.cl115Acknowledged='';const t=BANK[i];active=t;currentEntry=null;const prior=history.find(h=>h.id===t.id);const d=resume?drafts[t.id]:null;
  answers=(Array.isArray(d?.answers)&&d.answers.length===t.qs.length?d.answers.slice():Array(t.qs.length).fill(null));
@@ -31424,7 +31440,7 @@ const $=id=>document.getElementById(id);
 const clone=x=>JSON.parse(JSON.stringify(x));
 const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const trim=v=>String(v||'').trim();
-const blank=()=>({person:'',contact:'',address:'',personOther:'',relationship:'',contactOther:'',context:'',since:'',frequency:'',prior:'',children:'',recent:'',effects:'',fear:'',medical:'',evidence:'',witnesses:'',requests:'',more:'',querela:false,events:[]});
+const blank=()=>({person:'',contact:'',address:'',personOther:'',relationship:'',cohabit:'',cohabitNote:'',contactOther:'',anxiety:'',context:'',since:'',frequency:'',prior:'',children:'',recent:'',effects:'',fear:'',medical:'',evidence:'',witnesses:'',requests:'',more:'',querela:false,events:[]});
 const emptyEpisode=()=>({date:'',approx:'',place:'',what:'',words:'',reaction:'',witness:'',proof:'',kind:'',after:''});
 let data=blank(),step=0,changed=false;
 const steps=['Prima di cominciare','Le persone coinvolte','Il contesto','Gli episodi','Conseguenze e riscontri','La tua bozza'];
@@ -31456,7 +31472,7 @@ function compile(){
  const lines=[];const add=v=>{if(trim(v))lines.push(v)};const br=()=>{if(lines.length&&lines[lines.length-1]!=='')lines.push('')};
  add('BOZZA DI ESPOSIZIONE DEI FATTI');add('(Da rileggere e integrare personalmente. NON è una denuncia o querela già presentata.)');br();
  if(val('person')||val('contact')||val('address')){add('DATI DELLA PERSONA CHE RACCONTA');add(labelLine('Nome e cognome: ',val('person')).trimEnd());add(labelLine('Recapito per essere contattata: ',val('contact')).trimEnd());add(labelLine('Indirizzo, se desideri indicarlo: ',val('address')).trimEnd());br();}
- if(val('personOther')||val('relationship')||val('contactOther')){add('PERSONA A CUI SI RIFERISCONO I FATTI');add(labelLine('Nome o altri elementi per identificarla: ',val('personOther')).trimEnd());add(labelLine('Rapporto con la persona: ',val('relationship')).trimEnd());add(labelLine('Altri elementi conosciuti: ',val('contactOther')).trimEnd());br();}
+ if(val('personOther')||val('relationship')||val('contactOther')||val('cohabitNote')||(val('cohabit')&&val('cohabit')!=='nr')){add('PERSONA A CUI SI RIFERISCONO I FATTI');add(labelLine('Nome o altri elementi per identificarla: ',val('personOther')).trimEnd());add(labelLine('Rapporto con la persona: ',val('relationship')).trimEnd());add(labelLine('Convivenza: ',{si:'Sì, conviviamo tuttora',passato:'Non più: abbiamo convissuto in passato',mai:'Non abbiamo mai convissuto',nr:''}[val('cohabit')]||'').trimEnd());add(labelLine('Periodo e luogo della convivenza: ',val('cohabitNote')).trimEnd());add(labelLine('Altri elementi conosciuti: ',val('contactOther')).trimEnd());br();}
  if(['context','since','frequency','prior','children','recent'].some(k=>val(k))){add('COME SI È SVILUPPATA LA SITUAZIONE');for(const [k,l] of [['context','Contesto: '],['since','Primi episodi o periodo iniziale: '],['frequency','Andamento nel tempo: '],['prior','Interventi o segnalazioni precedenti: '],['children','Presenza o coinvolgimento di minori: '],['recent','Ultimi episodi o cambiamenti recenti: ']])if(val(k))add(l+val(k));br();}
  const nonEmptyEvents=data.events.map((e,i)=>({...e,i})).filter(e=>['date','approx','place','kind','what','words','reaction','witness','proof','after'].some(k=>trim(e[k])));
  if(nonEmptyEvents.length){
@@ -31464,7 +31480,8 @@ function compile(){
   const withoutDates=nonEmptyEvents.filter(e=>!e.date).sort((a,b)=>a.i-b.i);
   add(withoutDates.length?'EPISODI: DATE CERTE IN ORDINE, ALTRI NELL’ORDINE INSERITO':'EPISODI IN ORDINE CRONOLOGICO');
   const evs=[...withDates,...withoutDates];evs.forEach((e,i)=>{br();add('EPISODIO '+(i+1));if(e.date)add('Data: '+humanDate(e.date));if(e.approx)add('Periodo indicato: '+e.approx);if(e.place)add('Luogo: '+e.place);if(e.kind)add('Situazione: '+e.kind);if(e.what)add('Fatti: '+e.what);if(e.words)add('Parole ricordate: '+e.words);if(e.reaction)add('Mia reazione e conclusione: '+e.reaction);if(e.after)add('Cosa è successo dopo: '+e.after);if(e.witness)add('Persone presenti o informate: '+e.witness);if(e.proof)add('Possibili riscontri: '+e.proof);});br();}
- if(['effects','fear','medical','witnesses','evidence','requests','more'].some(k=>val(k))){add('CONSEGUENZE E ALTRE INFORMAZIONI');for(const [k,l] of [['effects','Cambiamenti nella vita quotidiana: '],['fear','Paure e preoccupazioni attuali: '],['medical','Conseguenze fisiche e sanitarie: '],['witnesses','Persone che possono riferire: '],['evidence','Materiale o documenti da segnalare: '],['requests','Esigenze di protezione che desidero segnalare: '],['more','Altre informazioni: ']])if(val(k))add(l+val(k));br();}
+ if(['anxiety','fear','effects'].some(k=>val(k))){add('CAMBIAMENTO DELLE CONDIZIONI DI VITA');for(const [k,l] of [['anxiety','Stato di ansia o di paura: '],['fear','Timore per la mia incolumità o per quella di persone care: '],['effects','Abitudini di vita che ho dovuto cambiare: ']])if(val(k))add(l+val(k));br();}
+ if(['medical','witnesses','evidence','requests','more'].some(k=>val(k))){add('CONSEGUENZE E ALTRE INFORMAZIONI');for(const [k,l] of [['medical','Conseguenze fisiche e sanitarie: '],['witnesses','Persone che possono riferire: '],['evidence','Materiale o documenti da segnalare: '],['requests','Esigenze di protezione che desidero segnalare: '],['more','Altre informazioni: ']])if(val(k))add(l+val(k));br();}
  if(data.querela){add('VOLONTÀ DI PROPORRE QUERELA');add('Se i fatti descritti richiedono la querela, desidero esprimere presso l’ufficio competente la mia volontà che si proceda. Chiedo che tale volontà venga raccolta formalmente, dopo aver verificato con gli operatori la procedura corretta.');br();}
  add('Questa bozza riporta esclusivamente quanto ho inserito e potrebbe essere incompleta. Desidero poter integrare il racconto durante il colloquio con le forze dell’ordine.');br();add('Data e firma: _________________________________');
  return lines.join('\n');
@@ -31473,7 +31490,7 @@ function content(){
  if(step===0)return title('Prima la tua sicurezza','Questa guida serve a mettere in ordine ciò che è successo per raccontarlo a un centro antiviolenza, a un professionista o alle forze dell’ordine. La bozza è facoltativa, non avvia una procedura, non invia dati e non sostituisce una denuncia o querela.')+`<div class="wizard-callout"><strong>Se hai paura adesso o c’è un pericolo immediato, chiama il <a href="tel:112">112</a>.</strong> Per orientamento puoi contattare il <a href="tel:1522">1522</a>. Non devi compilare questo percorso prima di chiedere aiuto.</div>
  <p>Le informazioni inserite <strong>non vengono salvate automaticamente</strong> sul dispositivo. Per conservarle usa <strong>«Salva tutto»</strong> nell’ultimo passo, oppure salva quando esci dall’app con il pulsante in alto a destra. Il file <strong>non è cifrato</strong>. Se qualcuno controlla il telefono, potrebbe trovarli.</p><p>Puoi saltare qualsiasi domanda che non ti senti di affrontare. Non servono prove complete né parole giuridiche.</p>`;
  if(step===1)return title('Partiamo dalle persone','Puoi indicare anche solo parte delle informazioni. Verifica di essere su un dispositivo sicuro.')+
- `<div class="wizard-grid">${field('person','Il tuo nome e cognome (facoltativo)','','input')}${field('contact','Come può contattarti l’ufficio in sicurezza?','Non inserire un recapito controllato da altre persone.','input')}${field('address','Indirizzo o città (facoltativo)','','input')}${field('personOther','Di chi vuoi raccontare i comportamenti?','Nome o elementi utili a riconoscere la persona.','input')}${field('relationship','Che rapporto hai o avevi con questa persona?','Ad esempio: partner, ex partner, familiare, conoscente.','input')}${field('contactOther','Altre informazioni per identificarla (se le conosci)','','input')}</div>`;
+ `<div class="wizard-grid">${field('person','Il tuo nome e cognome (facoltativo)','','input')}${field('contact','Come può contattarti l’ufficio in sicurezza?','Non inserire un recapito controllato da altre persone.','input')}${field('address','Indirizzo o città (facoltativo)','','input')}${field('personOther','Di chi vuoi raccontare i comportamenti?','Nome o elementi utili a riconoscere la persona.','input')}${field('relationship','Che rapporto hai o avevi con questa persona?','Ad esempio: partner, ex partner, familiare, conoscente.','input')}${field('cohabit','Vivete insieme in questo momento?','Conta anche se la casa è la stessa ma vivete da separati: puoi spiegarlo nella domanda successiva.','select',[['', 'Scegli una risposta'], ['si', 'Sì, viviamo ancora insieme'], ['passato', 'Non più: abbiamo vissuto insieme in passato'], ['mai', 'No, non abbiamo mai vissuto insieme'], ['nr', 'Preferisco non rispondere']])}${field('cohabitNote','Da quando e fino a quando avete vissuto insieme? Dove?','Facoltativo. Anche solo il periodo approssimativo.','input')}${field('contactOther','Altre informazioni per identificarla (se le conosci)','','input')}</div>`;
  if(step===2)return title('Racconta come è cominciato','La sequenza generale aiuta a capire il contesto. Non serve ricordare tutte le date.')+
  `<div class="wizard-grid"><div>${field('context','Com’era il rapporto prima dei fatti che vuoi raccontare?','Racconta ciò che ritieni importante senza giustificarti.')}${field('since','Quando hai iniziato a notare qualcosa che ti faceva stare male?')}</div><div>${field('frequency','Nel tempo che cosa è cambiato?','Gli episodi sono diventati più frequenti, diversi o più intensi?')}${field('recent','C’è stato un cambiamento recente o un episodio che ti ha spinto a cercare aiuto?')}</div></div>`+
  field('prior','Hai già parlato con Polizia, Carabinieri, medici, servizi sociali o un centro antiviolenza?','Anche se non ricordi date o nomi, puoi descrivere ciò che è successo.')+
@@ -31482,7 +31499,7 @@ function content(){
  `<div class="wizard-callout">Comincia dall’episodio che ricordi meglio. Cerca di distinguere ciò che hai <strong>visto o sentito direttamente</strong> da ciò che ti è stato riferito. Se il fatto è recente e grave, <strong>non aspettare di compilare tutte le schede</strong> per chiedere aiuto.</div>`+
  data.events.map(eventCard).join('')+`<button type="button" class="btn secondary" id="denunciaAddEvent">+ Aggiungi un episodio</button>`;
  if(step===4)return title('Le conseguenze e i possibili riscontri','Queste informazioni aiutano a capire come i fatti hanno influito sulla tua vita. Non devi dimostrare nulla per poter raccontare ciò che accade.')+
- `<div class="wizard-grid"><div>${field('effects','Nella vita quotidiana che cosa è cambiato?','Lavoro, amicizie, uscite, abitudini, autonomia.')}${field('fear','Che cosa ti preoccupa adesso?','Ad esempio: ritorno della persona, minacce, minori, armi.')}${field('medical','Hai avuto conseguenze fisiche, visite mediche, accessi al pronto soccorso?','Se non hai referti, puoi comunque raccontare ciò che è accaduto.')}</div><div>${field('witnesses','Chi potrebbe aver visto o sentito qualcosa?','Puoi indicare nomi o rapporti, se li conosci.')}${field('evidence','Quali messaggi, foto, video, documenti o altre tracce potrebbero essere utili?','Indica dove si trovano senza spostarli o modificarli, se non è sicuro.')}${field('requests','Qual è il tuo timore principale e quale protezione pensi di aver bisogno?','Non è necessario conoscere quale misura possa essere adottata.')}</div></div>`+
+ `<div class="wizard-callout"><strong>In che modo sono cambiate le tue condizioni di vita?</strong> Confronta la tua vita di prima con quella di adesso. La legge sugli atti persecutori (art. 612-bis del codice penale) considera tre conseguenze: <strong>un’ansia o una paura forte che dura nel tempo</strong>, <strong>il timore per la tua incolumità o per quella di persone care</strong>, <strong>l’essere stata costretta a cambiare le tue abitudini di vita</strong>. Ne basta una. Rispondi solo a ciò che corrisponde alla tua esperienza.</div>${field('effects','Quali abitudini hai dovuto cambiare a causa di questi comportamenti?','Com’era prima e com’è adesso. Ad esempio: percorsi o orari diversi, numero di telefono, profili social chiusi, casa o lavoro cambiati, uscite evitate o solo in compagnia, luoghi o persone che non frequenti più.')}${field('anxiety','Come stai dentro di te da quando sono cominciati i fatti?','Ad esempio: ansia o paura che non se ne vanno, sonno disturbato, attacchi di panico, difficoltà a concentrarti o a lavorare. Indica da quanto tempo dura e se ne hai parlato con un medico, uno psicologo o un centro antiviolenza.')}${field('fear','Hai paura per la tua incolumità o per quella di persone a te care?','Figli, familiari, una nuova persona accanto a te. Racconta che cosa ti fa temere: minacce, appostamenti, armi, il ritorno della persona.')}<div class="wizard-grid"><div>${field('medical','Hai avuto conseguenze fisiche, visite mediche, accessi al pronto soccorso?','Se non hai referti, puoi comunque raccontare ciò che è accaduto.')}</div><div>${field('witnesses','Chi potrebbe aver visto o sentito qualcosa?','Puoi indicare nomi o rapporti, se li conosci.')}${field('evidence','Quali messaggi, foto, video, documenti o altre tracce potrebbero essere utili?','Indica dove si trovano senza spostarli o modificarli, se non è sicuro.')}${field('requests','Qual è il tuo timore principale e quale protezione pensi di aver bisogno?','Non è necessario conoscere quale misura possa essere adottata.')}</div></div>`+
  field('more','C’è qualcos’altro che vorresti dire?')+
  `<div class="wizard-callout"><label><input type="checkbox" id="denunciaQuerela" ${data.querela?'checked':''}/> <strong>Vorrei indicare nella bozza anche la mia intenzione di proporre querela, qualora sia necessaria.</strong></label><p>Questa scelta <strong>non presenta una querela</strong>. La volontà deve essere espressa e raccolta nelle forme previste dalla legge presso l’ufficio competente.</p></div>`;
  return title('La tua bozza è pronta per essere riletta','Il testo è costruito soltanto con i dati che hai inserito. Puoi modificarli tornando indietro. Non viene inviato a nessuno.')+
@@ -31490,7 +31507,7 @@ function content(){
  <p class="tiny muted" id="denunciaSaveNote">«Salva tutto» crea un unico file di salvataggio, con il nome che scegli tu: contiene la bozza e anche tutti gli altri tuoi dati dell’app. Puoi salvare anche quando esci, con il pulsante in alto a destra. Il file non è cifrato: custodiscilo in un luogo sicuro. Questa è una bozza privata per il colloquio: la denuncia o querela si presenta secondo le modalità previste dalla legge.</p>`;
 }
 function attach(){
- $('denunciaContent').querySelectorAll('[data-field]').forEach(el=>el.addEventListener('input',()=>{data[el.dataset.field]=el.value;changed=true}));
+ $('denunciaContent').querySelectorAll('[data-field]').forEach(el=>{const up=()=>{data[el.dataset.field]=el.value;changed=true};el.addEventListener('input',up);el.addEventListener('change',up);});
  $('denunciaContent').querySelectorAll('[data-event-field]').forEach(el=>el.addEventListener('input',()=>{const index=Number(el.dataset.eventIndex);if(data.events[index]){data.events[index][el.dataset.eventField]=el.value;changed=true}}));
  $('denunciaContent').querySelectorAll('[data-remove-episode]').forEach(el=>el.addEventListener('click',()=>{const i=Number(el.dataset.removeEpisode);if(confirm('Eliminare questo episodio dalla bozza?')){data.events.splice(i,1);changed=true;render()}}));
  if($('denunciaAddEvent'))$('denunciaAddEvent').onclick=()=>{if(data.events.length>=50){alert('Massimo 50 episodi per bozza.');return}data.events.push(emptyEpisode());changed=true;render();document.querySelector('.wizard-event:last-of-type')?.scrollIntoView({block:'center',behavior:'smooth'})};
@@ -35907,7 +35924,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
  </div>
  <footer class="cl-orient-bottom-info" aria-label="Informazioni sul progetto e contatto di emergenza">
   <div class="cl-orient-credit" aria-label="Versione e autori">
-   <span class="cl-orient-credit-main">V <strong>1.1.43</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span>
+   <span class="cl-orient-credit-main">V <strong>1.2.0</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span>
    <a href="mailto:info@comelupi.it">info@comelupi.it</a>
   </div>
   <div class="cl-orient-safety-contact">
@@ -36278,7 +36295,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
  // exists in localStorage or a previous session was saved as JSON.
  // The person must explicitly select one of the three profiles before entering.
  let current=null,activeModal=false,returnFocus=null;
- // 1.1.43: il bordo segnala la prossima tappa non ancora iniziata, non l'intero profilo.
+ // 1.2.0: il bordo segnala la prossima tappa non ancora iniziata, non l'intero profilo.
  const cl142StartedPaths=new Set();
  window.addEventListener('comelupi:questionnaire-started',event=>{const id=event.detail?.id;if(Object.values(profiles).some(p=>p.ids.includes(id)))cl142StartedPaths.add(id);if(current)paintProgress();});
  const audienceFor=p=>p==='man'?'men':p==='helper'?'helper':'women';
@@ -37786,7 +37803,7 @@ function openExitDedication(){
    const note=document.createElement('p');note.textContent='Restituzione informativa costruita dalle risposte dichiarate. Non è una diagnosi, una prova dei fatti o una valutazione clinica del rischio.';area.appendChild(note);
    printNow();
   },
-  denuncia(body){area.replaceChildren();heading('COME LUPI · Bozza per esposizione dei fatti');const note=document.createElement('p');note.textContent='Bozza personale da rileggere e verificare prima di utilizzarla. Non è stata inviata ad alcuna autorità.';area.append(note);const pre=document.createElement('pre');pre.textContent=String(body||'');area.append(pre);printNow()}
+  denuncia(body){area.replaceChildren();heading('Bozza per esposizione dei fatti');const oldTitle=document.title;document.title='Bozza per esposizione dei fatti';window.addEventListener('afterprint',()=>{document.title=oldTitle},{once:true});setTimeout(()=>{if(!document.body.classList.contains('cl114-printing'))document.title=oldTitle},60000);const note=document.createElement('p');note.textContent='Bozza personale da rileggere e verificare prima di utilizzarla. Non è stata inviata ad alcuna autorità.';area.append(note);const pre=document.createElement('pre');pre.textContent=String(body||'');area.append(pre);printNow()}
  };
 })();
 </script>
@@ -38892,6 +38909,36 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
  }
  window.ComeLupiShowClearConfirmation=open;
  window.ComeLupiClearPick=open;
+})();
+</script>
+<script id="clx-nosave-20261127">
+(function(){
+ 'use strict';
+ const snap=()=>{try{const b=JSON.parse(JSON.stringify(window.ComeLupiBuildBackup()));delete b.created;if(b.denuncia)delete b.denuncia.exportedAt;return JSON.stringify(b);}catch(_){return null}};
+ const hasData=()=>{try{const b=window.ComeLupiBuildBackup();const q=b.questionnaires||{};return (q.history||[]).length>0||Object.keys(q.drafts||{}).length>0||Object.keys(b.book?.notes||{}).length>0||(b.book?.marks||[]).length>0||Number(b.reading?.page||1)>1||!!b.denuncia;}catch(_){return false}};
+ let savedSnap=null;
+ const ask=window.ComeLupiAskNamedExitBackup;
+ if(typeof ask==='function')window.ComeLupiAskNamedExitBackup=function(cb){return ask.call(this,function(name){savedSnap=snap();if(typeof cb==='function')return cb.apply(this,arguments);});};
+ let dlg=null,pass=false;
+ function proceed(){pass=true;dlg?.close();document.getElementById('exitDedicationNext')?.click();pass=false;}
+ function build(){
+  dlg=document.createElement('dialog');dlg.id='clxNoSave';dlg.setAttribute('aria-labelledby','clxNoSaveT');
+  dlg.innerHTML='<div class="ns-in"><h2 id="clxNoSaveT">Uscire senza salvare?</h2><p>Non hai salvato i tuoi dati in un file. Quando l’app si chiude, le risposte, le note e la bozza di denuncia andranno perse.</p><p class="ns-status" role="status" aria-live="polite" hidden></p><div class="ns-actions"><button type="button" class="ns-save">Salva i dati in un file</button><button type="button" class="ns-go">Esci senza salvare</button><button type="button" class="ns-stay">Resta nell’app</button></div></div>';
+  document.body.appendChild(dlg);
+  dlg.querySelector('.ns-save').addEventListener('click',()=>{window.ComeLupiAskNamedExitBackup?.(name=>{const s=dlg.querySelector('.ns-status');s.hidden=false;s.textContent='Download richiesto: '+name+'. Controlla che il file sia stato salvato, poi prosegui.';dlg.querySelector('.ns-go').textContent='Prosegui';});});
+  dlg.querySelector('.ns-go').addEventListener('click',proceed);
+  dlg.querySelector('.ns-stay').addEventListener('click',()=>{dlg.close();document.getElementById('exitDedication')?.close();});
+  dlg.addEventListener('cancel',e=>{e.preventDefault();dlg.close();});
+ }
+ document.addEventListener('click',e=>{
+  if(pass)return;const t=e.target.closest?.('#exitDedicationNext');if(!t)return;
+  if(!hasData()||(savedSnap&&savedSnap===snap()))return;
+  e.preventDefault();e.stopImmediatePropagation();
+  if(!dlg)build();
+  const s=dlg.querySelector('.ns-status');s.hidden=true;s.textContent='';dlg.querySelector('.ns-go').textContent='Esci senza salvare';
+  try{dlg.showModal();}catch(_){dlg.setAttribute('open','');}
+  dlg.querySelector('.ns-save').focus({preventScroll:true});
+ },true);
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "280ae458d20548ae856cf4258ab01ab6"}'></script><!-- End Cloudflare Web Analytics -->
