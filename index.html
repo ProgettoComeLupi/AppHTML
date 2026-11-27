@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 1.2.0</title><script id="cl-session-gate-1071">
+<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 1.2.4</title><script id="cl-session-gate-1071">
 /* Prima di ogni lettura di dati persistenti: una nuova apertura non eredita
    contenuti intimi senza scelta esplicita. Non cancellare mai le copie presenti. */
 (function(){
@@ -27875,6 +27875,36 @@ html body #app #info.identity-panel .identity-welcome-routes > button[data-info-
 #clxNoSave .ns-save { background: #8a1e3a; color: #fff; border: 0; }
 #clxNoSave .ns-go { background: transparent; color: #6e1530; border: 1.5px solid rgba(110,21,48,.35); }
 #clxNoSave .ns-stay { background: transparent; color: #6e1530; border: 0; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ===== Lampeggio unico, come «Come iniziare» (27/11/2026) ===== */
+html body #app #info.identity-panel .identity-welcome-routes > button[data-info-quickstart]::after,
+html body #app #info.identity-panel .identity-welcome-routes > button[data-info-quickstart].cl141-start-pulse::after { animation: none !important; content: none !important; }
+html body #app#app #info #clProfileResultStep[data-cl127-unread] { animation: none !important; filter: none !important; }
+.clx-halo { position: fixed; z-index: 3; pointer-events: none; box-sizing: border-box; display: none; contain: layout style; }
+.clx-halo.on { display: block; }
+.clx-halo::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  box-shadow: 0 0 14px 6px rgba(255,120,140,.85);
+  animation: clxGuideGlow 1.4s ease-in-out infinite;
+}
+.clx-halo::after {
+  content: ""; position: absolute; inset: -3px; border-radius: inherit; border: 3px solid #ffd3da;
+  animation: clxGuideRing 1.4s cubic-bezier(.23,1,.32,1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .clx-halo::before { animation: none; opacity: .6; }
+  .clx-halo::after { animation: none; opacity: .9; scale: 1; }
+}
+
+/* ===== Prima domanda: introduzione senza rimpicciolire ===== */
+html body #app#app #signals #testStage[data-clx-nointro] #editorialStageIntro { display: none !important; }
+#clxIntroChip { display: none; }
+html body #app#app #signals #testStage[data-clx-nointro] #clxIntroChip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; margin: 0 auto 0 8px; border-radius: 999px;
+  border: 1px solid currentColor; background: transparent; color: var(--clx-thread-a, #8a1e3a); font: 600 12.5px/1 system-ui, -apple-system, "Segoe UI", sans-serif; cursor: pointer; white-space: nowrap;
+}
+html body[data-cl-profile="man"] #app#app #signals #testStage[data-clx-nointro] #clxIntroChip { color: #4d4297; }
+html body[data-cl-profile="helper"] #app#app #signals #testStage[data-clx-nointro] #clxIntroChip { color: #813a70; }
 </style>
 <script>
 (function(){
@@ -27985,7 +28015,7 @@ html body #app #info.identity-panel .identity-welcome-routes > button[data-info-
 
  </div><div class="tree-meaning-actions"><button id="treeBack" type="button">Torna all’albero</button><button id="treeEnter" type="button">Entra nell’app →</button></div>
 </dialog>
-<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.2.0 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.2.0</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
+<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.2.4 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.2.4</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
   <g fill="#eac1c2">
     <g transform="translate(4.5 5) scale(.15)"><path d="M1 39 L0 42 L11 52 L24 41 L32 42 L33 45 L22 57 L22 104 L20 107 L15 108 L6 108 L5 107 L3 109 L3 121 L4 122 L34 122 L36 120 L37 117 L37 83 L40 82 L46 88 L62 109 L63 112 L63 138 L65 140 L78 140 L80 132 L80 107 L79 103 L59 77 L61 74 L83 74 L84 73 L84 57 L74 57 L71 55 L71 52 L74 49 L76 44 L76 36 L72 28 L63 25 L17 25 Z"/><path d="M81 0 L77 2 L72 8 L72 18 L79 25 L91 25 L97 19 L98 9 L93 2 L88 0 Z"/></g>
     <g transform="translate(29 12) scale(.19)"><path d="M52 21 L41 8 L32 0 L32 9 L30 12 L1 12 L0 13 L0 31 L1 32 L28 32 L32 36 L33 43 L52 24 Z"/></g>
@@ -28096,7 +28126,7 @@ html body #app #info.identity-panel .identity-welcome-routes > button[data-info-
         <button type="button" id="clFsTree" class="cl-fs-quicklink" title="Albero delle parole" aria-label="Apri l’albero delle parole senza riavviare l’app"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-4"/><path d="M8 21h8"/><path d="M12 17c-1.2-2.1-4.6-2.1-4.6-5 0-1.5 1-2.7 2.3-3.1-.2-2.4 1.4-4.4 3.7-4.4 2.2 0 4 1.8 4 4 1.7.1 3 1.5 3 3.2 0 2.4-2.3 3.8-4.4 4.3"/><path d="M12 17c1.1-1.8 4.2-1.7 4.2-4.3"/><path d="M12 13c-1.2 0-2.2-.9-2.2-2.1"/></svg></span><span class="cl-fs-quicklabel">Albero delle parole</span></button>
         <button type="button" id="clFsClear" class="cl-fs-quicklink" title="Cancella dati"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></svg></span><span class="cl-fs-quicklabel">Cancella dati</span></button>
       </div>
-<div class="identity-meta"><span>V <strong>1.2.0</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span><span class="identity-contact">Contatti: <a href="mailto:info@comelupi.it">info@comelupi.it</a></span></div>
+<div class="identity-meta"><span>V <strong>1.2.4</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span><span class="identity-contact">Contatti: <a href="mailto:info@comelupi.it">info@comelupi.it</a></span></div>
     </div>
   </div>
 </section>
@@ -29464,7 +29494,7 @@ function revealCurrentQuestion(){
    window.scrollTo({top,behavior:'instant'});
  });
 }
-// 1.2.0 — destinazione di ritorno della singola compilazione, solo in memoria.
+// 1.2.4 — destinazione di ritorno della singola compilazione, solo in memoria.
 let cl137QuestionnaireOrigin='signals';
 function start(i,resume,origin='signals'){cl137QuestionnaireOrigin=origin==='info'?'info':'signals';cl115StepNonce++;cl113Advancing=false;if($('testImmediateAlert'))$('testImmediateAlert').dataset.cl115Acknowledged='';const t=BANK[i];active=t;currentEntry=null;const prior=history.find(h=>h.id===t.id);const d=resume?drafts[t.id]:null;
  answers=(Array.isArray(d?.answers)&&d.answers.length===t.qs.length?d.answers.slice():Array(t.qs.length).fill(null));
@@ -35924,7 +35954,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
  </div>
  <footer class="cl-orient-bottom-info" aria-label="Informazioni sul progetto e contatto di emergenza">
   <div class="cl-orient-credit" aria-label="Versione e autori">
-   <span class="cl-orient-credit-main">V <strong>1.2.0</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span>
+   <span class="cl-orient-credit-main">V <strong>1.2.4</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span>
    <a href="mailto:info@comelupi.it">info@comelupi.it</a>
   </div>
   <div class="cl-orient-safety-contact">
@@ -36295,7 +36325,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
  // exists in localStorage or a previous session was saved as JSON.
  // The person must explicitly select one of the three profiles before entering.
  let current=null,activeModal=false,returnFocus=null;
- // 1.2.0: il bordo segnala la prossima tappa non ancora iniziata, non l'intero profilo.
+ // 1.2.4: il bordo segnala la prossima tappa non ancora iniziata, non l'intero profilo.
  const cl142StartedPaths=new Set();
  window.addEventListener('comelupi:questionnaire-started',event=>{const id=event.detail?.id;if(Object.values(profiles).some(p=>p.ids.includes(id)))cl142StartedPaths.add(id);if(current)paintProgress();});
  const audienceFor=p=>p==='man'?'men':p==='helper'?'helper':'women';
@@ -38527,11 +38557,18 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   if(ctx.state==='suspended'&&!document.hidden)ctx.resume().catch(()=>{});
   return ctx;
  }
+ const musicSource={};
  function load(name){
   if(buffers[name])return Promise.resolve(buffers[name]);
   if(loading[name])return loading[name];
-  const raw=atob(SND[name]),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
-  loading[name]=new Promise((ok,no)=>{const p=ctx.decodeAudioData(bytes.buffer,ok,no);if(p&&p.then)p.then(ok,no);}).then(b=>(buffers[name]=b));
+  const decode=ab=>new Promise((ok,no)=>{const p=ctx.decodeAudioData(ab,ok,no);if(p&&p.then)p.then(ok,no);});
+  const embedded=()=>{if(!SND[name])return Promise.reject(new Error('no music'));const raw=atob(SND[name]),bytes=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);return decode(bytes.buffer);};
+  // Prima le musiche nella cartella «music» accanto all'app (intro.ogg per l'albero iniziale, outro.ogg per quello finale);
+  // se mancano o il dispositivo non le sa leggere, quelle incorporate.
+  const file={sad:'intro.ogg',final:'outro.ogg'}[name];
+  const external=()=>{if(!file||!/^https?:$/.test(location.protocol)||typeof fetch!=='function')return Promise.reject(new Error('skip'));
+   return fetch(new URL('music/'+file,location.href).href,{cache:'no-cache',credentials:'same-origin'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.arrayBuffer();}).then(decode);};
+  loading[name]=external().then(b=>{musicSource[name]='music/'+file;return b;},()=>embedded().then(b=>{musicSource[name]='incorporata';return b;})).then(b=>(buffers[name]=b));
   return loading[name];
  }
  function stopMusic(fade){
@@ -38615,7 +38652,7 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   go.gain.setValueAtTime(0,t);go.gain.linearRampToValueAtTime(.16,t+.003);go.gain.exponentialRampToValueAtTime(.0001,t+.08);o.connect(go);go.connect(master);o.start(t);o.stop(t+.09);
   if(last){const bl=ctx.createOscillator(),gb=ctx.createGain(),tb=t+.28;bl.type='sine';bl.frequency.value=2093;gb.gain.setValueAtTime(0,tb);gb.gain.linearRampToValueAtTime(.05,tb+.004);gb.gain.exponentialRampToValueAtTime(.0001,tb+1.1);bl.connect(gb);gb.connect(master);bl.start(tb);bl.stop(tb+1.2);}
  }
- window.ComeLupiSound={typeKey,stopAll:f=>{window.__clxHalt=true;want=null;stopMusic(f||1)},setOff,isOff:()=>off,state:()=>({ctx:ctx&&ctx.state,playing:cur&&cur.name,want})};
+ window.ComeLupiSound={musicSource:()=>({...musicSource}),typeKey,stopAll:f=>{window.__clxHalt=true;want=null;stopMusic(f||1)},setOff,isOff:()=>off,state:()=>({ctx:ctx&&ctx.state,playing:cur&&cur.name,want})};
 })();
 </script>
 <script id="clx-quiz-fit-20261127">
@@ -38637,9 +38674,15 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   if(stage.classList.contains('hidden')||!stage.getClientRects().length)return;
   running=true;
   scen?.classList.remove('clx-open');
+  // L'introduzione «Prima di rispondere» non deve far rimpicciolire la domanda: si misura senza,
+  // e se poi non c'è posto resta raggiungibile dal tasto «Prima di rispondere» in alto.
+  const intro=document.getElementById('editorialStageIntro');
+  const hasIntro=!!intro&&!intro.hidden&&!intro.open&&stage.dataset.clxIntroWanted!=='1';
+  if(hasIntro)stage.dataset.clxNointro='1';else delete stage.dataset.clxNointro;
   let lvl=0;
   for(;lvl<=MAX;lvl++){stage.dataset.clxFit=String(lvl);void content.offsetHeight;if(fits())break;}
   if(lvl>MAX)stage.dataset.clxFit=String(MAX);
+  if(hasIntro){delete stage.dataset.clxNointro;void content.offsetHeight;if(!fits())stage.dataset.clxNointro='1';}
   content.scrollTop=0;
   running=false;
  }
@@ -38653,6 +38696,11 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(schedule);
  // Il testo di spiegazione accorciato si apre con un tocco (la risposta resta comunque raggiungibile).
  scen?.addEventListener('click',()=>{if(Number(stage.dataset.clxFit)>=3)scen.classList.toggle('clx-open')});
+ // L'introduzione editoriale della prima domanda si chiude dopo il primo disegno: ricalcolare quando cambia
+ // (apertura/chiusura, visibilità, classi) così la prima domanda ha gli stessi caratteri delle altre.
+ new MutationObserver(schedule).observe(stage,{subtree:true,attributes:true,attributeFilter:['open','hidden','class']});
+ stage.addEventListener('toggle',schedule,true);
+ [300,900,1800].forEach(t=>setTimeout(schedule,t));
  schedule();
 })();
 </script>
@@ -38939,6 +38987,61 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   try{dlg.showModal();}catch(_){dlg.setAttribute('open','');}
   dlg.querySelector('.ns-save').focus({preventScroll:true});
  },true);
+})();
+</script>
+<script id="clx-halo-20261127">
+(function(){
+ 'use strict';
+ // Tasti che possono lampeggiare in Inizio. Il lampeggio è lo stesso di «Come iniziare».
+ // Ogni tasto smette di lampeggiare dopo il primo tocco; riprende al riavvio dell'app, al cambio di profilo
+ // o quando cambia la sua scritta (ad esempio quando diventa «Suggerimenti»).
+ const SEL=['#info .identity-welcome-routes > button[data-info-quickstart]','#clProfileResultStep:not([hidden])'];
+ const done=new Set();let prof=null;
+ const profile=()=>{try{return window.ComeLupiProfile?.get?.()||document.body.dataset.clProfile||''}catch(_){return ''}};
+ const key=el=>profile()+'|'+(el.id||'cta')+'|'+(el.innerText||'').replace(/\s+/g,' ').trim();
+ document.addEventListener('click',e=>{const t=e.target.closest?.(SEL.join(','));if(t&&e.isTrusted)done.add(key(t));},true);
+ addEventListener('comelupi:profile-changed',()=>done.clear());
+ const halos=new Map();let raf=0;
+ function visible(el){
+  if(!el.isConnected||!el.getClientRects().length)return null;
+  const r=el.getBoundingClientRect();if(r.width<4||r.height<4||r.bottom<0||r.top>innerHeight)return null;
+  const cs=getComputedStyle(el);if(cs.visibility==='hidden'||Number(cs.opacity)<.05)return null;
+  return r;
+ }
+ function frame(){
+  raf=0;let any=false;
+  const p=profile();if(p!==prof){if(prof!==null)done.clear();prof=p;}
+  const els=new Set();SEL.forEach(s=>document.querySelectorAll(s).forEach(e=>els.add(e)));
+  halos.forEach((h,el)=>{if(!els.has(el)){h.remove();halos.delete(el);}});
+  els.forEach(el=>{
+   let h=halos.get(el);if(!h){h=document.createElement('div');h.className='clx-halo';h.setAttribute('aria-hidden','true');document.body.appendChild(h);halos.set(el,h);}
+   const r=done.has(key(el))?null:visible(el);
+   if(!r){h.classList.remove('on');return;}
+   any=true;
+   const s=h.style;s.left=r.left+'px';s.top=r.top+'px';s.width=r.width+'px';s.height=r.height+'px';
+   s.borderRadius=getComputedStyle(el).borderRadius;h.classList.add('on');
+  });
+  if(any&&!document.hidden)raf=requestAnimationFrame(frame);
+ }
+ const kick=()=>{if(!raf)raf=requestAnimationFrame(frame);};
+ setInterval(kick,400);addEventListener('resize',kick);addEventListener('scroll',kick,true);document.addEventListener('visibilitychange',kick);
+ kick();
+})();
+</script>
+<script id="clx-introchip-20261127">
+(function(){
+ 'use strict';
+ const stage=document.getElementById('testStage'),head=stage?.querySelector('.test-stage-header'),intro=document.getElementById('editorialStageIntro');
+ if(!stage||!head||!intro)return;
+ const b=document.createElement('button');b.type='button';b.id='clxIntroChip';b.textContent='Prima di rispondere';
+ b.setAttribute('aria-label','Apri «Prima di rispondere: uno spazio per osservare»');
+ const counter=document.getElementById('testCounter');head.insertBefore(b,counter||null);
+ b.addEventListener('click',()=>{stage.dataset.clxIntroWanted='1';delete stage.dataset.clxNointro;intro.open=true;
+  requestAnimationFrame(()=>intro.scrollIntoView({block:'nearest'}));});
+ // A ogni nuova domanda si torna al comportamento normale.
+ const p=document.getElementById('testPrompt');
+ if(p)new MutationObserver(()=>{delete stage.dataset.clxIntroWanted;}).observe(p,{childList:true,characterData:true,subtree:true});
+ intro.addEventListener('toggle',()=>{if(!intro.open)delete stage.dataset.clxIntroWanted;});
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "280ae458d20548ae856cf4258ab01ab6"}'></script><!-- End Cloudflare Web Analytics -->
