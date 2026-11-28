@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 1.2.4</title><script id="cl-session-gate-1071">
+<html lang="it"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><meta content="#3b0a18" name="theme-color"/><title>PROGETTO COME LUPI · Leggere, riconoscere, scegliere · 1.2.16</title><script id="cl-session-gate-1071">
 /* Prima di ogni lettura di dati persistenti: una nuova apertura non eredita
    contenuti intimi senza scelta esplicita. Non cancellare mai le copie presenti. */
 (function(){
@@ -27905,6 +27905,34 @@ html body #app#app #signals #testStage[data-clx-nointro] #clxIntroChip {
 }
 html body[data-cl-profile="man"] #app#app #signals #testStage[data-clx-nointro] #clxIntroChip { color: #4d4297; }
 html body[data-cl-profile="helper"] #app#app #signals #testStage[data-clx-nointro] #clxIntroChip { color: #813a70; }
+
+/* ===== Schermata iniziale: scelta del profilo e ingresso (27/11/2026) ===== */
+html body { --clx-pc: #6e1530; }
+html body[data-cl-profile="helper"] { --clx-pc: #6b2b5e; }
+html body[data-cl-profile="man"] { --clx-pc: #3d3577; }
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-profile-card { transition: transform 200ms cubic-bezier(.23,1,.32,1), opacity 200ms ease, box-shadow 200ms ease !important; }
+html body #clFirstOrientationNotice#clFirstOrientationNotice :is(.cl-profile-card.selected, .cl-profile-card[data-profile-choice].selected) {
+  position: relative !important;
+  background: linear-gradient(160deg, #ffffff 0%, #fffaf7 60%, #f8ece9 100%) !important;
+  border-color: #ffffff !important; color: var(--clx-pc) !important;
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px color-mix(in srgb, var(--clx-pc) 55%, transparent), 0 14px 28px -8px rgba(20,0,8,.55) !important;
+  transform: translateY(-3px) scale(1.03) !important; opacity: 1 !important; filter: none !important;
+}
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-profile-card.selected * { color: var(--clx-pc) !important; }
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-profile-card.selected::after {
+  content: "" !important; position: absolute !important; top: -9px !important; right: -9px !important; left: auto !important; bottom: auto !important;
+  width: 26px !important; height: 26px !important; border-radius: 50% !important; border: 2px solid #fff !important; z-index: 3 !important;
+  background: var(--clx-pc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 16px no-repeat !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3) !important; opacity: 1 !important; animation: none !important;
+}
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-profile-card:has(~ .cl-profile-card.selected):not(.selected),
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-profile-card.selected ~ .cl-profile-card:not(.selected) { opacity: .7 !important; transform: scale(.97) !important; }
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-orient-actions > #clNoticeContinue:not(:disabled) {
+  background: linear-gradient(180deg, #ffffff 0%, #fff4ef 100%) !important; color: var(--clx-pc) !important;
+  border: 0 !important; box-shadow: 0 0 0 1px rgba(255,255,255,.9), 0 12px 26px -8px rgba(15,0,6,.6) !important; text-shadow: none !important;
+}
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-orient-actions > #clNoticeContinue:not(:disabled) :is(span, .cl-orient-enter-arrow) { color: var(--clx-pc) !important; }
+html body #clFirstOrientationNotice#clFirstOrientationNotice .cl-orient-actions > #clNoticeContinue:not(:disabled):active { transform: scale(.97) !important; }
 </style>
 <script>
 (function(){
@@ -28015,7 +28043,7 @@ html body[data-cl-profile="helper"] #app#app #signals #testStage[data-clx-nointr
 
  </div><div class="tree-meaning-actions"><button id="treeBack" type="button">Torna all’albero</button><button id="treeEnter" type="button">Entra nell’app →</button></div>
 </dialog>
-<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.2.4 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.2.4</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
+<div class="app" id="app" inert><header><button type="button" aria-label="Cambia profilo" class="topbutton cover-trigger cl-header-profile-button" id="home" title="Cambia profilo"><span id="clHeaderProfileIcon" class="cl-header-profile-icon" aria-hidden="true"></span></button><div class="brand" aria-label="COME LUPI versione 1.2.16 — apri la presentazione del progetto"><span class="cl-brand-name">COME LUPI</span> <span class="cl-brand-version">v1.2.16</span></div><button type="button" id="clEmergencyExit" class="topbutton cl-emergency-exit" title="Uscita di emergenza: elimina subito i dati locali di COME LUPI e apre una pagina neutra" aria-label="Uscita di emergenza. Cancella subito i dati locali dell’app e apre una pagina vuota"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 32" width="65" height="32" fill="none" aria-hidden="true" focusable="false" class="cl-running-exit-sign">
   <g fill="#eac1c2">
     <g transform="translate(4.5 5) scale(.15)"><path d="M1 39 L0 42 L11 52 L24 41 L32 42 L33 45 L22 57 L22 104 L20 107 L15 108 L6 108 L5 107 L3 109 L3 121 L4 122 L34 122 L36 120 L37 117 L37 83 L40 82 L46 88 L62 109 L63 112 L63 138 L65 140 L78 140 L80 132 L80 107 L79 103 L59 77 L61 74 L83 74 L84 73 L84 57 L74 57 L71 55 L71 52 L74 49 L76 44 L76 36 L72 28 L63 25 L17 25 Z"/><path d="M81 0 L77 2 L72 8 L72 18 L79 25 L91 25 L97 19 L98 9 L93 2 L88 0 Z"/></g>
     <g transform="translate(29 12) scale(.19)"><path d="M52 21 L41 8 L32 0 L32 9 L30 12 L1 12 L0 13 L0 31 L1 32 L28 32 L32 36 L33 43 L52 24 Z"/></g>
@@ -28126,7 +28154,7 @@ html body[data-cl-profile="helper"] #app#app #signals #testStage[data-clx-nointr
         <button type="button" id="clFsTree" class="cl-fs-quicklink" title="Albero delle parole" aria-label="Apri l’albero delle parole senza riavviare l’app"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-4"/><path d="M8 21h8"/><path d="M12 17c-1.2-2.1-4.6-2.1-4.6-5 0-1.5 1-2.7 2.3-3.1-.2-2.4 1.4-4.4 3.7-4.4 2.2 0 4 1.8 4 4 1.7.1 3 1.5 3 3.2 0 2.4-2.3 3.8-4.4 4.3"/><path d="M12 17c1.1-1.8 4.2-1.7 4.2-4.3"/><path d="M12 13c-1.2 0-2.2-.9-2.2-2.1"/></svg></span><span class="cl-fs-quicklabel">Albero delle parole</span></button>
         <button type="button" id="clFsClear" class="cl-fs-quicklink" title="Cancella dati"><span class="cl-fs-quickicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/></svg></span><span class="cl-fs-quicklabel">Cancella dati</span></button>
       </div>
-<div class="identity-meta"><span>V <strong>1.2.4</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span><span class="identity-contact">Contatti: <a href="mailto:info@comelupi.it">info@comelupi.it</a></span></div>
+<div class="identity-meta"><span>V <strong>1.2.16</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span><span class="identity-contact">Contatti: <a href="mailto:info@comelupi.it">info@comelupi.it</a></span></div>
     </div>
   </div>
 </section>
@@ -29494,7 +29522,7 @@ function revealCurrentQuestion(){
    window.scrollTo({top,behavior:'instant'});
  });
 }
-// 1.2.4 — destinazione di ritorno della singola compilazione, solo in memoria.
+// 1.2.16 — destinazione di ritorno della singola compilazione, solo in memoria.
 let cl137QuestionnaireOrigin='signals';
 function start(i,resume,origin='signals'){cl137QuestionnaireOrigin=origin==='info'?'info':'signals';cl115StepNonce++;cl113Advancing=false;if($('testImmediateAlert'))$('testImmediateAlert').dataset.cl115Acknowledged='';const t=BANK[i];active=t;currentEntry=null;const prior=history.find(h=>h.id===t.id);const d=resume?drafts[t.id]:null;
  answers=(Array.isArray(d?.answers)&&d.answers.length===t.qs.length?d.answers.slice():Array(t.qs.length).fill(null));
@@ -34909,28 +34937,105 @@ document.fonts?.ready.then(fitTreeMeaning);
  const lines=document.getElementById('clHelpLines');
  const layer=document.getElementById('clHelpLayer');
  if(!overlay||!trigger||!closeButton||!lines||!layer)return;
+ // Aggiornato alla versione corrente: comandi comuni + comandi della schermata aperta, mostrati nell'ordine in cui compaiono.
+ const P=()=>window.ComeLupiProfile?.get?.()||document.body.dataset.clProfile||'woman';
+ const byP=(w,hp,m)=>()=>({woman:w,helper:hp,man:m})[P()]||w;
  const nav=[
-  ['#home','Cambia profilo','Il simbolo rotondo corrisponde a quello della schermata «Inizio». Toccalo per scegliere un altro profilo: cambiano questionari e linguaggio degli esiti, ma il cambio non cancella automaticamente le compilazioni precedenti.'],
-  ['#clEmergencyExit','Uscita di emergenza','Cancella i dati locali gestiti dall’app e apre una pagina neutra. Non può cancellare la cronologia del browser.'],
-  ['#clContextHelp','Guida contestuale','Il punto interrogativo apre una spiegazione approfondita della schermata e delle sue funzioni. Da lì puoi scegliere «Cosa c’è sullo schermo» per seguire questa visita guidata dei comandi, uno per volta.'],
-  ['#libraryButton','Biblioteca','La Biblioteca raccoglie manuale dell’app, guida P.A.S.S.O., materiali informativi e note legali. Seleziona una risorsa per aprire il lettore integrato; alcuni documenti e collegamenti richiedono una connessione esterna.'],
-  ['#fullscreenToggle','Schermo intero','Prova ad ampliare la visualizzazione, quando il browser lo consente.'],
-  ['#quick','Uscita ordinaria','Ti accompagna all’uscita e, se vuoi, consente di salvare i dati in un file con un nome scelto da te.'],
-  ['#app > nav.tabs button[data-tab="info"]','Inizio','La schermata «Inizio» mostra il profilo scelto, la barra di completamento, i collegamenti a esiti e mappe e l’accesso «Guidami». È anche il punto in cui puoi decidere se iniziare una nuova compilazione.'],
-  ['#app > nav.tabs button[data-tab="signals"]','Questionari','Qui compaiono soltanto i questionari previsti per il profilo in uso. Le schede mostrano se sono da iniziare, in corso o completate; puoi riprendere una bozza e scegliere di ripetere un singolo questionario. Dopo il completamento, dalla schermata «Inizio» trovi «Suggerimenti».'],
-  ['#app > nav.tabs button[data-tab="reader"]','Libro','Leggi l’intero libro con le pagine PDF originali o in eBook. Sono disponibili indice, zoom, avanzamento, segnalibri e quaderno; nel percorso «Ho dei dubbi» alcuni brani si collegano alle risposte, con spiegazioni editoriali.'],
-  ['#app > nav.tabs button[data-tab="help"]','Chiedere aiuto','Trovi numeri per emergenza e ascolto, indicazioni su cosa aspettarti da un contatto, ricerca dei centri antiviolenza e risorse pratiche. Nessun questionario è necessario per chiedere aiuto.'],
-  ['#app > nav.tabs button[data-tab="legal"]','Tutela','Le schede spiegano tutele, procedure e sostegni economici. Nel profilo uomini chiariscono anche le possibili conseguenze delle condotte maltrattanti. Il percorso per ordinare gli episodi produce soltanto una bozza: non spedisce automaticamente denunce, querele o richieste.'],
-  ['#app > nav.tabs button[data-tab="gloss"]','Glossario','Cerca fra 80 parole e definizioni, filtra l’elenco e apri il dettaglio di una voce. Quando presente, segui il richiamo al libro per comprenderne il contesto.']
+  ['#home','Profilo attivo','Il simbolo rotondo è il profilo che stai usando. Toccalo per cambiarlo o per tornare alla schermata iniziale. Ogni profilo ha domande, colori e consigli propri; cambiare profilo non cancella le risposte già date.'],
+  ['#app > header .brand','Nome e versione','Il numero accanto a COME LUPI è la versione dell’app. Serve per sapere se stai usando quella più recente.'],
+  ['#clEmergencyExit','Uscita di emergenza','L’omino che corre verso la porta. Un tocco e l’app si chiude subito: cancella i dati dell’app su questo dispositivo e apre una pagina vuota. Non chiede conferme. Non può cancellare la cronologia del browser.'],
+  ['#clContextHelp','Help','Apre la spiegazione della schermata in cui ti trovi. Da lì «Cosa c’è sullo schermo?» avvia questa visita dei comandi, uno alla volta.'],
+  ['#clxMenuBtn','Menu','Le tre linee aprono gli altri strumenti: Biblioteca, Schermo intero, Mappa dei nuclei della violenza, Esito ultimo questionario, Albero delle parole, Manuale dell’app e Cancella dati, dove scegli tu che cosa cancellare.'],
+  ['#quick',byP('Esci','Esci','Esci'),byP('Uscita ordinaria. Prima compare la dedica, poi l’albero finale; se non hai salvato i dati, l’app ti chiede se vuoi farlo. Alla fine lo schermo si scurisce, compare www.comelupi.it e l’app si chiude.','Uscita ordinaria. L’app ti chiede se vuoi salvare i dati in un file con un nome scelto da te; poi lo schermo si scurisce, compare www.comelupi.it e l’app si chiude.','Uscita ordinaria. L’app ti chiede se vuoi salvare i dati in un file con un nome scelto da te; poi lo schermo si scurisce, compare www.comelupi.it e l’app si chiude.')],
+  ['#app > nav.tabs button[data-tab="info"]','Inizio','La schermata principale del tuo profilo: il tasto per cominciare o proseguire, il tuo percorso e le scorciatoie.'],
+  ['#app > nav.tabs button[data-tab="signals"]','Questionari','I questionari del profilo che stai usando, con lo stato di ognuno: da iniziare, in corso o completato.'],
+  ['#app > nav.tabs button[data-tab="reader"]','Libro','Il libro intero, in PDF o in eBook, con indice, segnalibri e quaderno delle note.'],
+  ['#app > nav.tabs button[data-tab="help"]','Aiuto','Numeri di emergenza e di ascolto, cosa ti chiederanno quando chiami, ricerca dei centri e altre risorse.'],
+  ['#app > nav.tabs button[data-tab="legal"]','Tutela',byP('Le misure di tutela spiegate in modo semplice e la guida per preparare la bozza di denuncia.','Le misure di tutela, utili per capire come sostenere una persona senza esporla.','Le misure di tutela e le possibili conseguenze delle condotte maltrattanti.')],
+  ['#app > nav.tabs button[data-tab="gloss"]','Glossario','Le parole della violenza spiegate una per una, con il rimando alla pagina del libro.']
  ];
- // La visita guidata segue la schermata realmente aperta: nessuna risposta personale è letta qui.
  const contextual={
-  info:[['#clPassoOpen','Guidami','Un accompagnamento per scegliere da dove cominciare, adattato al tuo profilo.'],['#clProfileProgress','Avanzamento del percorso','Il riepilogo mostra quanti questionari del tuo profilo sono conclusi. Il bordo verde indica percorso completato.']],
-  signals:[['#testGrid .test-choice-card.cl-profile-relevant','Questionari del tuo profilo','Ogni scheda verde appartiene al profilo che hai scelto. Aprila per cominciare, riprendere una compilazione sospesa o ripetere il questionario. La spunta «Completato» non significa assenza di problemi, ma solo che hai concluso le domande.'],['#testHistoryList','Cronologia delle compilazioni','Qui puoi ritrovare le compilazioni disponibili, confrontare ciò che hai annotato nel tempo e salvare o caricare i dati. Un file esportato resta separato dai dati conservati sul dispositivo.']],
-  reader:[['#viewPDF','PDF originale','Qui leggi le pagine nella loro impaginazione originale, esattamente come nel libro. Sfoglia con le frecce o apri l’indice; se la pagina è troppo piccola, utilizza i controlli di zoom.'],['#viewEbook','eBook','La modalità eBook adatta il testo allo schermo: puoi ingrandire le lettere, passare fra i capitoli e scegliere la lettura continua o a pagine.'],['#readerResumeTop','Continua la lettura','Riprende l’ultima posizione di lettura disponibile nella sessione; per conservare posizioni e segnalibri controlla prima le scelte sulla memoria dei dati.']],
-  help:[['#help .help-first-112','112 emergenze','Utilizza il 112 se c’è un pericolo attuale o una necessità di soccorso immediato. Non devi finire un questionario o consultare altre risorse prima di chiamare.'],['#help .help-first-1522','1522 ascolto','Servizio specializzato per parlare di violenza e stalking, chiedere informazioni e orientarti. Puoi contattarlo anche prima di aver deciso che cosa fare; scegli un dispositivo sicuro.']],
-  legal:[['#legal .legal-index-hero','Orientarsi fra le tutele','Apri le schede per capire a chi è destinato uno strumento, quali condizioni sono previste e dove verificare le fonti. La bozza degli episodi non costituisce un invio automatico agli uffici.']],
-  gloss:[['#glossSearch','Cerca una parola','Digita anche soltanto una parte del termine per filtrare le 80 voci. Apri il risultato per leggerne il significato e, dove disponibile, il collegamento al racconto.']]
+  info:[
+   ['#clInfoProfileBadge','Il tuo profilo','Mostra il profilo in uso. Toccalo per passare a un altro.'],
+   ['#info .cl-intro-quiz-link','Presentazione del percorso','Spiega in poche righe da dove partire. Toccandola si aprono i questionari.'],
+   ['#info .identity-welcome-routes > button[data-info-quickstart]','Tasto principale','Cambia con il tuo percorso: «Comincia», poi «Prosegui con le domande», infine «Suggerimenti». Lampeggia finché non lo tocchi; riprende a lampeggiare quando cambia scritta o quando riapri l’app.'],
+   ['#clPassoOpen','Guidami','Un accompagnamento passo passo per scegliere da dove partire: leggere, rispondere alle domande, parlarne con qualcuno, mettere in ordine i fatti.'],
+   ['#clxResume','Riprendi da dove eri','Compare quando hai lasciato qualcosa a metà: un questionario, una pagina del libro, la bozza di denuncia. Un tocco e riparti da lì.'],
+   ['#clProfileProgress','Il tuo percorso','Quanti questionari hai completato e quante situazioni hai esaminato. «Prossimo» indica il questionario da fare. «Completato» vuol dire che hai finito le domande, non che non sia emerso nulla.'],
+   ['#clProfileResultStep','Esito','Compare a fine percorso e lampeggia finché non lo apri. Riapre la restituzione complessiva delle tue risposte.'],
+   ['#cl111DenunciaShortcut','Bozza denuncia','Apre la guida per mettere in ordine i fatti. Non invia nulla a nessuno.'],
+   ['#info .identity-feature','Leggere, Riflettere, Comprendere, Orientarsi','Quattro scorciatoie: il libro, i questionari, il glossario, l’aiuto e le tutele.']
+  ],
+  signals:[
+   ['#signals .audience-panel, #signals #audienceHeading','Scegli un questionario','Qui ci sono soltanto i questionari del tuo profilo.'],
+   ['#testGrid .test-choice-card','Schede dei questionari','Ogni scheda dice quante domande ha e a che punto sei. «Inizia», «Riprendi» o «Rifai» aprono il questionario; una compilazione interrotta riparte dall’ultima risposta.'],
+   ['#testBack','Torna all’elenco','Esci dal questionario senza perdere le risposte: restano come compilazione in corso.'],
+   ['#testCounter','A che domanda sei','Il numero della domanda e il totale. La barra sotto mostra quanto manca.'],
+   ['#clxIntroChip','Prima di rispondere','Sui telefoni piccoli lo spunto «Prima di rispondere» si raccoglie in questo tasto: toccalo per leggerlo.'],
+   ['#editorialStageIntro','Prima di rispondere','Un breve spunto per osservare la situazione. Si apre e si chiude con un tocco.'],
+   ['#testPrompt','La domanda','Leggila con calma. Se c’è una situazione descritta, rispondi pensando a quella.'],
+   ['#testChoices','Le risposte','Tocca quella più vicina a ciò che accade davvero. Non esiste una risposta giusta. Alcune risposte mostrano subito un avviso di sicurezza.'],
+   ['#testPrevious','Indietro','Torna alla domanda precedente per cambiare risposta. Sta sempre nello stesso punto.'],
+   ['#testSkip','Preferisco non rispondere','Salta la domanda. Non vale come «non succede».'],
+   ['#testNext','Avanti','Conferma la risposta, con un suono diverso dagli altri tasti, e passa alla domanda successiva. Sta sempre nello stesso punto.'],
+   ['#cl126ResultHome','Chiudi l’esito','Torna alla schermata principale. L’esito resta disponibile da Inizio.'],
+   ['#testOutcome .clx-brief','In breve','Il riassunto dell’esito: che cosa emerge, che cosa puoi fare adesso, a chi rivolgerti.'],
+   ['#testOutcome .clx-index','Parti dell’esito','Salta alla spiegazione, alle parole per dirlo, ai passi possibili, alle tue risposte o alla mappa.'],
+   ['#resultHelp','Chiedere aiuto','Porta alla sezione Aiuto con numeri e centri.'],
+   ['#resultMapDetails','Mappa','La mappa 3D dei nuclei richiamati dalle risposte. Ruotala con il dito e tocca una sfera per la spiegazione.'],
+   ['#cl114PrintVisible','Stampa esito','Stampa l’esito o lo salva in PDF. Fallo solo su un dispositivo sicuro.'],
+   ['#cl113ResultHomeBottom','Ritorna alla schermata principale','Chiude l’esito e torna a Inizio.']
+  ],
+  reader:[
+   ['#viewPDF','PDF','Le pagine originali del libro, con l’impaginazione di carta.'],
+   ['#viewEbook','eBook','Il testo che si adatta allo schermo. Sul telefono il libro si apre già così.'],
+   ['#readerResumeTop','Continua','Riporta all’ultima pagina che stavi leggendo.'],
+   ['#tocToggle','Indice','L’elenco dei capitoli, con la ricerca.'],
+   ['#ebookContinuous','Continua (scorrimento)','Nell’eBook il testo scorre di seguito.'],
+   ['#ebookPaged','A pagine','Nell’eBook leggi una schermata alla volta.'],
+   ['#clxSepia','Seppia','Colori caldi, più riposanti per gli occhi.'],
+   ['#prev','Pagina precedente',''],
+   ['#pageNum','Numero di pagina','Scrivi un numero per andare a quella pagina.'],
+   ['#next','Pagina successiva',''],
+   ['#zoomOut','Riduci','Rimpicciolisce la pagina o il testo.'],
+   ['#zoomIn','Ingrandisci','Ingrandisce la pagina o il testo.'],
+   ['#resetZoom','Dimensione standard','Riporta alla dimensione di partenza.'],
+   ['#bookmark','Segnalibro','Segna la pagina per ritrovarla nell’indice.'],
+   ['#toggleNotes','Quaderno','Apre le tue note su questa pagina.'],
+   ['#archiveButton','Archivio','Salva tutti i tuoi dati in un file o li carica da un file salvato prima.'],
+   ['#notes','Nota','Scrivi qui una riflessione su questa pagina.'],
+   ['#saveNote','Salva nota',''],['#deleteNote','Elimina','Cancella la nota di questa pagina.'],
+   ['#exportNotes','Esporta note','Scarica tutte le note in un file di testo.'],
+   ['#archiveFromNotes','Salva o carica i dati',''],
+   ['#closeNotes','Chiudi il quaderno','']
+  ],
+  help:[
+   ['#help a.help-first-call[href^="tel:112"]','Chiama il 112','Per un pericolo in questo momento. Non serve aver fatto un questionario.'],
+   ['#help a.help-first-call[href^="tel:1522"]','Chiama il 1522','Ascolto e orientamento sulla violenza e lo stalking, gratuito e attivo sempre.'],
+   ['#help details summary','Cosa mi chiederanno?','Aprilo prima di chiamare: spiega che cosa succede durante la telefonata.'],
+   ['#cavQuery','Centri antiviolenza vicini','Scrivi provincia o comune e tocca «Cerca». Verifica sempre indirizzi e orari.'],
+   ['#cuavDetails > summary',byP('Aiuto per chi vuole cambiare','Aiuto per chi vuole cambiare','Centri per uomini (CUAV)'),byP('Informazioni sui centri per chi vuole cambiare i propri comportamenti.','Informazioni sui centri per chi vuole cambiare i propri comportamenti.','I centri per uomini autori di violenza aiutano a riconoscere e interrompere controllo e violenza. L’elenco ufficiale richiede una connessione.')]
+  ],
+  legal:[
+   ['#legalHelp','Voglio parlare con qualcuno','Porta alla sezione Aiuto.'],
+   ['#legal .legal-nav-item','Le schede delle tutele','Ogni scheda spiega una misura: a chi serve, a quali condizioni, a chi chiederla.'],
+   ['#denunciaStart',byP('Prepara la bozza di denuncia','Bozza dei fatti','Bozza dei fatti'),'Una guida in sei passi per mettere in ordine ciò che è successo. Non invia nulla.'],
+   ['#denunciaBackGuide','Torna alle tutele',''],
+   ['#cl114PrintDenuncia','Stampa bozza','Stampa la bozza o la salva in PDF, senza il nome dell’app in cima.'],
+   ['#denunciaStepLabel','A che passo sei','I passi sono sei: sicurezza, persone (compresa la convivenza), contesto, episodi, condizioni di vita, bozza finale.'],
+   ['#denunciaContent','Le domande','Rispondi solo a ciò che ricordi. Puoi lasciare vuoto quello che non sai.'],
+   ['#denunciaAddEvent','Aggiungi un episodio','Una scheda per ogni fatto. Le date certe vanno in ordine, gli altri restano nell’ordine in cui li scrivi.'],
+   ['#denunciaPrev','Indietro',''],
+   ['#denunciaNext','Continua','Passa al passo successivo.'],
+   ['#denunciaArchive','Salva tutto','Un solo file, con il nome che scegli, che contiene la bozza e tutti gli altri dati. Non è cifrato.'],
+   ['#denunciaPrintBtn','Stampa',''],['#denunciaCopy','Copia testo','Copia la bozza negli appunti del dispositivo.']
+  ],
+  gloss:[
+   ['#glossSearch','Cerca','Scrivi anche solo una parte della parola.'],
+   ['#glossList','Le voci','Tocca una voce per leggerne il significato.'],
+   ['#glossFlyout','La definizione','Spiega la parola. Se c’è, «Leggi nel libro» apre la pagina corrispondente.'],
+   ['#openGlossPage','Leggi nel libro','']
+  ]
  };
  const card=document.createElement('div');card.className='cl-help-tour-card';card.setAttribute('role','region');card.setAttribute('aria-live','polite');
  card.innerHTML='<div class="cl-help-tour-meta" id="clHelpTourProgress"></div><h3 id="clHelpTourTitle"></h3><p id="clHelpTourDescription"></p><div class="cl-help-tour-actions"><button type="button" id="clHelpTourPrev">‹ Precedente</button><button type="button" id="clHelpTourNext">Successivo ›</button></div>';
@@ -34943,23 +35048,42 @@ document.fonts?.ready.then(fitTreeMeaning);
   const cs=getComputedStyle(node),r=node.getBoundingClientRect();
   return cs.display!=='none'&&cs.visibility!=='hidden'&&r.width>=10&&r.height>=10&&r.right>2&&r.left<innerWidth-2&&r.bottom>0&&r.top<innerHeight;
  }
+ function present(node){
+  if(!node||!node.getClientRects().length)return false;
+  const cs=getComputedStyle(node),r=node.getBoundingClientRect();
+  if(cs.display==='none'||cs.visibility==='hidden'||r.width<8||r.height<8)return false;
+  return !node.closest('[hidden],.hidden,[aria-hidden="true"]:not(#clHelpOverlay)')||node.closest('#app > header,#app > nav.tabs');
+ }
+ const val=v=>typeof v==='function'?v():v;
  function gather(){
   const name=document.querySelector('#app main .panel.active')?.id||'info';
-  const all=[...nav,...(contextual[name]||[])];
-  available=all.map(([sel,heading,description])=>({node:document.querySelector(sel),heading,description})).filter(x=>visible(x.node));
+  const head=nav.slice(0,6),tabs=nav.slice(6),mid=contextual[name]||[];
+  const seen=new Set();
+  // un comando dentro un riquadro chiuso si indica sul titolo del riquadro, che è ciò che si vede e si tocca
+  const real=n=>{const d=n?.closest?.('details:not([open])');return d&&!n.matches('summary')?d.querySelector(':scope > summary')||n:n;};
+  const pick=list=>list.map(([sel,heading,description])=>({node:real(document.querySelector(sel)),heading:val(heading),description:val(description)}))
+   .filter(x=>present(x.node)&&!seen.has(x.node)&&(seen.add(x.node),true));
+  const H=pick(head),M=pick(mid).sort((p,q)=>{const a=p.node.getBoundingClientRect(),b=q.node.getBoundingClientRect();const ra=Math.round((a.top+a.height/2)/18),rb=Math.round((b.top+b.height/2)/18);return (ra-rb)||(a.left-b.left);}),T=pick(tabs);
+  H.sort((p,q)=>p.node.getBoundingClientRect().left-q.node.getBoundingClientRect().left);
+  available=[...H,...M,...T];
   if(index>=available.length)index=Math.max(0,available.length-1);
  }
  function draw(){
   raf=0;if(!overlay.classList.contains('open'))return;
   gather();const item=available[index];if(!item){card.hidden=true;lines.replaceChildren();return;}
+  {const r=item.node.getBoundingClientRect(),hb=document.querySelector('#app > header')?.getBoundingClientRect(),nb=document.querySelector('#app > nav.tabs')?.getBoundingClientRect();
+   const top=Math.max(0,hb?hb.bottom:0)+8,bottom=(nb&&nb.top>innerHeight*.5?nb.top:innerHeight)-8;
+   if((r.top<top||r.bottom>bottom)&&!item.node.closest('#app > header,#app > nav.tabs')&&item.node.__clxShown!==index){item.node.__clxShown=index;item.node.scrollIntoView({block:'center',behavior:'instant'});requestAnimationFrame(schedule);}}
   card.hidden=false;
-  title.textContent=item.heading;desc.textContent=item.description;
-  prog.textContent='COMANDO '+(index+1)+' DI '+available.length;
+  title.textContent=item.heading;desc.textContent=item.description||'';desc.hidden=!item.description;
+  prog.textContent=(index+1)+' di '+available.length;
   prev.disabled=index===0;next.textContent=index===available.length-1?'Fine guida':'Successivo ›';
+  // se un antenato trasformato rende «fixed» relativo alla pagina, riallinea il livello alla finestra visibile
+  overlay.style.top='0px';overlay.style.bottom='auto';overlay.style.height=innerHeight+'px';{const ot=overlay.getBoundingClientRect().top;if(Math.abs(ot)>0.5)overlay.style.top=(-ot)+'px';}
   const w=innerWidth,h=innerHeight,header=document.querySelector('#app > header'),tabs=document.querySelector('#app > nav.tabs');
   const hr=header?.getBoundingClientRect(),nr=tabs?.getBoundingClientRect();
   const navBottom=!!nr&&nr.top>h*.53;
-  const upper=Math.round(navBottom?(hr?.bottom||56):Math.max(hr?.bottom||56,nr?.bottom||90));
+  const upper=Math.max(8,Math.round(navBottom?(hr?.bottom||56):Math.max(hr?.bottom||56,nr?.bottom||90)));
   const lower=Math.round(navBottom?nr.top:h);
   overlay.querySelector('.cl-help-shade').style.top=upper+'px';
   overlay.querySelector('.cl-help-shade').style.bottom=(h-lower)+'px';
@@ -34970,7 +35094,9 @@ document.fonts?.ready.then(fitTreeMeaning);
   card.style.top='0px';
   const cardHeight=card.getBoundingClientRect().height;
   const usable=Math.max(60,lower-upper);
-  const y=Math.max(upper+12,Math.min(lower-cardHeight-12,upper+(usable-cardHeight)*.47));
+  const tr0=item.node.getBoundingClientRect(),tc=tr0.top+tr0.height/2;
+  // il riquadro si mette nella metà opposta al comando, così non lo copre
+  const y=tc<(upper+lower)/2?Math.max(upper+12,lower-cardHeight-14):Math.min(lower-cardHeight-12,upper+14);
   card.style.top=Math.round(y)+'px';
   const c=card.getBoundingClientRect(),t=item.node.getBoundingClientRect();
   const cx=c.left+c.width/2,tx=Math.min(w-5,Math.max(5,t.left+t.width/2));
@@ -34981,7 +35107,10 @@ document.fonts?.ready.then(fitTreeMeaning);
   line.setAttribute('x1',tx.toFixed(1));line.setAttribute('y1',ay.toFixed(1));
   line.setAttribute('x2',cx.toFixed(1));line.setAttribute('y2',by.toFixed(1));
   line.setAttribute('marker-start','url(#clHelpArrow88)');
-  lines.replaceChildren(line);
+  const ring=document.createElementNS('http://www.w3.org/2000/svg','rect');
+  ring.setAttribute('x',(t.left-5).toFixed(1));ring.setAttribute('y',(t.top-5).toFixed(1));ring.setAttribute('width',(t.width+10).toFixed(1));ring.setAttribute('height',(t.height+10).toFixed(1));
+  ring.setAttribute('rx','12');ring.setAttribute('fill','none');ring.setAttribute('stroke','#fff');ring.setAttribute('stroke-width','3');ring.setAttribute('class','clx-help-ring');
+  lines.replaceChildren(ring,line);
   overlay.dataset.labels=String(available.length);overlay.dataset.collisions='0';
  }
  function schedule(){if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(draw);}
@@ -35077,7 +35206,7 @@ document.fonts?.ready.then(fitTreeMeaning);
 (function(){
   const button=document.getElementById('clManualeApp');
   if(!button)return;
-  const url='https://progettocomelupi.github.io/AppHTML/manuale.html';
+  const url=/^https?:$/.test(location.protocol)?new URL('manual.html',location.href).href:'https://www.comelupi.it/manual.html';
   button.addEventListener('click',function(event){
     event.preventDefault();
     event.stopPropagation();
@@ -35098,7 +35227,7 @@ document.fonts?.ready.then(fitTreeMeaning);
   <div class="cl-passo-content" id="clPassoContent" tabindex="-1"></div>
   <div class="cl-passo-legend-footer" id="clPassoLegendFooter" hidden>
    <button type="button" data-passo-legend="true">Cosa c’è sullo schermo? <span aria-hidden="true">↗</span></button>
-   <small>Mostra le frecce bianche e le didascalie dei pulsanti.</small>
+   <small>Tutti i comandi di questa schermata, uno alla volta, dall’alto in basso.</small>
   </div>
   
  </section>
@@ -35301,6 +35430,7 @@ document.fonts?.ready.then(fitTreeMeaning);
   const options=(inQuestion||inDenuncia)?[]:(shortcuts[name]||[]);
   const shortcutsHtml=options.length?'<div class="cl-passo-context-shortcuts"><strong>Se vuoi continuare</strong>'+ 
    options.map(([route,label])=>'<button type="button" data-passo-route="'+route+'">'+esc(label)+' ↗</button>').join('')+'</div>':'';
+  {const o=window.ComeLupiHelpText?.(name,helpProfile);if(o)data=o;}
   show('<div class="cl-passo-detail"><h3>'+esc(data.heading)+'</h3><ol class="cl-passo-steps">'+data.steps.map(step=>'<li>'+esc(step)+'</li>').join('')+'</ol><p>'+esc(data.note)+'</p>'+ 
    shortcutsHtml+
    '<div class="cl-passo-actions"><button type="button" class="cl-passo-primary" data-passo-start="true">Non so da dove iniziare</button><button type="button" class="cl-passo-secondary" data-passo-close="true">Torna alla schermata</button></div>'+ 
@@ -35954,7 +36084,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
  </div>
  <footer class="cl-orient-bottom-info" aria-label="Informazioni sul progetto e contatto di emergenza">
   <div class="cl-orient-credit" aria-label="Versione e autori">
-   <span class="cl-orient-credit-main">V <strong>1.2.4</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span>
+   <span class="cl-orient-credit-main">V <strong>1.2.16</strong> · di <strong>Luciano Maiorano e Matilde Pagano</strong></span>
    <a href="mailto:info@comelupi.it">info@comelupi.it</a>
   </div>
   <div class="cl-orient-safety-contact">
@@ -36325,7 +36455,7 @@ window.ComeLupiNarrativeTemplates.sicurezza_e_distanza_r72=window.ComeLupiNarrat
  // exists in localStorage or a previous session was saved as JSON.
  // The person must explicitly select one of the three profiles before entering.
  let current=null,activeModal=false,returnFocus=null;
- // 1.2.4: il bordo segnala la prossima tappa non ancora iniziata, non l'intero profilo.
+ // 1.2.16: il bordo segnala la prossima tappa non ancora iniziata, non l'intero profilo.
  const cl142StartedPaths=new Set();
  window.addEventListener('comelupi:questionnaire-started',event=>{const id=event.detail?.id;if(Object.values(profiles).some(p=>p.ids.includes(id)))cl142StartedPaths.add(id);if(current)paintProgress();});
  const audienceFor=p=>p==='man'?'men':p==='helper'?'helper':'women';
@@ -38718,7 +38848,8 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   map:'<circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8 6.5l7.8.4M7 8l4 8M17 9l-4 7"/>',
   res:'<path d="M14 4H6.6A1.6 1.6 0 0 0 5 5.6v12.8A1.6 1.6 0 0 0 6.6 20h10.8a1.6 1.6 0 0 0 1.6-1.6V11"/><path d="M10 14l.6-2.7 6.8-6.8a1.6 1.6 0 0 1 2.3 2.3l-6.8 6.8z"/>',
   tree:'<path d="M12 21v-7"/><path d="M12 14c-4 0-7-2.6-7-6a5 5 0 0 1 7-4.6A5 5 0 0 1 19 8c0 3.4-3 6-7 6z"/><path d="M9 21h6"/>',
-  del:'<path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"/><path d="M10 11v6M14 11v6"/>'
+  del:'<path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"/><path d="M10 11v6M14 11v6"/>',
+  man:'<path d="M5 4.5h10.5A3.5 3.5 0 0 1 19 8v11.5H8.5A3.5 3.5 0 0 1 5 16z"/><path d="M12 9.2v.01M12 11.5v4"/>'
  };
  const svg=n=>'<svg '+P+'>'+I[n]+'</svg>';
  const btn=document.createElement('button');
@@ -38733,6 +38864,8 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   ['map','Mappa dei nuclei della violenza','clFsNuclei'],
   ['res','Esito ultimo questionario','clFsLastResult'],
   ['tree','Albero delle parole','clFsTree'],
+  null,
+  ['man','Manuale dell’app','clManualeApp'],
   null,
   ['del','Cancella dati','clFsClear','clx-danger']
  ];
@@ -38995,11 +39128,15 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
  // Tasti che possono lampeggiare in Inizio. Il lampeggio è lo stesso di «Come iniziare».
  // Ogni tasto smette di lampeggiare dopo il primo tocco; riprende al riavvio dell'app, al cambio di profilo
  // o quando cambia la sua scritta (ad esempio quando diventa «Suggerimenti»).
- const SEL=['#info .identity-welcome-routes > button[data-info-quickstart]','#clProfileResultStep:not([hidden])'];
+ const SEL=['#info .identity-welcome-routes > button[data-info-quickstart]','#clProfileResultStep:not([hidden])','#clFirstOrientationNotice #clNoticeContinue:not(:disabled)','#clFirstOrientationNotice .cl-profile-card'];
  const done=new Set();let prof=null;
+ // Le carte del percorso lampeggiano solo per chi ha già aperto «Come iniziare» e non ha ancora scelto.
+ const CARD='#clFirstOrientationNotice .cl-profile-card';let guideSeen=false;
+ document.addEventListener('click',e=>{if(e.isTrusted&&e.target.closest?.('#clStartGuideBtn'))guideSeen=true;},true);
+ const cardsWanted=()=>guideSeen&&!document.querySelector(CARD+'[aria-pressed="true"]');
  const profile=()=>{try{return window.ComeLupiProfile?.get?.()||document.body.dataset.clProfile||''}catch(_){return ''}};
  const key=el=>profile()+'|'+(el.id||'cta')+'|'+(el.innerText||'').replace(/\s+/g,' ').trim();
- document.addEventListener('click',e=>{const t=e.target.closest?.(SEL.join(','));if(t&&e.isTrusted)done.add(key(t));},true);
+ document.addEventListener('click',e=>{const t=e.target.closest?.(SEL.join(','));if(t&&e.isTrusted&&!t.matches(CARD))done.add(key(t));},true);
  addEventListener('comelupi:profile-changed',()=>done.clear());
  const halos=new Map();let raf=0;
  function visible(el){
@@ -39015,11 +39152,12 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
   halos.forEach((h,el)=>{if(!els.has(el)){h.remove();halos.delete(el);}});
   els.forEach(el=>{
    let h=halos.get(el);if(!h){h=document.createElement('div');h.className='clx-halo';h.setAttribute('aria-hidden','true');document.body.appendChild(h);halos.set(el,h);}
-   const r=done.has(key(el))?null:visible(el);
+   let r=done.has(key(el))||(el.matches(CARD)&&!cardsWanted())?null:visible(el);
+   if(r){const cx=Math.min(innerWidth-1,Math.max(0,r.left+r.width/2)),cy=Math.min(innerHeight-1,Math.max(0,r.top+r.height/2));const top=document.elementFromPoint(cx,cy);if(!top||!(top===el||el.contains(top)))r=null;}
    if(!r){h.classList.remove('on');return;}
    any=true;
    const s=h.style;s.left=r.left+'px';s.top=r.top+'px';s.width=r.width+'px';s.height=r.height+'px';
-   s.borderRadius=getComputedStyle(el).borderRadius;h.classList.add('on');
+   s.borderRadius=getComputedStyle(el).borderRadius;s.zIndex=el.closest('#clFirstOrientationNotice')?'2147483590':'3';h.classList.add('on');
   });
   if(any&&!document.hidden)raf=requestAnimationFrame(frame);
  }
@@ -39044,5 +39182,159 @@ let pending=false;const observer=new MutationObserver(()=>{if(!pending){pending=
  intro.addEventListener('toggle',()=>{if(!intro.open)delete stage.dataset.clxIntroWanted;});
 })();
 </script>
+<script id="clx-help-texts-20261127">
+(function(){
+ 'use strict';
+ const T={"info": {"heading": "Inizio: il tuo punto di partenza", "steps": ["In alto. Il simbolo rotondo è il profilo attivo: toccalo per cambiarlo. Accanto trovi l’uscita di emergenza (l’omino verso la porta), «Help», il menu con le tre linee e «Esci».", "Il menu. Contiene Biblioteca, Schermo intero, Mappa dei nuclei della violenza, Esito ultimo questionario, Albero delle parole, Manuale dell’app e Cancella dati, dove scegli tu che cosa cancellare.", "Il tasto principale. Avvia il percorso del tuo profilo e cambia scritta man mano: «Comincia», «Prosegui con le domande», infine «Suggerimenti». Lampeggia finché non lo tocchi e riprende quando cambia scritta o riapri l’app.", "«Guidami». Un accompagnamento passo passo per scegliere da dove partire.", "«Riprendi da dove eri». Compare quando hai lasciato qualcosa a metà (un questionario, una pagina del libro, la bozza di denuncia) e ti riporta lì.", "«Il tuo percorso». Quanti questionari hai completato e quante situazioni hai esaminato; «Prossimo» indica il questionario da fare. «Completato» vuol dire che hai finito le domande, non che non sia emerso nulla.", "«Esito». A fine percorso compare accanto al percorso e lampeggia finché non lo apri.", "Le quattro scorciatoie. Leggere (il libro), Riflettere (i questionari), Comprendere (il glossario), Orientarsi (aiuto e tutele).", "In basso. La barra porta a Inizio, Questionari, Libro, Aiuto, Tutela e Glossario."], "note": "Le risposte restano su questo dispositivo finché non chiudi l’app. Per conservarle salvale in un file: dall’uscita, dal menu dell’archivio nel Libro o con «Salva tutto» nella bozza di denuncia."}, "signals": {"heading": "Questionari: scegliere e riprendere", "steps": ["Solo il tuo profilo. Qui compaiono i questionari previsti per il profilo in uso.", "Le schede. Ogni scheda indica il numero di domande e lo stato: da iniziare, in corso, completato. «Inizia», «Riprendi» o «Rifai» aprono il questionario; una compilazione interrotta riparte dall’ultima risposta.", "Dopo l’ultimo questionario. Torna a Inizio: il tasto principale diventa «Suggerimenti» e compare «Esito»."], "note": "I questionari aiutano a osservare; non sono test clinici né accertano responsabilità. Se c’è un pericolo adesso, chiama il 112 senza aspettare la fine."}, "quiz": {"heading": "Rispondere alle domande", "steps": ["Una domanda per schermata. In alto il numero della domanda e la barra che mostra quanto manca.", "«Prima di rispondere». Uno spunto per osservare la situazione. Sui telefoni piccoli diventa un tasto in alto, accanto al numero della domanda.", "Le risposte. Tocca quella più vicina a ciò che accade davvero. Non c’è una risposta giusta. Alcune risposte mostrano subito un avviso di sicurezza: leggilo e tocca «Ho letto» per continuare.", "I tre tasti in basso stanno sempre nello stesso punto. «Indietro» torna alla domanda precedente, «Preferisco non rispondere» salta la domanda (non vale come «non succede»), «Avanti» conferma con un suono diverso dagli altri tasti.", "Domande di frequenza e di confronto. Alcune risposte aprono una domanda su quanto spesso succede; altre domande servono a verificare la coerenza del racconto, non a dire che qualcuno mente.", "«‹ Indietro» in alto a sinistra torna all’elenco dei questionari senza perdere le risposte.", "A fine questionario puoi aprire l’esito parziale o continuare con il questionario successivo."], "note": "Una condotta grave resta importante anche se è successa una volta sola."}, "outcome": {"heading": "Leggere l’esito", "steps": ["«In breve». Il riassunto: che cosa emerge, che cosa puoi fare adesso, a chi rivolgerti.", "I tasti sotto il riassunto. Portano alla spiegazione, alle parole per dirlo (con i termini del glossario), ai passi possibili, alle tue risposte e alla mappa.", "Gli avvisi in rosso. Segnalano risposte che richiedono attenzione subito.", "La mappa 3D. Mostra i nuclei richiamati dalle risposte: ruotala con il dito e tocca una sfera per la spiegazione. Non misura il rischio.", "In fondo. «Chiedere aiuto», i collegamenti al libro, «Stampa esito / salva PDF» e «Ritorna alla schermata principale». La X in alto chiude l’esito."], "note": "L’esito è una lettura delle risposte date, non una diagnosi né una previsione."}, "reader": {"heading": "Libro: leggere e annotare", "steps": ["Due modi di leggere. «PDF» mostra le pagine originali; «eBook» adatta il testo allo schermo. Sul telefono il libro si apre già in eBook, sul computer in PDF.", "«Continua» riporta all’ultima pagina letta; «Indice» apre i capitoli.", "Nell’eBook. «Continua» fa scorrere il testo di seguito, «A pagine» lo divide in schermate, «Seppia» usa colori più caldi.", "In basso. Frecce e numero di pagina per spostarti, lenti per ingrandire o ridurre, il segnalibro per segnare la pagina, la matita per il quaderno delle note, l’archivio per salvare o caricare i tuoi dati.", "Passaggi collegati. Se arrivi dall’esito di un questionario, alcune frasi sono evidenziate: toccale per leggere il collegamento con le tue risposte."], "note": "Il libro funziona anche senza connessione."}, "notes": {"heading": "Il quaderno delle note", "steps": ["Scrivi una nota sulla pagina che stai leggendo e tocca «Salva nota». «Elimina» la cancella.", "«Esporta note» scarica tutte le note in un file di testo; «Salva o carica i dati» apre l’archivio con tutti i dati.", "La X chiude il quaderno."], "note": "Le note restano sul dispositivo finché non chiudi l’app: salvale in un file se vuoi conservarle."}, "help": {"heading": "Aiuto: chi chiamare e dove andare", "steps": ["112. Per un pericolo in questo momento. Non serve aver fatto nessun questionario.", "1522. Ascolto e orientamento sulla violenza e lo stalking, gratuito, sempre attivo, anche in chat.", "«Cosa mi chiederanno?». Aprilo prima di chiamare: spiega come si svolge il primo contatto.", "Centri antiviolenza. Scrivi provincia o comune e tocca «Cerca»; c’è anche la mappatura ufficiale. Verifica sempre indirizzi e orari.", "Altre sezioni. Strumenti e precauzioni, aiuto per chi vuole cambiare i propri comportamenti (CUAV), segnalazioni con YouPol, come sostenere un’altra persona."], "note": "L’app non chiama e non invia nulla da sola. Su un telefono controllato da altri, chiamate e ricerche possono restare visibili."}, "legal": {"heading": "Tutela: misure e bozza dei fatti", "steps": ["Le schede. Ammonimento, allontanamento, Codice Rosso, sostegni economici e altro: ogni scheda spiega a chi serve, a quali condizioni e a chi chiederla.", "«Voglio parlare con qualcuno» porta alla sezione Aiuto.", "«Voglio preparare un racconto dei fatti». Apre la guida per la bozza di denuncia."], "note": "Sono informazioni generali: non sostituiscono un avvocato, un centro antiviolenza o le forze dell’ordine."}, "denuncia": {"heading": "La bozza di denuncia, passo per passo", "steps": ["Sei passi. Sicurezza; persone coinvolte, compresa la convivenza in atto o passata; contesto; episodi; come sono cambiate le tue condizioni di vita; bozza finale.", "Gli episodi. Una scheda per ogni fatto. Se non ricordi il giorno, scrivi un periodo approssimativo: la bozza mette in ordine le date certe e lascia gli altri nell’ordine in cui li scrivi.", "Le condizioni di vita. Le domande seguono l’art. 612-bis del codice penale: ansia o paura che durano nel tempo, timore per la tua incolumità o per quella di persone care, abitudini che hai dovuto cambiare. Ne basta una.", "Rispondi solo a ciò che ricordi. Puoi lasciare vuoto quello che non sai. «‹ Indietro» e «Continua» spostano tra i passi.", "Alla fine. «Salva tutto» crea un unico file con il nome che scegli (bozza e altri dati, non cifrato); «Stampa» la stampa senza il nome dell’app in cima; «Copia testo» la copia negli appunti."], "note": "La bozza non è una denuncia e non viene inviata a nessuno: è un aiuto per il colloquio con le forze dell’ordine o con un centro."}, "legaltopic": {"heading": "Hai aperto una misura di tutela", "steps": ["Leggi prima a chi si rivolge e in quali casi si può chiedere: misure con nomi simili hanno requisiti diversi.", "Controlla condizioni, scadenze e ufficio di riferimento. Le norme cambiano: verifica le fonti prima di agire.", "Torna all’elenco per aprire un’altra scheda."], "note": "Le informazioni sono generali e non sostituiscono la consulenza di un professionista."}, "gloss": {"heading": "Glossario: dare un nome alle cose", "steps": ["Cerca. Scrivi anche solo una parte della parola, oppure scorri l’elenco.", "Tocca una voce per leggerne il significato. Se c’è, «Leggi nel libro» apre la pagina dove compare.", "Le parole evidenziate negli esiti dei questionari aprono le stesse definizioni."], "note": "Il glossario spiega; non formula diagnosi o valutazioni giuridiche."}, "library": {"heading": "Biblioteca: materiali e manuale", "steps": ["Materiali oltre il libro: guide per riconoscere e affrontare la violenza, testi informativi, note legali, la guida al metodo P.A.S.S.O.", "«Manuale app» apre il manuale completo dell’app (manual.html del sito). Lo trovi anche nel menu, alla voce «Manuale dell’app».", "Tocca una risorsa per aprirla nel lettore sotto l’elenco. Alcuni collegamenti richiedono una connessione."], "note": "La Biblioteca si apre dal menu con le tre linee, in alto."}}, EXTRA={"info": {"woman": "Nel profilo «Ho dei dubbi» accanto a «Esito» trovi anche «Bozza denuncia». Uscendo con «Esci» compaiono la dedica e l’albero finale.", "helper": "Nel profilo «Voglio aiutare qualcuno» i consigli riguardano anche gesti in apparenza utili che possono esporre la persona: messaggi, tracciamento, accompagnamenti non concordati.", "man": "Nel profilo «Voglio capire i miei comportamenti» l’esito riassume le condotte riconosciute e «Suggerimenti» propone i centri per uomini (CUAV), il glossario e la lettura mirata del libro."}, "outcome": {"woman": "Nel profilo «Ho dei dubbi» i collegamenti al libro propongono scene vicine alle tue risposte.", "helper": "Nel profilo di chi aiuta l’esito indica le iniziative rischiose e alternative più sicure, senza decidere al posto della persona.", "man": "Nel profilo uomini l’esito indica le condotte da interrompere subito e i centri CUAV."}};
+ const vis=id=>{const e=document.getElementById(id);return !!e&&!e.classList.contains('hidden')&&!e.hidden&&e.getClientRects().length>0;};
+ window.ComeLupiHelpText=function(name,profile){
+  let key=name;
+  if(document.getElementById('libraryDrawer')&&!document.getElementById('libraryDrawer').classList.contains('hidden')&&document.getElementById('libraryDrawer').getClientRects().length)key='library';
+  else if(name==='signals'&&vis('testOutcome'))key='outcome';
+  else if(name==='signals'&&vis('testStage'))key='quiz';
+  else if(name==='legal'&&vis('denunciaView'))key='denuncia';
+  else if(name==='legal'&&vis('legalTopic'))key='legaltopic';
+  else if(name==='reader'&&document.getElementById('noteDrawer')?.classList.contains('open'))key='notes';
+  const d=T[key];if(!d)return null;
+  const steps=d.steps.slice();const x=EXTRA[key]?.[profile];if(x)steps.push(x);
+  return {heading:d.heading,steps,note:d.note};
+ };
+})();
+</script>
+
+<style id="clx-pill-buttons-20261128">
+/* tasto principale: Comincia da te stessa / Prosegui / Suggerimenti / Continua… */
+html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ){
+ background:#fff7f4!important;background-image:none!important;border:1px solid rgba(255,236,229,.7)!important;
+ border-radius:999px!important;box-shadow:0 8px 18px rgba(13,0,6,.22)!important;color:#6e1530!important;
+ display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:11px!important;
+ padding:4px 16px 4px 7px!important;min-height:0!important;text-align:left!important;
+ transition:transform 160ms cubic-bezier(.23,1,.32,1),box-shadow 160ms ease!important}
+html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ)::before{
+ content:''!important;position:static!important;inset:auto!important;flex:0 0 32px!important;width:32px!important;height:32px!important;
+ border-radius:50%!important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l8.5-5.5z' fill='%23fff'/%3E%3C/svg%3E") center/18px no-repeat,radial-gradient(circle at 35% 32%,#ff8a9a,#a3162c 68%)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 2px 6px rgba(120,0,30,.35)!important;opacity:1!important;transform:none!important;mix-blend-mode:normal!important;filter:none!important}
+html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ) strong{
+ font:700 14px/1.22 system-ui,-apple-system,"Segoe UI",sans-serif!important;color:#6e1530!important;letter-spacing:0!important;text-shadow:none!important;text-align:left!important}
+html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ) .identity-welcome-arrow{display:none!important}
+html body #app #info.identity-panel .identity-welcome:not(#clxZ)::after{content:none!important;display:none!important}
+/* Guidami, Esito, Bozza denuncia */
+html body #app #info.identity-panel #clPassoOpen:not(#clxZ),html body #app #info.identity-panel #clProfileResultStep:not(#clxZ),html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ){
+ background:#fff7f4!important;background-image:none!important;border:1px solid rgba(255,236,229,.7)!important;
+ box-shadow:0 8px 18px rgba(13,0,6,.22)!important;color:#6e1530!important;border-radius:18px!important;
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;font-weight:700!important;letter-spacing:0!important;text-shadow:none!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px!important;
+ transition:transform 160ms cubic-bezier(.23,1,.32,1)!important}
+html body #app #info.identity-panel #clProfileResultStep:not(#clxZ)[hidden],html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ)[hidden]{display:none!important}
+html body #app #info.identity-panel #clPassoOpen:not(#clxZ)::before,html body #app #info.identity-panel #clProfileResultStep:not(#clxZ)::before{content:none!important;background:none!important}
+html body #app #info.identity-panel #clPassoOpen:not(#clxZ) .cl-info-accomp-glyph,html body #app #info.identity-panel #clProfileResultStep:not(#clxZ) .cl-profile-result-icon{
+ display:grid!important;place-items:center!important;width:24px!important;height:24px!important;border-radius:50%!important;
+ background:radial-gradient(circle at 35% 32%,#ff8a9a,#a3162c 68%)!important;color:#fff!important;font-size:12px!important;line-height:1!important;margin:0!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 2px 5px rgba(120,0,30,.3)!important;-webkit-text-fill-color:#fff!important}
+html body #app #info.identity-panel #clPassoOpen:not(#clxZ) .cl-info-accomp-word,html body #app #info.identity-panel #clProfileResultStep:not(#clxZ) .cl-profile-result-label{
+ font:700 11.5px/1.15 system-ui,-apple-system,"Segoe UI",sans-serif!important;color:#6e1530!important}
+html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ){font-size:11px!important;line-height:1.15!important;text-align:center!important;padding:6px 4px!important}
+html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ)::before{content:''!important;position:static!important;inset:auto!important;display:block!important;flex:0 0 24px!important;width:24px!important;height:24px!important;border-radius:50%!important;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 3.5h7l4 4v13H7z'/%3E%3Cpath d='M10 12h5M10 16h5'/%3E%3C/svg%3E") center/14px no-repeat,radial-gradient(circle at 35% 32%,#ff8a9a,#a3162c 68%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 2px 5px rgba(120,0,30,.3)!important;opacity:1!important}
+html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ):active,
+html body #app #info.identity-panel #clPassoOpen:not(#clxZ):active,html body #app #info.identity-panel #clProfileResultStep:not(#clxZ):active,html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ):active{transform:scale(.97)!important}
+html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ):focus-visible,
+html body #app #info.identity-panel #clPassoOpen:not(#clxZ):focus-visible,html body #app #info.identity-panel #clProfileResultStep:not(#clxZ):focus-visible,html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ):focus-visible{outline:3px solid #ffd3da!important;outline-offset:3px!important}
+@media (prefers-reduced-motion:reduce){html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ),html body #app #info.identity-panel #clPassoOpen:not(#clxZ),html body #app #info.identity-panel #clProfileResultStep:not(#clxZ),html body #app #info.identity-panel #cl111DenunciaShortcut:not(#clxZ){transition:none!important}}
+@media (max-height:740px){html body #app #info.identity-panel .identity-welcome-routes>button[data-info-quickstart]:not(#clxZ) strong{font-size:13px!important;line-height:1.18!important}}
+</style>
+<script id="clx-swipe-20261128">
+(function(){
+ 'use strict';
+ const rm=matchMedia('(prefers-reduced-motion: reduce)');
+ /* ---------- 1. swipe fra le sezioni ---------- */
+ const nav=document.querySelector('#app > nav.tabs');
+ const order=[...document.querySelectorAll('#app > nav.tabs [data-tab]')].map(b=>b.dataset.tab);
+ const panels=[...document.querySelectorAll('#app .panel')];
+ if(nav&&order.length&&panels.length){
+  let current=document.querySelector('#app .panel.active')?.id||null;
+  let inAnim=null,outAnim=null,bypass=false,swipeTick=false,pending=null,lastDir=0;
+  const dirOf=(a,b)=>{const i=order.indexOf(a),j=order.indexOf(b);return (i<0||j<0)?1:(j>i?1:-1)};
+  // lo swipe con il dito chiama .click() sul tasto: lo riconosco perché avviene nello stesso istante del touchend
+  window.addEventListener('touchend',()=>{swipeTick=true;setTimeout(()=>{swipeTick=false},0)},{capture:true,passive:true});
+  // fase 1: la schermata attuale scorre via (è ancora attiva, quindi conserva tutta la sua grafica)
+  window.addEventListener('click',e=>{
+   if(bypass||rm.matches)return;
+   const btn=e.target.closest&&e.target.closest('#app > nav.tabs [data-tab]');if(!btn)return;
+   if(!(e.isTrusted||swipeTick))return;
+   const outEl=document.querySelector('#app .panel.active');const to=btn.dataset.tab;
+   if(!outEl||outEl.id===to)return;
+   e.stopImmediatePropagation();e.preventDefault();
+   if(outAnim){pending=btn;return}
+   const dir=dirOf(outEl.id,to);lastDir=dir;
+   outEl.style.willChange='transform';
+   outAnim=outEl.animate([{transform:'translate3d(0,0,0)'},{transform:`translate3d(${-dir*100}%,0,0)`}],{duration:150,easing:'cubic-bezier(.5,0,.85,.45)',fill:'forwards'});
+   outAnim.onfinish=()=>{
+    const target=pending||btn;pending=null;
+    bypass=true;try{target.click()}finally{bypass=false}
+    const a=outAnim;outAnim=null;try{a.cancel()}catch(_){}outEl.style.willChange='';
+    if(outEl.classList.contains('active')){ /* il cambio non è avvenuto: rientra */
+     outEl.animate([{transform:`translate3d(${-dir*100}%,0,0)`},{transform:'translate3d(0,0,0)'}],{duration:260,easing:'cubic-bezier(.23,1,.32,1)'});}
+   };
+  },true);
+  // fase 2: la nuova schermata entra dal lato giusto (vale anche per i cambi fatti dal programma)
+  const mo=new MutationObserver(()=>{
+   const now=document.querySelector('#app .panel.active')?.id||null;
+   if(now&&now!==current){
+    const prev=current;current=now;if(!prev)return;
+    const el=document.getElementById(now);if(!el)return;
+    if(inAnim){try{inAnim.cancel()}catch(_){}}
+    if(rm.matches){inAnim=el.animate([{opacity:0},{opacity:1}],{duration:160,easing:'ease'});return}
+    const dir=dirOf(prev,now);
+    el.style.willChange='transform';
+    inAnim=el.animate([{transform:`translate3d(${dir*100}%,0,0)`},{transform:'translate3d(0,0,0)'}],{duration:300,easing:'cubic-bezier(.23,1,.32,1)'});
+    inAnim.onfinish=inAnim.oncancel=()=>{el.style.willChange=''};
+   } else if(!now) current=null;
+  });
+  panels.forEach(p=>mo.observe(p,{attributes:true,attributeFilter:['class']}));
+ }
+ /* ---------- 2. risposte non scelte che escono ---------- */
+ let busy=false;
+ window.addEventListener('click',e=>{
+  const btn=e.target.closest&&e.target.closest('#testNext');
+  if(!btn||busy||btn.disabled||rm.matches)return;
+  const stage=document.getElementById('testStage');if(!stage||stage.classList.contains('hidden'))return;
+  const opts=[...stage.querySelectorAll('label.test-option')].filter(l=>l.offsetParent);
+  const picked=opts.filter(l=>l.querySelector('input:checked'));
+  const others=opts.filter(l=>!picked.includes(l));
+  if(!picked.length||!others.length)return;
+  const fn=btn.onclick;if(typeof fn!=='function')return;
+  busy=true;btn.onclick=null;stage.style.pointerEvents='none';
+  const STAG=45,D=300;
+  others.forEach((l,k)=>{l.style.willChange='transform,opacity';
+   l.animate([{transform:'translate3d(0,0,0)',opacity:1},{transform:'translate3d(115%,0,0)',opacity:0}],{duration:D,delay:k*STAG,easing:'cubic-bezier(.55,0,.75,.2)',fill:'forwards'})});
+  picked.forEach(l=>l.animate([{transform:'scale(1)'},{transform:'scale(1.025)'},{transform:'scale(1)'}],{duration:260,easing:'cubic-bezier(.23,1,.32,1)'}));
+  const total=D+STAG*(others.length-1)+60;
+  setTimeout(()=>{
+   btn.onclick=fn;stage.style.pointerEvents='';busy=false;
+   try{fn.call(btn,new MouseEvent('click'))}catch(err){console.error(err)}
+   // le risposte uscite restano fuori finché la domanda non viene sostituita;
+   // se la domanda resta (per esempio un avviso blocca il passaggio) rientrano dopo un attimo
+   const t0=performance.now();
+   (function wait(){
+    const still=others.filter(l=>l.isConnected&&l.offsetParent);
+    if(!still.length){
+     const fresh=[...stage.querySelectorAll('label.test-option')].filter(l=>l.offsetParent&&!opts.includes(l));
+     fresh.forEach((l,k)=>l.animate([{transform:'translate3d(-14px,0,0)',opacity:0},{transform:'translate3d(0,0,0)',opacity:1}],{duration:240,delay:k*30,easing:'cubic-bezier(.23,1,.32,1)',fill:'backwards'}));
+     return}
+    if(performance.now()-t0<1600){requestAnimationFrame(wait);return}
+    still.forEach(l=>{l.getAnimations().forEach(a=>a.cancel());l.style.willChange=''});
+   })();
+  },total);
+ },true);
+})();
+</script>
+<style id="clx-header-center-20261128">
+html body #app#app > header .brand .cl-brand-version:not(#clxZ):not(#clxY){display:none!important}
+html body #app > header > .brand{flex:0 0 auto!important;width:auto!important;margin-right:0!important}
+html body #app > header > #clEmergencyExit:not(#clxZ){margin-left:auto!important;margin-right:auto!important;order:0!important;
+ border:1px solid rgba(255,239,237,.62)!important;box-shadow:0 3px 9px rgba(19,0,8,.15),inset 0 1px 0 rgba(255,255,255,.09)!important;background:rgba(255,255,255,.13)!important}
+html body #app > header > #clContextHelp:not(#clxZ){margin-left:0!important}
+</style>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "280ae458d20548ae856cf4258ab01ab6"}'></script><!-- End Cloudflare Web Analytics -->
 </body></html>
